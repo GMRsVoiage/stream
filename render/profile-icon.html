@@ -4,50 +4,21 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=512,height=512">
   <title>Rafaelmanu001 — Synthwave Sun Profile Base</title>
+  <link rel="stylesheet" href="../css/scenes.css">
+  <link rel="stylesheet" href="../css/aquawave-sync.css">
   <style>
-    *{box-sizing:border-box}
-    html,body{width:512px;height:512px;margin:0;overflow:hidden}
-    body{
-      display:grid;
-      place-items:center;
-      background:#080517;
-    }
-    .icon{
-      position:relative;
-      width:472px;
-      height:472px;
-      overflow:hidden;
-      border-radius:50%;
-      background:
-        radial-gradient(circle at 50% 52%,rgba(255,62,210,.10),transparent 44%),
-        linear-gradient(180deg,#0b071f 0%,#10092e 62%,#05030f 100%);
-      border:4px solid rgba(53,231,255,.72);
-      box-shadow:
-        0 0 0 6px #171034,
-        0 0 0 9px rgba(255,62,210,.48),
-        0 0 34px rgba(53,231,255,.18);
-    }
-    .sun{
-      position:absolute;
-      width:410px;
-      height:410px;
-      left:31px;
-      top:38px;
-      opacity:.95;
-    }
-    .grain{
-      position:absolute;
-      inset:0;
-      opacity:.045;
-      background:repeating-linear-gradient(180deg,#fff 0,#fff 1px,transparent 1px,transparent 4px);
-      pointer-events:none;
-    }
+    html,body{width:512px;height:512px;margin:0;overflow:hidden;background:#080517}
+    body{display:grid;place-items:center}
   </style>
 </head>
 <body>
-  <main class="icon" aria-label="Base de ícone com sol Synthwave">
-    <img class="sun" src="../assets/synth-sun.svg" alt="Sol Synthwave">
-    <div class="grain"></div>
+  <main class="profile-synth" aria-label="Base de ícone AquaWave pronta para receber uma foto">
+    <div class="sync-stars profile-synth__stars"></div>
+    <img class="profile-synth__sun" src="../assets/synth-sun.svg" alt="Sol Synthwave">
+    <div class="sync-orbit profile-synth__orbit-a"></div>
+    <div class="sync-orbit profile-synth__orbit-b"></div>
+    <div class="profile-synth__safe" aria-hidden="true"></div>
+    <div class="scanlines scanlines--dark"></div>
   </main>
 </body>
 </html>

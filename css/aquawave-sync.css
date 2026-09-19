@@ -1,0 +1,336 @@
+/* AquaWave visual unification layer
+   Uses starting.html as the visual reference for every other scene. */
+
+.sync-stars {
+  position: absolute;
+  inset: -8%;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,.86) 0 1px, transparent 1.5px),
+    radial-gradient(circle, rgba(53,231,255,.62) 0 1px, transparent 1.5px),
+    radial-gradient(circle, rgba(255,62,210,.48) 0 1px, transparent 1.5px);
+  background-size: 168px 168px, 231px 231px, 307px 307px;
+  background-position: 13px 27px, 74px 118px, 151px 42px;
+  opacity: .24;
+}
+
+.sync-stars--moving {
+  animation: starDrift 34s linear infinite;
+  will-change: transform;
+}
+
+.sync-orbit {
+  position: absolute;
+  pointer-events: none;
+  border: 1px solid rgba(53,231,255,.13);
+  border-left-color: rgba(255,62,210,.34);
+  border-right-color: rgba(53,231,255,.34);
+  border-radius: 50%;
+  opacity: .72;
+  will-change: transform;
+}
+
+.sync-label {
+  color: rgba(220,216,239,.7);
+  font: 600 9px/1 var(--font-brand);
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+/* MAIN ------------------------------------------------------------------ */
+
+.main-overlay .sync-stars {
+  opacity: .12;
+  mix-blend-mode: screen;
+}
+
+.main-overlay__orbit-a {
+  width: 580px;
+  height: 280px;
+  right: -220px;
+  top: -90px;
+  transform: rotate(16deg);
+  animation: orbitSpin 30s linear infinite;
+}
+
+.main-overlay__orbit-b {
+  width: 420px;
+  height: 210px;
+  left: -180px;
+  bottom: -85px;
+  transform: rotate(-22deg);
+  animation: orbitSpinReverse 25s linear infinite;
+}
+
+.main-overlay__brand {
+  border-left-color: rgba(53,231,255,.92);
+  background:
+    linear-gradient(90deg, rgba(7,6,22,.92), rgba(15,9,41,.78) 64%, rgba(15,9,41,0));
+  box-shadow: none;
+}
+
+.main-overlay__brand::after {
+  content: "";
+  position: absolute;
+  left: 18px;
+  right: 30px;
+  bottom: -7px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--primary), rgba(255,62,210,.45), transparent);
+}
+
+.aero-popup {
+  width: 260px;
+  min-height: 92px;
+  border-color: rgba(176,219,255,.26);
+  border-radius: 9px;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(104,178,255,.16), transparent 40%),
+    linear-gradient(180deg, rgba(46,72,105,.18), rgba(7,9,24,.86));
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.12),
+    0 10px 26px rgba(0,0,0,.22);
+}
+
+.aero-popup__title {
+  height: 28px;
+  color: rgba(229,238,249,.78);
+  font-size: 9px;
+}
+
+.aero-popup__title i {
+  width: 19px;
+  height: 15px;
+  border-color: rgba(255,255,255,.14);
+  background: linear-gradient(180deg, rgba(255,105,131,.44), rgba(92,24,45,.58));
+  font-size: 10px;
+}
+
+.aero-popup__body {
+  gap: 5px;
+  padding: 10px 13px 12px;
+}
+
+.aero-popup__body strong {
+  color: #edf7ff;
+  font-size: 12px;
+}
+
+.aero-popup__body span {
+  font-size: 9px;
+}
+
+.aero-popup::after {
+  content: "";
+  position: absolute;
+  left: 13px;
+  bottom: 8px;
+  width: 42%;
+  height: 1px;
+  background: linear-gradient(90deg, var(--primary), transparent);
+  opacity: .42;
+}
+
+/* WEBCAM --------------------------------------------------------------- */
+
+.webcam-neon {
+  --runner-size: 23%;
+  --runner-thickness: 3px;
+}
+
+.webcam-neon__base {
+  border: 1px solid rgba(185,180,215,.16);
+  box-shadow:
+    inset 0 0 0 1px rgba(8,5,22,.5),
+    inset 0 0 20px rgba(10,6,28,.16);
+}
+
+.webcam-neon__runner--top,
+.webcam-neon__runner--bottom {
+  width: var(--runner-size);
+  height: var(--runner-thickness);
+}
+
+.webcam-neon__runner--left,
+.webcam-neon__runner--right {
+  width: var(--runner-thickness);
+  height: var(--runner-size);
+}
+
+.webcam-neon__tag {
+  left: 16px;
+  bottom: 12px;
+  min-height: 28px;
+  border-color: rgba(186,217,255,.16);
+  background:
+    linear-gradient(180deg, rgba(46,72,105,.14), rgba(6,6,19,.84));
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.08),
+    0 6px 16px rgba(0,0,0,.18);
+}
+
+.webcam-neon__system {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 9px;
+  border: 1px solid rgba(180,218,255,.14);
+  border-radius: 6px;
+  background: rgba(7,6,20,.68);
+  color: rgba(220,217,239,.62);
+  font: 600 8px/1 var(--font-brand);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.webcam-neon__system::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 0 0 8px rgba(53,231,255,.58);
+  animation: signalPulse 1.5s ease-in-out infinite;
+}
+
+/* BANNER --------------------------------------------------------------- */
+
+.banner {
+  background:
+    radial-gradient(circle at 76% 45%, rgba(113,72,255,.18), transparent 30%),
+    linear-gradient(180deg,#060412 0%,#0b071f 48%,#10082d 68%,#05030e 100%);
+}
+
+.banner__stars {
+  opacity: .34;
+}
+
+.banner__sun {
+  position: absolute;
+  width: 410px;
+  height: 410px;
+  right: 95px;
+  bottom: -26px;
+  opacity: .78;
+}
+
+.banner__orbit-a {
+  width: 510px;
+  height: 250px;
+  right: 39px;
+  top: 72px;
+  transform: rotate(-8deg);
+  opacity: .55;
+}
+
+.banner__orbit-b {
+  width: 400px;
+  height: 196px;
+  right: 94px;
+  top: 99px;
+  transform: rotate(17deg);
+  opacity: .42;
+}
+
+.banner .planet {
+  opacity: .78;
+}
+
+.banner .palms {
+  opacity: .45;
+}
+
+.banner__copy {
+  top: 124px;
+  border-left-color: rgba(53,231,255,.86);
+}
+
+.banner__copy h1 {
+  text-shadow:
+    0 0 18px rgba(53,231,255,.12),
+    0 0 24px rgba(255,62,210,.10);
+}
+
+.banner__eyebrow {
+  color: rgba(53,231,255,.72);
+}
+
+.banner__signature {
+  padding: 6px 8px;
+  border: 1px solid rgba(180,218,255,.12);
+  border-radius: 5px;
+  background: rgba(7,6,20,.45);
+}
+
+/* PROFILE -------------------------------------------------------------- */
+
+.profile-synth {
+  position: relative;
+  width: 472px;
+  height: 472px;
+  overflow: hidden;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 55%, rgba(113,72,255,.16), transparent 44%),
+    linear-gradient(180deg,#060412 0%,#0b071f 50%,#10082d 72%,#05030e 100%);
+  border: 4px solid rgba(53,231,255,.72);
+  box-shadow:
+    0 0 0 6px #171034,
+    0 0 0 9px rgba(255,62,210,.48),
+    0 0 34px rgba(53,231,255,.18);
+}
+
+.profile-synth__stars {
+  opacity: .31;
+}
+
+.profile-synth__sun {
+  position: absolute;
+  width: 390px;
+  height: 390px;
+  left: 41px;
+  top: 45px;
+  opacity: .92;
+}
+
+.profile-synth__orbit-a {
+  width: 410px;
+  height: 202px;
+  left: 31px;
+  top: 132px;
+  transform: rotate(-10deg);
+  opacity: .58;
+}
+
+.profile-synth__orbit-b {
+  width: 330px;
+  height: 164px;
+  left: 71px;
+  top: 151px;
+  transform: rotate(18deg);
+  opacity: .46;
+}
+
+.profile-synth__safe {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 250px;
+  height: 320px;
+  transform: translate(-50%,-42%);
+  border-radius: 48% 48% 42% 42%;
+  background: radial-gradient(ellipse at center, rgba(4,3,15,.05), transparent 70%);
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sync-stars--moving,
+  .main-overlay__orbit-a,
+  .main-overlay__orbit-b {
+    animation: none !important;
+  }
+}
