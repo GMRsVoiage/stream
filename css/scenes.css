@@ -18,9 +18,15 @@
   bottom: 280px;
   width: 100%;
   height: 220px;
-  opacity: .54;
-  background:
-    url("../assets/palms.svg") center bottom / 720px 205px repeat-x;
+  opacity: .58;
+  background: url("../assets/palms.svg") center bottom / 920px 230px repeat-x;
+}
+
+.palms--main {
+  bottom: 242px;
+  height: 240px;
+  opacity: .32;
+  filter: brightness(.58) saturate(.8);
 }
 
 .horizon-glow {
@@ -28,8 +34,21 @@
   left: 0;
   right: 0;
   bottom: 238px;
-  height: 130px;
-  background: linear-gradient(180deg, transparent, rgba(36, 219, 255, .25), rgba(53, 231, 255, .07));
+  height: 145px;
+  background: linear-gradient(180deg, transparent, rgba(35, 116, 255, .15), rgba(255, 62, 210, .09), transparent);
+}
+
+.synth-sun {
+  position: absolute;
+  z-index: -1;
+  width: 380px;
+  height: 380px;
+  left: 50%;
+  bottom: 154px;
+  transform: translateX(-50%);
+  opacity: .47;
+  animation: sunPulse 5.6s ease-in-out infinite;
+  will-change: transform, opacity;
 }
 
 .synth-grid {
@@ -38,17 +57,39 @@
   right: -15%;
   bottom: -315px;
   height: 610px;
+  overflow: hidden;
   transform: perspective(520px) rotateX(61deg);
   transform-origin: center top;
+  opacity: .68;
+}
+
+.synth-grid::before {
+  content: "";
+  position: absolute;
+  inset: -95px 0 -20px;
   background-image:
-    linear-gradient(rgba(255, 62, 210, .5) 2px, transparent 2px),
-    linear-gradient(90deg, rgba(53, 231, 255, .32) 2px, transparent 2px);
+    linear-gradient(rgba(255, 62, 210, .47) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(53, 231, 255, .28) 2px, transparent 2px);
   background-size: 92px 72px;
-  opacity: .72;
+}
+
+.synth-grid--animated::before {
+  animation: gridRush 5.8s linear infinite;
+  will-change: transform;
 }
 
 .main-overlay {
   background: transparent;
+}
+
+.main-overlay__shade {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at center, transparent 43%, rgba(3, 2, 12, .11) 68%, rgba(2, 1, 9, .38) 100%),
+    linear-gradient(180deg, rgba(5, 3, 18, .12) 0%, rgba(7, 4, 26, .06) 53%, rgba(5, 2, 18, .34) 79%, rgba(2, 1, 9, .64) 100%);
 }
 
 .main-overlay::after {
@@ -56,86 +97,183 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  border: 1px solid rgba(116, 71, 255, .12);
+  border: 1px solid rgba(116, 71, 255, .09);
 }
 
 .main-overlay__goal {
   position: absolute;
-  top: 40px;
+  top: 34px;
   left: 50%;
   transform: translateX(-50%);
+  opacity: .93;
 }
 
 .main-overlay__brand {
   position: absolute;
-  left: 52px;
-  bottom: 42px;
+  left: 48px;
+  bottom: 38px;
+  opacity: .94;
 }
 
 .main-overlay__retro {
   position: absolute;
   right: 42px;
-  bottom: 55px;
-  width: 370px;
-  height: 170px;
+  bottom: 44px;
+  width: 350px;
+  height: 154px;
+  opacity: .74;
 }
 
 .main-overlay__retro .gmrs-window:nth-child(1) {
   position: absolute;
-  right: 105px;
+  right: 96px;
   top: 0;
-  width: 175px;
-  transform: rotate(-2deg);
+  width: 180px;
+  transform: rotate(-1.2deg);
 }
 
 .main-overlay__retro .gmrs-window:nth-child(2) {
   position: absolute;
   right: 0;
-  bottom: 6px;
-  width: 255px;
-  transform: rotate(1deg);
+  bottom: 2px;
+  width: 250px;
+  transform: rotate(.7deg);
 }
 
-.webcam-frame {
-  width: 1920px;
-  height: 1080px;
+.gmrs-window--dark {
+  border-color: rgba(105, 79, 255, .62);
+  background: rgba(8, 6, 24, .88);
+  color: #d9d6ee;
+  box-shadow: 4px 5px 0 rgba(0,0,0,.28);
+}
+
+.gmrs-window--dark .gmrs-window__titlebar {
+  background: linear-gradient(90deg, rgba(72,44,169,.92), rgba(143,47,173,.9));
+}
+
+.gmrs-window--dark .gmrs-window__body {
+  color: #b9b3d9;
+  font-size: 14px;
+}
+
+.scanlines--dark {
+  opacity: .035;
+}
+
+/* Minimal Dark webcam ----------------------------------------------------- */
+
+.webcam-minimal {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  min-width: 320px;
+  min-height: 180px;
+  overflow: hidden;
   background: transparent;
+  color: var(--text);
+  font-family: var(--font-ui);
 }
 
-.webcam-frame__box {
+.webcam-minimal__frame {
   position: absolute;
-  inset: 18px;
-  border: 3px solid transparent;
-  border-image: linear-gradient(135deg, var(--primary), var(--accent), var(--secondary)) 1;
+  inset: 10px;
+  border: 1px solid rgba(186, 180, 218, .22);
+  background: linear-gradient(180deg, rgba(9, 7, 26, .05), rgba(9, 7, 26, .01));
   box-shadow:
-    inset 0 0 28px rgba(53, 231, 255, .08),
-    0 0 16px rgba(116, 71, 255, .22);
+    inset 0 0 0 1px rgba(0,0,0,.32),
+    0 8px 28px rgba(0,0,0,.18);
 }
 
-.webcam-frame__corner {
+.webcam-minimal__corner {
   position: absolute;
-  width: 210px;
-  height: 210px;
-  opacity: .92;
-  background: url("../assets/palms.svg") center / contain no-repeat;
+  width: 58px;
+  height: 58px;
+  pointer-events: none;
 }
 
-.webcam-frame__corner--tl {
-  left: 0;
-  top: 0;
-  transform: scaleX(-1);
+.webcam-minimal__corner--tl {
+  left: -1px;
+  top: -1px;
+  border-left: 3px solid var(--primary);
+  border-top: 3px solid var(--primary);
 }
 
-.webcam-frame__corner--br {
-  right: 0;
-  bottom: 0;
+.webcam-minimal__corner--tr {
+  right: -1px;
+  top: -1px;
+  border-right: 3px solid rgba(255,255,255,.48);
+  border-top: 3px solid rgba(255,255,255,.22);
 }
 
-.webcam-frame__tag {
+.webcam-minimal__corner--bl {
+  left: -1px;
+  bottom: -1px;
+  border-left: 3px solid rgba(255,255,255,.28);
+  border-bottom: 3px solid rgba(255,255,255,.16);
+}
+
+.webcam-minimal__corner--br {
+  right: -1px;
+  bottom: -1px;
+  border-right: 3px solid var(--accent);
+  border-bottom: 3px solid var(--accent);
+}
+
+.webcam-minimal__accent {
   position: absolute;
-  left: 78px;
-  bottom: 38px;
+  height: 2px;
+  width: 18%;
+  opacity: .88;
 }
+
+.webcam-minimal__accent--cyan {
+  left: 59px;
+  top: -1px;
+  background: linear-gradient(90deg, var(--primary), transparent);
+}
+
+.webcam-minimal__accent--pink {
+  right: 59px;
+  bottom: -1px;
+  background: linear-gradient(90deg, transparent, var(--accent));
+}
+
+.webcam-minimal__tag {
+  position: absolute;
+  left: 30px;
+  bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 34px;
+  padding: 7px 13px 7px 10px;
+  border: 1px solid rgba(255,255,255,.11);
+  border-radius: 7px;
+  background: rgba(7, 6, 20, .88);
+  box-shadow: 0 7px 20px rgba(0,0,0,.22);
+  letter-spacing: .055em;
+}
+
+.webcam-minimal__tag strong {
+  font: 700 15px/1 var(--font-ui);
+}
+
+.webcam-minimal__tag > span:last-child {
+  color: var(--text-muted);
+  font: 600 11px/1 var(--font-ui);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.webcam-minimal__status {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 0 0 9px rgba(53,231,255,.45);
+}
+
+/* Starting --------------------------------------------------------------- */
 
 .starting__content {
   position: absolute;
@@ -182,6 +320,8 @@
   font: 700 18px/1 var(--font-ui);
 }
 
+/* Twitch banner ---------------------------------------------------------- */
+
 .banner {
   position: relative;
   width: 1200px;
@@ -201,9 +341,10 @@
 }
 
 .banner .palms {
-  bottom: 108px;
-  height: 130px;
-  background-size: 465px 132px;
+  bottom: 103px;
+  height: 148px;
+  opacity: .61;
+  background-size: 610px 152px;
 }
 
 .banner .horizon-glow {
@@ -214,7 +355,12 @@
 .banner .synth-grid {
   bottom: -225px;
   height: 345px;
+}
+
+.banner .synth-grid::before {
   background-size: 58px 48px;
+  animation: none;
+  transform: none;
 }
 
 .banner__copy {
@@ -241,6 +387,22 @@
 @keyframes drift {
   0%, 100% { transform: translate3d(0, 0, 0); }
   50% { transform: translate3d(0, 8px, 0); }
+}
+
+@keyframes gridRush {
+  from { transform: translate3d(0, -72px, 0); }
+  to { transform: translate3d(0, 0, 0); }
+}
+
+@keyframes sunPulse {
+  0%, 100% {
+    opacity: .40;
+    transform: translateX(-50%) scale(.985);
+  }
+  50% {
+    opacity: .52;
+    transform: translateX(-50%) scale(1.015);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

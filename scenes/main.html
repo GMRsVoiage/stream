@@ -3,15 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=1920,height=1080">
-  <title>AquaWave — Main Overlay</title>
+  <title>AquaWave — Dark Synthwave Main</title>
   <link rel="stylesheet" href="../css/scenes.css">
 </head>
 <body>
-  <main class="overlay-root main-overlay" aria-label="Overlay principal AquaWave">
-    <img class="planet" src="../assets/planet.svg" alt="">
-    <div class="palms"></div>
+  <main class="overlay-root main-overlay" aria-label="Overlay principal Dark Synthwave">
+    <div class="main-overlay__shade"></div>
+    <img class="synth-sun" src="../assets/synth-sun.svg" alt="">
+    <div class="palms palms--main"></div>
     <div class="horizon-glow"></div>
-    <div class="synth-grid"></div>
+    <div class="synth-grid synth-grid--animated"></div>
 
     <section class="main-overlay__goal gmrs-goal" style="--progress: 18%;">
       <div class="gmrs-goal__line">
@@ -29,25 +30,25 @@
     </section>
 
     <aside class="main-overlay__retro" aria-label="Elementos retrô decorativos">
-      <div class="gmrs-window">
+      <div class="gmrs-window gmrs-window--dark">
         <div class="gmrs-window__titlebar">
-          <span>coffee.cup</span>
+          <span>stream.status</span>
           <span class="gmrs-window__controls"><i class="gmrs-window__control"></i></span>
         </div>
-        <div class="gmrs-window__body">loading... 100%</div>
+        <div class="gmrs-window__body">ONLINE // NIGHT MODE</div>
       </div>
-      <div class="gmrs-window">
+      <div class="gmrs-window gmrs-window--dark">
         <div class="gmrs-window__titlebar">
-          <span>C:/stream/rafaelmanu001.exe</span>
+          <span>C:/gmrs/rafaelmanu001.exe</span>
           <span class="gmrs-window__controls">
             <i class="gmrs-window__control"></i><i class="gmrs-window__control"></i>
           </span>
         </div>
-        <div class="gmrs-window__body">Broadcast ready. Have fun!</div>
+        <div class="gmrs-window__body">broadcast initialized_</div>
       </div>
     </aside>
 
-    <div class="scanlines"></div>
+    <div class="scanlines scanlines--dark"></div>
   </main>
 </body>
 </html>

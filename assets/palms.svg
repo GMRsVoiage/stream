@@ -1,19 +1,47 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 205" role="img" aria-label="Silhuetas de palmeiras Synthwave">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" role="img" aria-label="Silhuetas de palmeiras Synthwave">
   <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
-      <stop stop-color="#ff3ed2"/>
-      <stop offset=".5" stop-color="#7438ff"/>
-      <stop offset="1" stop-color="#3e28a8"/>
+    <linearGradient id="palm" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ff4fd8"/>
+      <stop offset=".46" stop-color="#8c49ff"/>
+      <stop offset="1" stop-color="#37227c"/>
     </linearGradient>
   </defs>
-  <g fill="url(#g)">
-    <path d="M70 205h15l-5-95 20-45-8-3-15 28-4-39-9 1 2 37-22-25-7 6 25 35z"/>
-    <path d="M74 60C37 33 17 42 2 50c31 3 44 9 62 23-35-7-53 2-66 13 31-2 48 1 70 12-25 3-40 13-52 27 25-8 41-9 57-5 17-17 27-39 29-64-11 4-19 8-28 13z"/>
-    <path d="M248 205h16l-6-112 24-51-8-3-19 33-5-46-10 1 3 43-25-30-8 7 29 40z"/>
-    <path d="M247 43c-38-27-60-18-76-9 32 2 49 10 68 23-38-6-56 3-70 15 34-3 53 2 75 12-26 4-43 15-55 29 27-8 44-8 61-4 17-17 30-42 32-67-13 4-24 9-35 15z"/>
-    <path d="M445 205h16l-7-104 22-48-8-4-17 31-4-43-10 1 2 40-24-27-8 7 29 37z"/>
-    <path d="M448 55c-38-27-58-18-75-10 31 3 47 9 67 23-37-6-55 3-69 14 34-2 52 2 73 13-26 3-42 14-54 28 26-8 43-9 60-5 17-16 28-39 30-64-11 4-21 8-32 14z"/>
-    <path d="M624 205h15l-5-96 20-44-8-3-15 28-4-39-9 1 2 37-22-25-7 6 25 35z"/>
-    <path d="M627 62c-37-27-57-18-72-10 30 3 44 9 63 22-35-6-52 3-65 14 31-2 48 1 68 12-24 4-39 13-50 27 24-8 40-9 56-5 16-16 26-38 28-61-10 3-19 8-28 13z"/>
+
+  <g fill="none" stroke="url(#palm)" stroke-linecap="round" stroke-linejoin="round">
+    <g transform="translate(130 16)">
+      <path d="M86 278C80 224 82 173 95 126c8-29 18-51 31-68" stroke-width="18"/>
+      <path d="M126 58C87 32 52 28 12 39" stroke-width="12"/>
+      <path d="M126 58C91 54 62 65 31 91" stroke-width="12"/>
+      <path d="M126 58C101 75 86 98 75 128" stroke-width="12"/>
+      <path d="M126 58C140 28 163 11 194 4" stroke-width="12"/>
+      <path d="M126 58C157 37 190 35 226 48" stroke-width="12"/>
+      <path d="M126 58C158 58 186 72 213 99" stroke-width="12"/>
+      <path d="M126 58C146 79 156 103 158 132" stroke-width="12"/>
+      <path d="M126 58C118 31 102 13 78 2" stroke-width="11"/>
+    </g>
+
+    <g transform="translate(472 42) scale(.86)">
+      <path d="M104 296C101 239 104 187 116 139c8-34 18-62 31-83" stroke-width="18"/>
+      <path d="M147 56C108 25 68 18 23 28" stroke-width="12"/>
+      <path d="M147 56C105 50 67 62 29 92" stroke-width="12"/>
+      <path d="M147 56C116 76 96 104 84 139" stroke-width="12"/>
+      <path d="M147 56C161 25 185 7 219 2" stroke-width="12"/>
+      <path d="M147 56C181 34 218 36 255 52" stroke-width="12"/>
+      <path d="M147 56C184 60 216 78 245 111" stroke-width="12"/>
+      <path d="M147 56C168 82 178 112 178 148" stroke-width="12"/>
+      <path d="M147 56C135 28 115 10 88 1" stroke-width="11"/>
+    </g>
+
+    <g transform="translate(865 12) scale(.96)">
+      <path d="M93 287C89 231 91 177 104 130c8-31 20-56 34-75" stroke-width="18"/>
+      <path d="M138 55C101 27 65 21 22 31" stroke-width="12"/>
+      <path d="M138 55C100 50 65 62 32 88" stroke-width="12"/>
+      <path d="M138 55C109 75 91 101 79 134" stroke-width="12"/>
+      <path d="M138 55C153 24 177 8 211 3" stroke-width="12"/>
+      <path d="M138 55C171 34 205 35 242 50" stroke-width="12"/>
+      <path d="M138 55C174 58 205 75 233 106" stroke-width="12"/>
+      <path d="M138 55C159 80 168 108 168 140" stroke-width="12"/>
+      <path d="M138 55C127 29 107 10 82 2" stroke-width="11"/>
+    </g>
   </g>
 </svg>
