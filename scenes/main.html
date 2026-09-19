@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=1920,height=1080">
   <title>AquaWave — Dark Synthwave Main</title>
   <link rel="stylesheet" href="../css/scenes.css">
+  <script defer src="../js/scene-config.js"></script>
 </head>
 <body>
   <main class="overlay-root main-overlay" aria-label="Overlay principal Dark Synthwave">
@@ -14,39 +15,48 @@
     <div class="horizon-glow"></div>
     <div class="synth-grid synth-grid--animated"></div>
 
-    <section class="main-overlay__goal gmrs-goal" style="--progress: 18%;">
-      <div class="gmrs-goal__line">
-        <span>StreamDeck Caseiro</span>
-        <span>R$ 54 / R$ 300</span>
-      </div>
-      <div class="gmrs-goal__track"><div class="gmrs-goal__fill"></div></div>
-    </section>
-
     <section class="main-overlay__brand gmrs-lower-third">
       <div>
-        <strong>Rafaelmanu001</strong>
-        <small>GMRsVoiage // Games · Tech · Live</small>
+        <strong data-scene-name>RAFAELMANU001</strong>
+        <small><span data-scene-game>GMRsVoiage</span> // <span data-scene-status>AO VIVO</span></small>
       </div>
     </section>
 
-    <aside class="main-overlay__retro" aria-label="Elementos retrô decorativos">
-      <div class="gmrs-window gmrs-window--dark">
-        <div class="gmrs-window__titlebar">
-          <span>stream.status</span>
-          <span class="gmrs-window__controls"><i class="gmrs-window__control"></i></span>
-        </div>
-        <div class="gmrs-window__body">ONLINE // NIGHT MODE</div>
+    <div class="aero-popup aero-popup--one">
+      <div class="aero-popup__title">
+        <span class="aero-popup__orb"></span>
+        <span>Broadcast Center</span>
+        <i>×</i>
       </div>
-      <div class="gmrs-window gmrs-window--dark">
-        <div class="gmrs-window__titlebar">
-          <span>C:/gmrs/rafaelmanu001.exe</span>
-          <span class="gmrs-window__controls">
-            <i class="gmrs-window__control"></i><i class="gmrs-window__control"></i>
-          </span>
-        </div>
-        <div class="gmrs-window__body">broadcast initialized_</div>
+      <div class="aero-popup__body">
+        <strong data-scene-status>AO VIVO</strong>
+        <span>overlay sincronizado</span>
       </div>
-    </aside>
+    </div>
+
+    <div class="aero-popup aero-popup--two">
+      <div class="aero-popup__title">
+        <span class="aero-popup__orb aero-popup__orb--pink"></span>
+        <span>Aplicativo em foco</span>
+        <i>×</i>
+      </div>
+      <div class="aero-popup__body">
+        <strong data-scene-game>GMRsVoiage</strong>
+        <span>perfil de cena carregado</span>
+      </div>
+    </div>
+
+    <div class="aero-popup aero-popup--three">
+      <div class="aero-popup__title">
+        <span class="aero-popup__orb aero-popup__orb--violet"></span>
+        <span>GMRsVoiage</span>
+        <i>×</i>
+      </div>
+      <div class="aero-popup__body">
+        <strong>AquaWave</strong>
+        <span>broadcast system ready</span>
+      </div>
+    </div>
 
     <div class="scanlines scanlines--dark"></div>
   </main>

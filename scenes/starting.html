@@ -5,22 +5,51 @@
   <meta name="viewport" content="width=1920,height=1080">
   <title>AquaWave — Starting Soon</title>
   <link rel="stylesheet" href="../css/scenes.css">
+  <script defer src="../js/scene-config.js"></script>
 </head>
 <body>
-  <main class="overlay-root screen-full" aria-label="Tela de início da transmissão">
-    <img class="planet" src="../assets/planet.svg" alt="">
-    <div class="palms"></div>
-    <div class="horizon-glow"></div>
-    <div class="synth-grid"></div>
+  <main class="overlay-root screen-full starting" aria-label="Tela de início da transmissão">
+    <div class="starting__stars"></div>
+    <img class="starting__sun" src="../assets/synth-sun.svg" alt="">
+    <div class="palms starting__palms"></div>
+    <div class="horizon-glow starting__horizon"></div>
+    <div class="synth-grid synth-grid--animated starting__grid"></div>
+
+    <div class="starting__orbit starting__orbit--outer"></div>
+    <div class="starting__orbit starting__orbit--inner"></div>
 
     <section class="starting__content">
-      <div class="starting__eyebrow">GMRsVoiage Broadcast System</div>
+      <div class="starting__eyebrow">
+        <span class="starting__signal"></span>
+        <span>GMRsVoiage // AquaWave Broadcast</span>
+      </div>
+
       <h1 class="starting__title">A LIVE JÁ VAI COMEÇAR</h1>
-      <p class="starting__subtitle">Rafaelmanu001 // Games · Tech · Live</p>
-      <div class="starting__pill">twitch.tv/rafaelmanu001</div>
+
+      <p class="starting__subtitle">
+        <span data-scene-name>RAFAELMANU001</span>
+        <span class="starting__slash">//</span>
+        <span data-scene-game>GMRsVoiage</span>
+      </p>
+
+      <div class="starting__loader" aria-hidden="true">
+        <span></span>
+      </div>
+
+      <div class="starting__status">
+        <span data-scene-status>INICIALIZANDO TRANSMISSÃO</span>
+        <span class="starting__dots"><i></i><i></i><i></i></span>
+      </div>
     </section>
 
-    <div class="scanlines"></div>
+    <aside class="starting__system">
+      <div class="starting__system-title">broadcast.sys</div>
+      <div class="starting__system-line"><span>VIDEO</span><strong>READY</strong></div>
+      <div class="starting__system-line"><span>AUDIO</span><strong>READY</strong></div>
+      <div class="starting__system-line"><span>SCENE</span><strong>STARTING</strong></div>
+    </aside>
+
+    <div class="scanlines scanlines--dark"></div>
   </main>
 </body>
 </html>

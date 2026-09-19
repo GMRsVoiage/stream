@@ -23,8 +23,9 @@
   --glow-cyan: 0 0 18px rgba(53, 231, 255, 0.32);
   --glow-pink: 0 0 18px rgba(255, 62, 210, 0.26);
 
-  --font-brand: "Orbitron", "Segoe UI", system-ui, sans-serif;
-  --font-ui: "Rajdhani", "Segoe UI", system-ui, sans-serif;
+  --font-display: "Orbitron", "Segoe UI", system-ui, sans-serif;
+  --font-brand: var(--font-display);
+  --font-ui: var(--font-display);
   --font-body: "Segoe UI", system-ui, sans-serif;
 
   --radius-sm: 8px;

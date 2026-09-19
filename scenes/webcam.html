@@ -3,25 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>AquaWave — Minimal Dark Webcam</title>
+  <title>AquaWave — Neon Runner Webcam</title>
   <link rel="stylesheet" href="../css/scenes.css">
+  <script defer src="../js/scene-config.js"></script>
 </head>
 <body>
-  <main class="webcam-minimal" aria-label="Moldura de webcam Minimal Dark">
-    <div class="webcam-minimal__frame">
-      <span class="webcam-minimal__corner webcam-minimal__corner--tl"></span>
-      <span class="webcam-minimal__corner webcam-minimal__corner--tr"></span>
-      <span class="webcam-minimal__corner webcam-minimal__corner--bl"></span>
-      <span class="webcam-minimal__corner webcam-minimal__corner--br"></span>
+  <main class="webcam-neon" aria-label="Moldura de webcam Neon Runner">
+    <div class="webcam-neon__base"></div>
 
-      <span class="webcam-minimal__accent webcam-minimal__accent--cyan"></span>
-      <span class="webcam-minimal__accent webcam-minimal__accent--pink"></span>
-    </div>
+    <div class="webcam-neon__runner webcam-neon__runner--top"></div>
+    <div class="webcam-neon__runner webcam-neon__runner--right"></div>
+    <div class="webcam-neon__runner webcam-neon__runner--bottom"></div>
+    <div class="webcam-neon__runner webcam-neon__runner--left"></div>
 
-    <div class="webcam-minimal__tag">
-      <span class="webcam-minimal__status"></span>
-      <strong>RAFAELMANU001</strong>
-      <span>GMRsVoiage</span>
+    <div class="webcam-neon__tag">
+      <span class="webcam-neon__dot"></span>
+      <strong data-scene-name>RAFAELMANU001</strong>
+      <span class="webcam-neon__separator">/</span>
+      <span data-scene-game>GMRsVoiage</span>
     </div>
   </main>
 </body>
