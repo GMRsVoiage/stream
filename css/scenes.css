@@ -1,0 +1,253 @@
+@import url("./components.css");
+
+.planet {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  top: -105px;
+  left: -78px;
+  opacity: .95;
+  animation: drift 9s ease-in-out infinite;
+  will-change: transform;
+}
+
+.palms {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 280px;
+  width: 100%;
+  height: 220px;
+  opacity: .54;
+  background:
+    url("../assets/palms.svg") center bottom / 720px 205px repeat-x;
+}
+
+.horizon-glow {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 238px;
+  height: 130px;
+  background: linear-gradient(180deg, transparent, rgba(36, 219, 255, .25), rgba(53, 231, 255, .07));
+}
+
+.synth-grid {
+  position: absolute;
+  left: -15%;
+  right: -15%;
+  bottom: -315px;
+  height: 610px;
+  transform: perspective(520px) rotateX(61deg);
+  transform-origin: center top;
+  background-image:
+    linear-gradient(rgba(255, 62, 210, .5) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(53, 231, 255, .32) 2px, transparent 2px);
+  background-size: 92px 72px;
+  opacity: .72;
+}
+
+.main-overlay {
+  background: transparent;
+}
+
+.main-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border: 1px solid rgba(116, 71, 255, .12);
+}
+
+.main-overlay__goal {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.main-overlay__brand {
+  position: absolute;
+  left: 52px;
+  bottom: 42px;
+}
+
+.main-overlay__retro {
+  position: absolute;
+  right: 42px;
+  bottom: 55px;
+  width: 370px;
+  height: 170px;
+}
+
+.main-overlay__retro .gmrs-window:nth-child(1) {
+  position: absolute;
+  right: 105px;
+  top: 0;
+  width: 175px;
+  transform: rotate(-2deg);
+}
+
+.main-overlay__retro .gmrs-window:nth-child(2) {
+  position: absolute;
+  right: 0;
+  bottom: 6px;
+  width: 255px;
+  transform: rotate(1deg);
+}
+
+.webcam-frame {
+  width: 1920px;
+  height: 1080px;
+  background: transparent;
+}
+
+.webcam-frame__box {
+  position: absolute;
+  inset: 18px;
+  border: 3px solid transparent;
+  border-image: linear-gradient(135deg, var(--primary), var(--accent), var(--secondary)) 1;
+  box-shadow:
+    inset 0 0 28px rgba(53, 231, 255, .08),
+    0 0 16px rgba(116, 71, 255, .22);
+}
+
+.webcam-frame__corner {
+  position: absolute;
+  width: 210px;
+  height: 210px;
+  opacity: .92;
+  background: url("../assets/palms.svg") center / contain no-repeat;
+}
+
+.webcam-frame__corner--tl {
+  left: 0;
+  top: 0;
+  transform: scaleX(-1);
+}
+
+.webcam-frame__corner--br {
+  right: 0;
+  bottom: 0;
+}
+
+.webcam-frame__tag {
+  position: absolute;
+  left: 78px;
+  bottom: 38px;
+}
+
+.starting__content {
+  position: absolute;
+  z-index: 4;
+  top: 50%;
+  left: 50%;
+  width: 980px;
+  transform: translate(-50%, -58%);
+  text-align: center;
+}
+
+.starting__eyebrow {
+  margin-bottom: 18px;
+  color: var(--primary);
+  font: 700 22px/1 var(--font-ui);
+  letter-spacing: .28em;
+  text-transform: uppercase;
+}
+
+.starting__title {
+  margin: 0;
+  font: 800 84px/.95 var(--font-brand);
+  letter-spacing: .04em;
+  text-shadow:
+    0 0 20px rgba(53, 231, 255, .24),
+    0 0 26px rgba(255, 62, 210, .18);
+}
+
+.starting__subtitle {
+  margin: 22px 0 0;
+  color: var(--text-muted);
+  font: 600 28px/1.2 var(--font-ui);
+  letter-spacing: .08em;
+}
+
+.starting__pill {
+  display: inline-block;
+  margin-top: 32px;
+  padding: 10px 18px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(8, 7, 31, .64);
+  color: var(--text);
+  font: 700 18px/1 var(--font-ui);
+}
+
+.banner {
+  position: relative;
+  width: 1200px;
+  height: 480px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 15% 10%, rgba(116, 71, 255, .30), transparent 32%),
+    linear-gradient(180deg, #0d0827, #12103b 58%, #083d5a 78%, #080418);
+}
+
+.banner .planet {
+  width: 260px;
+  height: 260px;
+  top: -65px;
+  left: -52px;
+  animation: none;
+}
+
+.banner .palms {
+  bottom: 108px;
+  height: 130px;
+  background-size: 465px 132px;
+}
+
+.banner .horizon-glow {
+  bottom: 100px;
+  height: 90px;
+}
+
+.banner .synth-grid {
+  bottom: -225px;
+  height: 345px;
+  background-size: 58px 48px;
+}
+
+.banner__copy {
+  position: absolute;
+  z-index: 5;
+  left: 86px;
+  top: 155px;
+}
+
+.banner__copy h1 {
+  margin: 0;
+  font: 800 53px/.95 var(--font-brand);
+  letter-spacing: .04em;
+}
+
+.banner__copy p {
+  margin: 12px 0 0;
+  color: var(--primary);
+  font: 700 19px/1 var(--font-ui);
+  letter-spacing: .24em;
+  text-transform: uppercase;
+}
+
+@keyframes drift {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, 8px, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

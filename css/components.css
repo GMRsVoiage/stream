@@ -1,0 +1,114 @@
+@import url("./base.css");
+
+.gmrs-glass {
+  background: var(--glass);
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-soft);
+}
+
+.gmrs-window {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(121, 94, 255, 0.92);
+  background: rgba(239, 231, 255, 0.96);
+  color: #21183c;
+  box-shadow: 5px 6px 0 rgba(10, 4, 29, 0.34);
+}
+
+.gmrs-window__titlebar {
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+  color: #fff;
+  background: linear-gradient(90deg, #6330d8, #b037e6);
+  font: 700 13px/1 var(--font-ui);
+  letter-spacing: .03em;
+}
+
+.gmrs-window__controls {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.gmrs-window__control {
+  width: 13px;
+  height: 13px;
+  border: 1px solid rgba(255,255,255,.78);
+  background: rgba(255,255,255,.18);
+}
+
+.gmrs-window__body {
+  padding: 12px;
+  font: 600 16px/1.2 var(--font-ui);
+}
+
+.gmrs-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 42px;
+  padding: 8px 14px;
+  border: 1px solid rgba(53, 231, 255, .48);
+  border-radius: var(--radius-sm);
+  background: rgba(10, 8, 34, .72);
+  box-shadow: var(--glow-cyan);
+  font: 700 18px/1 var(--font-ui);
+}
+
+.gmrs-goal {
+  width: 560px;
+  padding: 11px 16px 12px;
+  border: 1px solid rgba(255, 62, 210, .4);
+  border-radius: var(--radius-sm);
+  background: rgba(18, 11, 46, .84);
+  box-shadow: var(--shadow-soft);
+}
+
+.gmrs-goal__line {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 8px;
+  font: 700 17px/1 var(--font-ui);
+}
+
+.gmrs-goal__track {
+  height: 8px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255,255,255,.1);
+}
+
+.gmrs-goal__fill {
+  width: var(--progress, 12%);
+  height: 100%;
+  background: linear-gradient(90deg, var(--secondary), var(--accent), var(--primary));
+}
+
+.gmrs-lower-third {
+  display: flex;
+  align-items: center;
+  min-width: 420px;
+  height: 68px;
+  padding: 0 22px;
+  border-left: 5px solid var(--primary);
+  background:
+    linear-gradient(90deg, rgba(14, 18, 57, .95), rgba(28, 17, 72, .86));
+  box-shadow: var(--shadow-soft);
+}
+
+.gmrs-lower-third strong {
+  font: 800 25px/1 var(--font-brand);
+  letter-spacing: .045em;
+}
+
+.gmrs-lower-third small {
+  display: block;
+  margin-top: 5px;
+  color: var(--text-muted);
+  font: 600 15px/1 var(--font-ui);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}

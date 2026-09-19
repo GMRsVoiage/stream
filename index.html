@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>GMRsVoiage Stream — AquaWave</title>
+  <style>
+    :root{color-scheme:dark;font-family:"Segoe UI",system-ui,sans-serif}
+    body{margin:0;min-height:100vh;background:#09051e;color:#f7f5ff}
+    main{max-width:980px;margin:auto;padding:52px 24px}
+    h1{margin:0 0 8px;font-size:38px}
+    p{color:#bbb4d8;line-height:1.6}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:34px}
+    a{display:block;padding:20px;border:1px solid rgba(53,231,255,.25);border-radius:14px;background:#15103b;color:#f7f5ff;text-decoration:none}
+    a:hover{border-color:#35e7ff}
+    strong{display:block;margin-bottom:7px}
+    small{color:#9f98bd}
+  </style>
+</head>
+<body>
+  <main>
+    <h1>GMRsVoiage Stream</h1>
+    <p>Protótipos AquaWave para testar no navegador e no OBS. Abra cada cena separadamente; no OBS use os arquivos dentro de <code>scenes/</code> como Fonte de Navegador local.</p>
+    <div class="grid">
+      <a href="scenes/main.html"><strong>Main Overlay</strong><small>1920×1080 · transparente</small></a>
+      <a href="scenes/webcam.html"><strong>Webcam Frame</strong><small>1920×1080 · transparente</small></a>
+      <a href="scenes/starting.html"><strong>Starting Soon</strong><small>1920×1080 · tela cheia</small></a>
+      <a href="render/twitch-banner.html"><strong>Twitch Banner</strong><small>1200×480 · render estático</small></a>
+      <a href="render/profile-icon.html"><strong>Profile Icon</strong><small>512×512 · render estático</small></a>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Planeta neon AquaWave">
+  <defs>
+    <radialGradient id="p" cx="35%" cy="30%" r="70%">
+      <stop offset="0" stop-color="#58f4ff"/>
+      <stop offset=".45" stop-color="#8650ff"/>
+      <stop offset="1" stop-color="#ff45d7"/>
+    </radialGradient>
+    <linearGradient id="r" x1="0" x2="1">
+      <stop stop-color="#35e7ff"/>
+      <stop offset=".45" stop-color="#ff3ed2"/>
+      <stop offset="1" stop-color="#7447ff"/>
+    </linearGradient>
+  </defs>
+  <circle cx="200" cy="200" r="104" fill="url(#p)" opacity=".95"/>
+  <ellipse cx="200" cy="200" rx="180" ry="52" fill="none" stroke="url(#r)" stroke-width="18" transform="rotate(-18 200 200)"/>
+  <ellipse cx="200" cy="200" rx="154" ry="38" fill="none" stroke="#ffffff" stroke-opacity=".18" stroke-width="3" transform="rotate(-18 200 200)"/>
+</svg>
