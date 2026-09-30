@@ -2,7 +2,7 @@
   const params = new URLSearchParams(window.location.search);
 
   const state = {
-    name: params.get("name") || "RAFAELMANU001",
+    name: params.get("name") || "GMRsVoiage",
     game: params.get("game") || "GMRsVoiage",
     status: params.get("status") || "AO VIVO"
   };

@@ -1,6 +1,6 @@
 # GMRsVoiage Stream
 
-Sistema leve de overlays e peças visuais para o canal **twitch.tv/rafaelmanu001**, baseado no **GMRsVoiage AquaWave Visual System**.
+Sistema leve de overlays e peças visuais para o canal **twitch.tv/gmrsvoiage**, baseado no **GMRsVoiage AquaWave Visual System**.
 
 A base usa **HTML + CSS + SVG** e JavaScript mínimo, sem frameworks. A ideia é manter as fontes de navegador do OBS leves, editáveis e reaproveitáveis também para banners e outras artes.
 
@@ -44,14 +44,14 @@ As cenas carregam `js/scene-config.js`. Ele já deixa três valores prontos para
 Exemplo ao abrir por URL:
 
 ```text
-webcam.html?name=Rafaelmanu001&game=CS2&status=AO%20VIVO
+webcam.html?name=GMRsVoiage&game=CS2&status=AO%20VIVO
 ```
 
 Também é possível alterar os valores em runtime:
 
 ```js
 AquaWave.set({
-  name: "Rafaelmanu001",
+  name: "GMRsVoiage",
   game: "Counter-Strike 2",
   status: "RANQUEADA"
 });
