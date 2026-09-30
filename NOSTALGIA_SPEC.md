@@ -121,3 +121,42 @@ A intensidade de animação seguirá uma **hierarquia por cena**:
 
 - gameplay → microanimações;
 - Starting / BRB / Ending → animações mais evidentes.
+
+
+## 5. Decisões aprovadas — identidade v0.5
+
+### Aparência das janelas
+
+Cada aplicativo pode ter sua própria combinação pastel, desde que preserve a mesma estrutura visual do sistema.
+
+### Titlebars
+
+A cor das titlebars será **contextual**.
+
+Chat, alertas e widgets podem usar cores diferentes conforme sua função.
+
+### Botões e controles
+
+Os controles usarão **bevel clássico**:
+
+- bordas claras e escuras;
+- aparência Web 1.0 / Windows antigo;
+- sem transformar tudo em glossy moderno.
+
+### Cenário Vaporwave
+
+O universo Nostalgia.exe terá **vários lugares pertencentes à mesma internet alternativa**.
+
+Cada cena pode revelar uma área diferente desse universo, preservando elementos visuais em comum.
+
+### Uso do símbolo Nostalgia.exe
+
+O símbolo será usado principalmente como **ícone de aplicativo**.
+
+Aplicações previstas:
+
+- titlebars;
+- favicon;
+- loading;
+- menus;
+- pequenos elementos de interface.
