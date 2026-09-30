@@ -198,3 +198,46 @@ Exemplos de direção:
 O tom geral do tema será **nostálgico**.
 
 A interface deve ter personalidade e clima, evitando parecer apenas software funcional sem identidade.
+
+
+## 7. Decisões aprovadas — identidade v0.7
+
+### Tratamento dos badges
+
+O tratamento será **misto por tipo**.
+
+- badges de função podem usar linguagem de ícones de status;
+- badges especiais podem parecer selos, stamps ou micro-banners da Web antiga.
+
+### Tratamento dos emotes
+
+O tratamento será **contextual**.
+
+- emotes pequenos permanecem livres e legíveis;
+- emotes grandes ou eventos especiais podem aparecer como stickers ou attachments.
+
+### Estrutura visual do Starting
+
+O Starting seguirá uma **mistura narrativa**.
+
+A cena pode começar como conexão ou login antigo e, em seguida, revelar o portal ou ambiente principal do universo Nostalgia.exe.
+
+### Estrutura visual do BRB
+
+O BRB terá **variação aleatória/contextual**.
+
+Versões possíveis podem alternar entre:
+
+- status Away;
+- página em manutenção / temporariamente indisponível;
+- sessão suspensa.
+
+### Estrutura visual do Ending
+
+O Ending terá **encerramento em etapas**:
+
+1. salvar a sessão;
+2. desconectar da rede;
+3. efetuar logout.
+
+A sequência deve reforçar a sensação de que a transmissão existiu como uma sessão dentro da internet alternativa do Nostalgia.exe.
