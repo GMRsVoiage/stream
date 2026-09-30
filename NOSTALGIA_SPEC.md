@@ -241,3 +241,40 @@ O Ending terá **encerramento em etapas**:
 3. efetuar logout.
 
 A sequência deve reforçar a sensação de que a transmissão existiu como uma sessão dentro da internet alternativa do Nostalgia.exe.
+
+
+## 8. Decisões aprovadas — identidade v0.8
+
+### Backgrounds escuros
+
+A base dos backgrounds será **azul-marinho violeta**.
+
+A intenção é aproximar os cenários de uma noite digital e da atmosfera da internet antiga, mantendo compatibilidade com os acentos Vaporwave.
+
+### Pastéis das interfaces
+
+A família pastel principal será **lavanda + azul-claro**.
+
+Essas cores serão usadas em janelas, painéis e elementos de interface para reforçar a aparência de software e Web dos anos 2000.
+
+### Títulos grandes
+
+A fonte de referência para títulos grandes será **Trebuchet MS Bold**.
+
+Ela será usada em banners, títulos de cena e elementos de destaque que precisem preservar uma aparência típica da Web 2000.
+
+### Links e cursores
+
+Links e cursores seguirão a lógica de **Web clássica recolorida**.
+
+O comportamento visual continuará inspirado na internet antiga, mas usando a paleta do Nostalgia.exe em vez de depender apenas do azul/roxo padrão.
+
+### Assinatura visual recorrente
+
+A identidade usará um **sistema contextual** com três assinaturas recorrentes:
+
+- indicadores de status como `ONLINE`, `CONNECTED` e `AWAY`;
+- micro-banners 88×31 fictícios;
+- contadores de visitas, conexões ou sessões.
+
+Cada aplicativo ou cena deve usar apenas os elementos que façam sentido no contexto, evitando excesso visual.
