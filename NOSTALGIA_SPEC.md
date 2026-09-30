@@ -86,3 +86,38 @@ Os alertas serão tratados como **eventos da internet alternativa**:
 - donate → transferência recebida;
 - raid → pico de tráfego;
 - bits → signal boost.
+
+
+## 4. Decisões aprovadas — identidade v0.4
+
+### Paleta base
+
+A composição cromática será dividida por função:
+
+- **backgrounds escuros em Vaporwave**;
+- **interfaces e janelas em tons pastel claros**.
+
+### Tratamento dos ícones
+
+Os ícones seguirão uma linguagem de **ícones coloridos de Web/Windows XP dos anos 2000**.
+
+### Intensidade dos elementos Web
+
+A presença de elementos Web antigos varia por cena:
+
+- gameplay → mais limpo e discreto;
+- Starting / BRB / Just Chatting → maior liberdade para explorar elementos Web antigos.
+
+### Grain / scanlines / textura
+
+O tratamento será **variável por contexto**:
+
+- UI → limpa e legível;
+- backgrounds e cenas completas → grain e scanlines permitidos.
+
+### Animações
+
+A intensidade de animação seguirá uma **hierarquia por cena**:
+
+- gameplay → microanimações;
+- Starting / BRB / Ending → animações mais evidentes.
