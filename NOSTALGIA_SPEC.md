@@ -278,3 +278,48 @@ A identidade usará um **sistema contextual** com três assinaturas recorrentes:
 - contadores de visitas, conexões ou sessões.
 
 Cada aplicativo ou cena deve usar apenas os elementos que façam sentido no contexto, evitando excesso visual.
+
+
+## 9. Decisões aprovadas — identidade v0.9
+
+### Aparência concreta do chat
+
+O chat terá **variação por cena**.
+
+- gameplay → versão compacta e funcional;
+- Just Chatting e cenas especiais → versão mais completa, com referências mais evidentes a MSN e Web 2000.
+
+### Aparência da webcam
+
+A webcam será **contextual por cena**.
+
+- gameplay → janela simples e discreta;
+- outras cenas → pode assumir linguagem de player antigo ou módulo de portal.
+
+### Aparência dos alertas
+
+Os alertas serão **contextuais por tipo de evento**.
+
+Exemplos:
+
+- follow → popup de mensageiro;
+- sub → caixa de instalação/conclusão;
+- raid → evento de tráfego/rede;
+- donate → diálogo de transferência;
+- outros eventos → formato coerente com sua função.
+
+### Goal / meta
+
+A meta seguirá uma linguagem **híbrida**:
+
+- contador Web antigo;
+- barra de progresso clássica;
+- leitura rápida e compacta.
+
+### Widgets pequenos
+
+Os widgets usarão **mistura contextual**.
+
+- informações técnicas → painéis de status;
+- conteúdos secundários → mini apps ou módulos de portal;
+- cada widget deve adotar a forma mais coerente com sua função sem quebrar a unidade visual.
