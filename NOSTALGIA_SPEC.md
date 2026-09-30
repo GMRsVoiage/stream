@@ -160,3 +160,41 @@ Aplicações previstas:
 - loading;
 - menus;
 - pequenos elementos de interface.
+
+
+## 6. Decisões aprovadas — identidade v0.6
+
+### Estrutura visual das mensagens
+
+A estrutura do chat será **mista por contexto**:
+
+- chat principal → mais compacto;
+- cenas especiais → mensagens maiores e blocos mais evidentes.
+
+### Badges e emotes
+
+Badges e emotes poderão receber **tematização forte** dentro do layout, desde que continuem reconhecíveis e legíveis.
+
+### Webcam
+
+A webcam terá **variação por cena**:
+
+- gameplay → janela mais simples;
+- Just Chatting e intervalos → versões mais elaboradas.
+
+### Linguagem de loading / progresso
+
+A base textual será de **internet antiga**, com adaptação contextual quando fizer sentido.
+
+Exemplos de direção:
+
+- connecting to network;
+- opening chat service;
+- loading user page;
+- variações contextuais conforme a cena.
+
+### Tom textual
+
+O tom geral do tema será **nostálgico**.
+
+A interface deve ter personalidade e clima, evitando parecer apenas software funcional sem identidade.
