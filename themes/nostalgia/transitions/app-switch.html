@@ -157,7 +157,11 @@ body { font:24px Tahoma,Arial,sans-serif }
   function play(now) {
     const t=(now-started)/1000;
     window.renderFrame(t);
-    if (t<1.2) frame=requestAnimationFrame(play);
+    if (t<1.2 || (params.has("loop") && t<3.2)) {
+      frame=requestAnimationFrame(play);
+    } else if (params.has("loop")) {
+      restart();
+    }
   }
   function restart() { if(frame)cancelAnimationFrame(frame); started=performance.now(); frame=requestAnimationFrame(play); }
   window.renderFrame(0);
