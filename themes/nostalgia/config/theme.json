@@ -1,0 +1,10 @@
+{
+  "theme": "nostalgia",
+  "displayName": "Nostalgia.exe",
+  "status": {
+    "label": "CONNECTED"
+  },
+  "effects": {
+    "intensity": "moderate"
+  }
+}
