@@ -604,3 +604,20 @@ Se a implementação não consumir diretamente a API da Twitch, usar o **templat
 O Nostalgia.exe modifica **CSS e apresentação**, não o contrato de placeholders. A direção visual aprovada é MSN/Web 2000: janela pastel clara, barra de título antiga, Tahoma para a interface, Verdana para mensagens e contraste forte. A fonte antiga VT323/Orbitron, os brilhos magenta/ciano e o blur do CSS anterior ficam como **referência histórica**, não como padrões obrigatórios para o chat novo.
 
 Esta alternativa entrega as mensagens por meio do provedor do widget; não significa que o projeto está conectado à API da Twitch nem que o widget por si só fornece eventos ao barramento de automações. Integrações de eventos/doações/ações físicas são uma camada separada.
+
+
+## 26. Decisão aprovada — transição entre cenas como troca de aplicativos
+
+A transição padrão do Nostalgia.exe será uma combinação de **Alt+Tab clássico** com a **abertura do próximo aplicativo**. A troca de cena continua sendo gerenciada pelo OBS.
+
+Implementação inicial:
+
+- Stinger reutilizável com aparência própria de desktop, alternador de tarefas e janela de inicialização inspirados na Web 2000;
+- vídeo WebM VP9 com transparência e sem áudio; duração aproximada de 1,2 s, com ponto de corte aos **600 ms**, quando o desktop da animação cobre a tela;
+- versão genérica para qualquer cena e possibilidade de variantes específicas como `Messenger.exe`, `Broadcast.exe` e `Away.exe`;
+- HTML autônomo com animação determinística para prévia e exportação; `export_stinger.py` gera os arquivos de vídeo sem depender de imagens ou sons proprietários;
+- não exigir renderizar gameplay ou webcam via HTML; integrar com Move Transition apenas se houver benefício visual posteriormente.
+
+A narrativa completa de Starting (login → conexão → portal) permanece uma cena separada. O conjunto de transições pode evoluir, mas a seleção automática de destino pelo OBS e os efeitos sonoros **não fazem parte desta versão**.
+
+Código, exportador e instruções: [`themes/nostalgia/transitions/`](./themes/nostalgia/transitions/).
