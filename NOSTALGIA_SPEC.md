@@ -386,3 +386,27 @@ Direção aprovada:
 - evitar renomeações destrutivas que quebrem cenas existentes durante a transição.
 
 O objetivo é permitir que o repositório suporte temas sem acoplar a infraestrutura ao nome de uma identidade visual específica.
+
+
+## 12. Decisões de implementação — arquitetura v1.2
+
+### Organização dos arquivos
+
+A estrutura alvo será uma **base neutra + temas separados**.
+
+Direção aprovada:
+
+```text
+core/
+themes/
+├── nostalgia/
+└── aquawave/
+```
+
+Regras:
+
+- código compartilhado entre temas deve viver em `core/`;
+- identidade, estilos e assets específicos do Nostalgia.exe devem viver em `themes/nostalgia/`;
+- AquaWave deve permanecer isolado em `themes/aquawave/` quando for migrado;
+- cenas e componentes não devem depender de nomes de tema quando a funcionalidade puder ser compartilhada;
+- a migração pode continuar gradual, mas a arquitetura final deve convergir para essa separação.
