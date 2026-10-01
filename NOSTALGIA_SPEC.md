@@ -639,3 +639,14 @@ Elementos de estudo visual, sujeitos à aprovação dos primeiros desenhos:
 **Escopo desta decisão:** nível de semelhança e referências de aparência. Nome, roupa definitiva, expressões, poses e frequência de aparição ainda serão validados com arte de conceito. As fotos pessoais e os perfis sociais fornecidos como referência **não devem ser enviados ou versionados neste repositório**. Antes de publicar uma mascote reconhecivelmente baseada em outra pessoa, confirmar que ela concorda com o uso público da sua aparência.
 
 A mascote poderá acompanhar a futura transição estilo Vista/7 Aero e apresentar a troca de aplicativos. O design não substitui as decisões anteriores sobre a estrutura Alt+Tab da transição.
+
+
+## 28. Mascote — decisões aprovadas v1.0
+
+- **Papel na transição:** variável por cena; pode ser guia ou elemento secundário conforme a situação.
+- **Expressões:** uma expressão principal (a selecionar) e variantes contextuais.
+- **Cabelo:** aparência adaptável entre artes e cenas, preservando os traços reconhecíveis estabelecidos no estudo B+.
+- **Óculos e piercing:** representação suavizada de ambos, priorizando a linguagem de mascote de software.
+- **Roupa-base:** assistente Frutiger Aero azul e branca, com referência a softwares dos anos 2000.
+
+Estas regras complementam a direção de semelhança B+ da seção anterior. Não implicam publicar fotos ou referências pessoais.
