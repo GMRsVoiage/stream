@@ -83,6 +83,12 @@ body::before {
 
 #log .name {
   color: inherit;             /* Preserva {color}, definido em .meta pelo widget. */
+  /* Contorno escuro discreto mantém nomes muito claros legíveis no pastel. */
+  text-shadow:
+    -1px -1px 0 rgba(22, 25, 49, .65),
+     1px -1px 0 rgba(22, 25, 49, .65),
+    -1px  1px 0 rgba(22, 25, 49, .65),
+     1px  1px 0 rgba(22, 25, 49, .65);
   overflow-wrap: anywhere;
 }
 
