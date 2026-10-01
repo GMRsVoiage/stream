@@ -1,6 +1,6 @@
 # NOSTALGIA_SPEC.md — GMRsVoiage
 
-> Status: especificação visual em desenvolvimento do tema principal **Nostalgia.exe**.
+> Status: identidade visual **Nostalgia.exe v1.0** aprovada como baseline de implementação.
 > Este arquivo registra apenas decisões explicitamente aprovadas pelo usuário.
 > Novas ideias não entram aqui até serem aprovadas.
 
@@ -323,3 +323,49 @@ Os widgets usarão **mistura contextual**.
 - informações técnicas → painéis de status;
 - conteúdos secundários → mini apps ou módulos de portal;
 - cada widget deve adotar a forma mais coerente com sua função sem quebrar a unidade visual.
+
+
+## 10. Decisões aprovadas — identidade v1.0
+
+### Gameplay
+
+A cena de gameplay será **minimalista**.
+
+- o jogo domina a composição;
+- webcam, chat e meta permanecem funcionais;
+- poucos detalhes visuais adicionais;
+- a identidade Nostalgia.exe aparece sem competir com o conteúdo principal.
+
+### Just Chatting
+
+A cena seguirá uma composição **híbrida**.
+
+Pode combinar:
+
+- portal;
+- aplicativos;
+- webcam maior;
+- chat mais evidente;
+- elementos Web 2000 e Vaporwave em maior intensidade do que no gameplay.
+
+### Starting
+
+O Starting seguirá uma **sequência narrativa**:
+
+1. login;
+2. conexão;
+3. revelação/carregamento do portal ou ambiente principal.
+
+### Consistência entre cenas
+
+Cada cena pode representar um **lugar diferente da internet Nostalgia.exe**.
+
+A consistência será mantida pela mesma linguagem visual, tipografia, paleta, comportamento de interface e biblioteca de elementos, sem obrigar todas as cenas a usar exatamente o mesmo layout.
+
+### Densidade visual
+
+A densidade será **adaptativa por cena**.
+
+- gameplay → sempre a cena mais limpa;
+- Just Chatting / Starting / BRB / Ending → podem usar maior densidade visual;
+- elementos extras só entram quando contribuírem para narrativa, função ou identidade.
