@@ -369,3 +369,20 @@ A densidade será **adaptativa por cena**.
 - gameplay → sempre a cena mais limpa;
 - Just Chatting / Starting / BRB / Ending → podem usar maior densidade visual;
 - elementos extras só entram quando contribuírem para narrativa, função ou identidade.
+
+
+## 11. Decisões de implementação — arquitetura v1.1
+
+### Migração da infraestrutura de tema
+
+A implementação seguirá uma **refatoração gradual**.
+
+Direção aprovada:
+
+- criar uma base técnica neutra para temas;
+- migrar **Nostalgia.exe** primeiro para essa base;
+- manter compatibilidade temporária com a infraestrutura legada **AquaWave**;
+- remover ou converter gradualmente referências antigas conforme cada componente for migrado;
+- evitar renomeações destrutivas que quebrem cenas existentes durante a transição.
+
+O objetivo é permitir que o repositório suporte temas sem acoplar a infraestrutura ao nome de uma identidade visual específica.
