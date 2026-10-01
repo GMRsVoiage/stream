@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nostalgia.exe — demonstração da troca de programas</title>
+<style>
+*{box-sizing:border-box}html,body{min-height:100%;margin:0}
+body{font:16px Tahoma,Arial,sans-serif;color:#202743;background:#10162f;padding:24px}
+main{max-width:1200px;margin:auto}h1{font:bold 34px "Trebuchet MS",Tahoma,sans-serif;color:#f7e4fa;margin:0 0 5px}
+p{color:#c8d4f2;line-height:1.5;margin:5px 0 15px}
+.toolbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+label{color:#dbe3fa}select,button,a.back{font:14px Tahoma,Arial,sans-serif;background:#e8eafb;color:#202743;padding:8px 12px;border:2px outset #fff}
+button{cursor:pointer}a.back{display:inline-block;text-decoration:none}
+.stage{width:100%;aspect-ratio:16/9;position:relative;overflow:hidden;background:linear-gradient(170deg,#253352,#151932 65%,#302452);border:3px ridge #c2cbea;box-shadow:7px 7px #070b21}
+.stage-scene{position:absolute;inset:0;padding:5%;color:#c9d8ff;display:flex;align-items:center;justify-content:center;text-align:center;flex-direction:column}
+.stage-scene h2{font:bold clamp(20px,5vw,48px) "Trebuchet MS",Tahoma,sans-serif;color:#ffd0ec;margin:0 0 15px}
+.stage-scene p{font-size:clamp(11px,2vw,22px);margin:0;color:#ccdafa}
+#screen{position:absolute;inset:0;transform-origin:0 0;border:0;background:transparent;width:1920px;height:1080px;pointer-events:none}
+.note{margin-top:15px;color:#c8d4f2}
+code{background:#222849;padding:2px 5px;color:#c4d8fb}
+</style>
+</head>
+<body>
+<main>
+  <h1>Nostalgia.exe // Transições</h1>
+  <p>Visualização em loop da Stinger Alt+Tab → abrir aplicativo. O quadro ao fundo representa uma cena qualquer do OBS.</p>
+  <div class="toolbar">
+    <label for="app">Abrir:</label>
+    <select id="app">
+      <option value="generic">Next.exe (genérica)</option>
+      <option value="messenger" selected>Messenger.exe</option>
+      <option value="broadcast">Broadcast.exe</option>
+      <option value="away">Away.exe</option>
+      <option value="portal">Portal.exe</option>
+      <option value="logout">Logout.exe</option>
+    </select>
+    <button id="replay" type="button">Reproduzir novamente</button>
+    <a class="back" href="../portal-preview.html">Voltar ao portal</a>
+  </div>
+  <div class="stage" id="stage">
+    <div class="stage-scene">
+      <h2>GMRsVoiage</h2>
+      <p>Prévia de uma cena atrás da transição</p>
+    </div>
+    <iframe id="screen" title="Animação de transição Nostalgia.exe" src="app-switch.html?to=messenger&amp;loop=1"></iframe>
+  </div>
+  <p class="note">A demonstração não troca cenas de verdade. No OBS, exporte o arquivo WebM transparente e configure a transição Stinger em <strong>600 ms</strong>.</p>
+</main>
+<script>
+(() => {
+  const frame=document.getElementById("screen"),stage=document.getElementById("stage");
+  const select=document.getElementById("app");
+  function fit() {
+    const scale=stage.clientWidth/1920;
+    frame.style.transform="scale("+scale+")";
+  }
+  function reload(){frame.src="app-switch.html?to="+encodeURIComponent(select.value)+"&loop=1";}
+  select.addEventListener("change",reload);
+  document.getElementById("replay").addEventListener("click",reload);
+  addEventListener("resize",fit);
+  fit();
+})();
+</script>
+</body>
+</html>
