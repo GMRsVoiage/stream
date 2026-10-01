@@ -440,3 +440,18 @@ Direção aprovada:
 - o `core/` não deve impor uma árvore HTML única aos temas;
 - lógica reutilizável pode continuar compartilhada quando não depender da estrutura visual;
 - a prioridade é permitir que cada tema tenha liberdade estrutural sem contaminar o código comum.
+
+
+## 15. Decisões de implementação — arquitetura v1.5
+
+### Lógica JavaScript dos componentes
+
+A estratégia será **caso a caso**.
+
+Direção aprovada:
+
+- componentes simples podem usar lógica neutra compartilhada em `core/`;
+- componentes com comportamento visual específico podem ter JS próprio dentro do tema;
+- integrações, eventos e modelos de dados devem ser compartilhados sempre que isso não limitar a identidade visual;
+- animações, renderização e comportamentos muito específicos do Nostalgia.exe podem permanecer em `themes/nostalgia/`;
+- evitar duplicação quando a lógica puder ser reutilizada sem acoplamento visual.
