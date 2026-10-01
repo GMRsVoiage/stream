@@ -15,7 +15,7 @@ Este diretório é o **novo tema em desenvolvimento**. A versão AquaWave perman
 
 A infraestrutura compartilhável fica em `core/`. A lógica de mesclagem de configuração está em `core/js/config.mjs`: **marca → tema → cena**.
 
-Os futuros componentes terão HTML, CSS, JS quando necessário e assets organizados por componente dentro do tema.
+O chat opcional sem API direta já possui um [template de Chat Box com HTML/CSS para copiar e colar](./components/chat/README.md), mantendo os placeholders de mensagens e badges fornecidos pelo usuário. Os demais componentes terão HTML, CSS, JS quando necessário e assets organizados por componente dentro do tema.
 
 ## Ver a prévia
 
