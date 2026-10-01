@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-label="artist buddy idle">
+ <defs>
+  <linearGradient id="back" x1="0" y1="0" x2=".72" y2="1"><stop stop-color="#f7c4ff"/><stop offset=".52" stop-color="#c869f4"/><stop offset="1" stop-color="#7239b3"/></linearGradient>
+  <linearGradient id="front" x1="0" y1="0" x2=".72" y2="1"><stop stop-color="#cdffff"/><stop offset=".48" stop-color="#4ac6db"/><stop offset="1" stop-color="#107b9e"/></linearGradient>
+  <filter id="light" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2"/></filter>
+ </defs>
+ <!-- Two simple classic instant-messenger silhouettes. No text, faces, accessories or background. -->
+ <g opacity=".14" fill="#9cf4fa" filter="url(#light)">
+  <circle cx="44" cy="37" r="23"/><path d="M11 100C11 72 25 65 44 65c11 0 22 5 29 15l4 25H11Z"/>
+  <circle cx="83" cy="45" r="27"/><path d="M39 116V105c0-26 19-41 44-41s43 17 43 42v10H39Z"/>
+ </g>
+ <g stroke-linejoin="round">
+  <path d="M12 99C12 78 25 65 44 65c19 0 32 13 32 34v7H12v-7Z" fill="url(#back)" stroke="#7239b3" stroke-width="2.5"/>
+  <circle cx="44" cy="38" r="23" fill="url(#back)" stroke="#7239b3" stroke-width="2.5"/>
+  <path d="M20 96C20 81 30 74 44 73" fill="none" stroke="#fff" stroke-opacity=".65" stroke-width="3" stroke-linecap="round"/>
+  <path d="M27 29c4-7 11-9 17-9" fill="none" stroke="#fff" stroke-opacity=".72" stroke-width="4" stroke-linecap="round"/>
+  <path d="M40 108c0-26 18-44 43-44s43 18 43 44v10H40v-10Z" fill="url(#front)" stroke="#107b9e" stroke-width="3"/>
+  <circle cx="83" cy="45" r="27" fill="url(#front)" stroke="#107b9e" stroke-width="3"/>
+  <path d="M54 107C54 88 64 77 83 76" fill="none" stroke="#fff" stroke-opacity=".64" stroke-width="4" stroke-linecap="round"/>
+  <path d="M69 31c5-7 11-9 18-8" fill="none" stroke="#fff" stroke-opacity=".85" stroke-width="5" stroke-linecap="round"/>
+ </g>
+ </svg>
