@@ -410,3 +410,18 @@ Regras:
 - AquaWave deve permanecer isolado em `themes/aquawave/` quando for migrado;
 - cenas e componentes não devem depender de nomes de tema quando a funcionalidade puder ser compartilhada;
 - a migração pode continuar gradual, mas a arquitetura final deve convergir para essa separação.
+
+
+## 13. Decisões de implementação — arquitetura v1.3
+
+### Associação entre cenas e temas
+
+As cenas usarão **tema fixo por arquivo**.
+
+Direção aprovada:
+
+- cada HTML de cena importa diretamente os estilos e scripts do tema ao qual pertence;
+- não haverá troca dinâmica de tema dentro da mesma cena;
+- a simplicidade e a previsibilidade no OBS têm prioridade sobre flexibilidade em runtime;
+- se uma mesma composição precisar existir em outro tema, ela deve ter um arquivo próprio ou uma variante explícita;
+- a infraestrutura compartilhada continua neutra em `core/`, mas a cena declara diretamente qual tema utiliza.
