@@ -650,3 +650,14 @@ A mascote poderá acompanhar a futura transição estilo Vista/7 Aero e apresent
 - **Roupa-base:** assistente Frutiger Aero azul e branca, com referência a softwares dos anos 2000.
 
 Estas regras complementam a direção de semelhança B+ da seção anterior. Não implicam publicar fotos ou referências pessoais.
+
+
+## 29. Mascote — decisões aprovadas v1.1
+
+- **Cenas de presença:** transições, Starting e BRB. Presença em pequenos widgets ou gameplay não foi aprovada nesta rodada.
+- **Função narrativa:** apresenta o próximo aplicativo e exibe mensagens curtas do sistema; não se torna uma assistente autônoma com funções não definidas.
+- **Pose:** prioritariamente apontando ou guiando a atenção para janelas, botões e elementos do sistema.
+- **Destaque:** tamanho médio, papel visual secundário em relação à janela ou ao conteúdo principal.
+- **Momento de aparição:** depende do tipo de cena ou aplicativo, sem impor entrada sempre antes ou sempre durante a troca.
+
+A arte final, o nome, as poses específicas e a animação serão avaliados separadamente. A mascote deve complementar a Stinger e não prejudicar a legibilidade.
