@@ -485,3 +485,18 @@ Direção aprovada:
 - cada componente terá seu próprio arquivo CSS, como `chat.css`, `alerts.css`, `webcam.css`, `goal.css` e equivalentes;
 - regras específicas de um componente não devem ficar espalhadas em arquivos genéricos;
 - o objetivo é facilitar manutenção, consistência visual e evolução independente dos componentes.
+
+
+## 18. Decisões de implementação — arquitetura v1.8
+
+### Organização das cenas
+
+As cenas ficarão **dentro do tema**, com **atalhos globais opcionais** para facilitar o uso no OBS.
+
+Direção aprovada:
+
+- a fonte real de cada cena deve viver em `themes/nostalgia/scenes/`;
+- exemplos: `gameplay.html`, `starting.html`, `brb.html`, `ending.html`, `just-chatting.html`;
+- arquivos simples em `scenes/` podem existir como atalhos, aliases ou wrappers para facilitar a configuração no OBS;
+- esses atalhos não devem duplicar a implementação principal;
+- a mesma estratégia pode ser aplicada a outros temas no futuro.
