@@ -531,3 +531,17 @@ Direção aprovada:
 - evitar lógica desnecessária em arquivos de dados;
 - manter a configuração legível e fácil de editar;
 - preservar separação entre dados, comportamento e apresentação.
+
+
+## 21. Decisões de implementação — arquitetura v2.1
+
+### Entrada de dados e eventos
+
+Os componentes usarão uma **arquitetura híbrida**:
+
+- eventos em tempo real, como atividades da Twitch, Streamer.bot e doações, passam por um barramento comum com mensagens padronizadas;
+- configurações, dados simples e estados podem vir de arquivos de configuração ou de uma API/ponte local;
+- componentes devem consumir dados/eventos padronizados sem precisar conhecer diretamente cada integração externa;
+- a arquitetura deve permitir futuras automações em que eventos da live provoquem ações em dispositivos físicos, além de atualizações visuais.
+
+A integração com dispositivos físicos fica como capacidade futura, **sem aprovar ainda** hardware, efeitos, acionamentos ou regras específicas. Ao implementá-la, separar o barramento da camada que executa comandos físicos, com autorizações e limites próprios.
