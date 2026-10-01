@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nostalgia.exe — App Switch Stinger</title>
+<style>
+/* 1920x1080, transparent at beginning/end. No external media or fonts. */
+:root {
+  --night:#10162f; --night-deep:#090d21; --lavender:#e8eafb;
+  --title:#625a9c; --blue:#486a9b; --pink:#e39bc6; --ink:#202743;
+}
+* { box-sizing:border-box }
+html,body { width:100%; height:100%; margin:0; padding:0; overflow:hidden; background:transparent; }
+body { font:24px Tahoma,Arial,sans-serif }
+#desktop {
+  opacity:0; position:absolute; inset:0; overflow:hidden; color:#f8f7ff;
+  background:
+    radial-gradient(circle at 83% 28%,#9e76b766,transparent 31%),
+    linear-gradient(150deg,#090d21 0%,#10162f 49%,#392651 100%);
+}
+#desktop:before {
+  content:""; position:absolute; right:170px; top:100px;
+  width:420px; height:420px; border-radius:50%; opacity:.65;
+  background:repeating-linear-gradient(to bottom,#e39bc6 0 26px,#e39bc6 26px 32px,transparent 32px 45px);
+}
+#desktop:after {
+  content:""; position:absolute; left:-15%; bottom:-280px;
+  width:130%; height:450px; opacity:.28;
+  transform:perspective(400px) rotateX(48deg);
+  background:
+    linear-gradient(to right,transparent 49.8%,#9ecaf0 50%,transparent 50.2%),
+    repeating-linear-gradient(to bottom,transparent 0 34px,#9ecaf0 34px 37px);
+}
+#desktop .brand { position:absolute; top:32px; left:36px; z-index:1;
+  font:bold 29px "Trebuchet MS",Tahoma,sans-serif; letter-spacing:.4px; text-shadow:2px 2px #534578; }
+#desktop .tag { position:absolute; top:72px; left:37px; z-index:1;
+  font:16px Tahoma,Arial,sans-serif; color:#c6d4fa; }
+#icons { position:absolute; top:164px; left:42px; z-index:1; display:grid; gap:25px; }
+.desktop-icon { text-align:center; width:128px; font:bold 15px Tahoma,Arial,sans-serif; text-shadow:1px 2px #12142b; }
+.desktop-icon .icon { width:72px; height:62px; margin:0 auto 7px; display:grid; place-items:center;
+  border:2px solid #c2caee; background:#6772ab; box-shadow:4px 4px #11162d; font-size:30px; }
+#bar { z-index:5; position:absolute; left:0; bottom:0; right:0; height:62px; display:flex; align-items:center;
+  background:#dce3f9; border-top:3px solid #fbfcff; color:var(--ink); }
+#start { padding:10px 23px; height:52px; display:flex; align-items:center;
+  border:2px outset white; background:linear-gradient(#c9d7f4,#9caad9); font-weight:bold; }
+#task { padding:12px 22px; margin-left:10px; font:bold 17px Tahoma,Arial,sans-serif; border:2px inset white; background:#b8c6ec; min-width:275px; }
+#bar .clock { margin-left:auto; padding:0 30px; font:bold 16px Tahoma,Arial,sans-serif; }
+#switcher {
+  position:absolute; z-index:7; left:50%; top:50%; width:730px;
+  transform:translate(-50%,-50%);
+  color:var(--ink); border:3px solid #f6f8ff; background:#e8eafb;
+  box-shadow:0 0 0 2px #777aab,10px 13px 0 #05091acc;
+}
+.titlebar { padding:10px 17px; min-height:52px; color:#fff; font:bold 22px Tahoma,Arial,sans-serif;
+  background:linear-gradient(to right,#486a9b,#625a9c); }
+#switcher p { font:bold 19px Tahoma,Arial,sans-serif; margin:22px 25px 16px; }
+.apps { display:flex; justify-content:space-evenly; gap:16px; margin:8px 25px 23px; }
+.app { padding:10px; width:180px; min-height:160px; text-align:center; background:#f7f8ff;
+  border:2px solid #bec9e3; font:bold 19px Tahoma,Arial,sans-serif; }
+.app .mark { margin:2px auto 12px; width:92px; height:90px; display:grid; place-items:center;
+  font:bold 43px Tahoma,Arial,sans-serif; color:#fff; background:#6177ab; border:3px outset #d7e3fe; }
+.app#next .mark { background:#9a6da9; }
+.app.selected { border:3px solid #625a9c; padding:9px; background:#ded7f2; box-shadow:3px 3px 0 #9990c1; }
+#switcher .hint { background:#d7e1f7; padding:10px 20px; border-top:1px solid #a1b3d3; font:17px Tahoma,Arial,sans-serif; }
+#launch {
+  position:absolute; z-index:8; left:50%; top:50%; width:775px;
+  transform:translate(-50%,-50%); color:var(--ink);
+  border:3px solid #f8f9ff; background:var(--lavender);
+  box-shadow:0 0 0 2px #7e80aa,10px 13px 0 #05091acc;
+}
+#launch .body { display:grid; grid-template-columns:105px 1fr; gap:20px; padding:28px; align-items:center; }
+#launch .big-icon { width:95px; height:90px; display:grid; place-items:center; font-size:49px;
+  background:#c1b9e5; border:3px outset #fbfaff; color:#443873; }
+#launch h1 { margin:0 0 11px; font:bold 26px "Trebuchet MS",Tahoma,sans-serif; }
+#launch p { margin:0 0 14px; font:17px Tahoma,Arial,sans-serif; }
+.track { height:20px; border:2px inset #a1a7cd; background:#f9faff; }
+#progress { width:0%; height:100%; background:repeating-linear-gradient(to right,#7467b5 0 21px,#ad9acf 21px 25px); }
+#launch .footer { padding:9px 19px; background:#d7e1f7; border-top:1px solid #a3aed1; font:14px Tahoma,Arial,sans-serif; }
+</style>
+</head>
+<body>
+<div id="desktop">
+  <div class="brand">Nostalgia.exe</div>
+  <div class="tag">GMRsVoiage // DREAM NETWORK</div>
+  <div id="icons">
+    <div class="desktop-icon"><div class="icon">▶</div>Broadcast.exe</div>
+    <div class="desktop-icon"><div class="icon">✉</div>Messenger.exe</div>
+    <div class="desktop-icon"><div class="icon">☾</div>Away.exe</div>
+  </div>
+  <div id="switcher">
+    <div class="titlebar">Nostalgia.exe — Alternar aplicativos</div>
+    <p>Selecione uma janela para continuar:</p>
+    <div class="apps">
+      <div class="app" id="previous"><div class="mark">▶</div><span>Broadcast.exe</span></div>
+      <div class="app" id="next"><div class="mark" id="next-symbol">□</div><span id="next-name">Next.exe</span></div>
+    </div>
+    <div class="hint">Alt + Tab &nbsp; • &nbsp; alternando sessão...</div>
+  </div>
+  <div id="launch">
+    <div class="titlebar" id="launch-title">Nostalgia.exe — iniciando aplicativo</div>
+    <div class="body">
+      <div class="big-icon" id="launch-icon">□</div>
+      <div>
+        <h1 id="launch-heading">Abrindo Next.exe</h1>
+        <p>Conectando à rede nostálgica...</p>
+        <div class="track"><div id="progress"></div></div>
+      </div>
+    </div>
+    <div class="footer" id="launch-status">Aguarde... // GMRsVoiage</div>
+  </div>
+  <div id="bar"><div id="start">❖ &nbsp; Iniciar</div><div id="task">▣ &nbsp; Nostalgia.exe</div><div class="clock">● &nbsp; CONNECTED</div></div>
+</div>
+<script>
+(() => {
+  "use strict";
+  // No unsanitized URL data is written into HTML: supported targets are fixed.
+  const targets = {
+    generic:   { name:"Next.exe",      symbol:"□", source:"Broadcast.exe" },
+    messenger: { name:"Messenger.exe", symbol:"✉", source:"Broadcast.exe" },
+    broadcast: { name:"Broadcast.exe", symbol:"▶", source:"Messenger.exe" },
+    away:      { name:"Away.exe",      symbol:"☾", source:"Broadcast.exe" },
+    portal:    { name:"Portal.exe",    symbol:"◎", source:"Broadcast.exe" },
+    logout:    { name:"Logout.exe",    symbol:"⏻", source:"Portal.exe" }
+  };
+  const params = new URLSearchParams(location.search);
+  const dest = targets[params.get("to")] || targets.generic;
+  const byId = id => document.getElementById(id);
+  byId("next-name").textContent = dest.name;
+  byId("next-symbol").textContent = dest.symbol;
+  byId("launch-icon").textContent = dest.symbol;
+  byId("previous").querySelector("span").textContent = dest.source;
+  byId("launch-heading").textContent = "Abrindo " + dest.name;
+  byId("launch-status").textContent = "Conectado // " + dest.name;
+  const desktop = byId("desktop"), switcher = byId("switcher"), launcher = byId("launch");
+  const next = byId("next"), progress = byId("progress");
+  const clamp = (v,a=0,b=1) => Math.min(b,Math.max(a,v));
+  const ease = x => x*x*(3-2*x);
+  const mix = (a,b,v) => a+(b-a)*v;
+
+  // Deterministic 1200ms timeline; OBS Stinger cut point = 600ms.
+  // Desktop is fully opaque at the cut point so the two scenes never overlap.
+  window.renderFrame = function renderFrame(seconds) {
+    const t=clamp(seconds,0,1.2);
+    let alpha = t < .06 ? 0 : t < .49 ? ease((t-.06)/.43) : t <= .78 ? 1 : 1-ease((t-.78)/.42);
+    desktop.style.opacity = String(alpha);
+    desktop.style.pointerEvents = "none";
+    switcher.style.opacity = String(t<.12 ? 0 : t<.21 ? ease((t-.12)/.09) : t<.38 ? 1 : t<.50 ? 1-ease((t-.38)/.12) : 0);
+    switcher.style.transform = "translate(-50%,-50%) scale("+mix(.96,1,ease(clamp((t-.10)/.16)))+")";
+    next.classList.toggle("selected",t>=.23);
+    launcher.style.opacity = String(t<.35 ? 0 : t<.47 ? ease((t-.35)/.12) : t<.77 ? 1 : t<.91 ? 1-ease((t-.77)/.14) : 0);
+    launcher.style.transform = "translate(-50%,-50%) scale("+mix(.97,1,ease(clamp((t-.35)/.17)))+")";
+    progress.style.width = Math.round(100*ease(clamp((t-.43)/.37)))+"%";
+    return { t, alpha };
+  };
+  let started = performance.now(), frame;
+  function play(now) {
+    const t=(now-started)/1000;
+    window.renderFrame(t);
+    if (t<1.2) frame=requestAnimationFrame(play);
+  }
+  function restart() { if(frame)cancelAnimationFrame(frame); started=performance.now(); frame=requestAnimationFrame(play); }
+  window.renderFrame(0);
+  if (!params.has("export")) {
+    restart();
+    addEventListener("keydown",event=>{if(event.code==="Space"){event.preventDefault();restart();}});
+    addEventListener("click",restart);
+  }
+})();
+</script>
+</body>
+</html>
