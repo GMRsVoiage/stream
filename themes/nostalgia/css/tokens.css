@@ -1,0 +1,31 @@
+/* Nostalgia.exe initial palette. Prototype color values, not final exports.
+   Approved direction: navy-violet backgrounds + lavender/light-blue pastel UI.
+   Keep theme-specific values here rather than duplicating literals in widgets. */
+:root {
+  --nost-bg: #10162f;
+  --nost-bg-deep: #090d21;
+  --nost-bg-soft: #252451;
+  --nost-window: #e8eafb;
+  --nost-window-alt: #d7e1f7;
+  --nost-window-highlight: #f8f9ff;
+  --nost-titlebar-chat: #7772b4;
+  --nost-titlebar-system: #6886b9;
+  --nost-titlebar-alert: #a9669a;
+  --nost-purple: #8261ae;
+  --nost-pink: #e39bc6;
+  --nost-blue: #9ecaf0;
+  --nost-ink: #202743;
+  --nost-ink-muted: #4f5978;
+  --nost-light: #f8f7ff;
+  --nost-link: #5559ab;
+  --nost-link-visited: #8c508f;
+  --nost-border: #777aab;
+  --nost-bevel-light: #ffffff;
+  --nost-bevel-dark: #5d638d;
+  --nost-shadow-hard: 3px 3px 0 rgba(7, 9, 29, 0.42);
+  --nost-font-ui: Tahoma, Geneva, sans-serif;
+  --nost-font-body: Verdana, Geneva, sans-serif;
+  --nost-font-title: "Trebuchet MS", Tahoma, sans-serif;
+  --nost-radius-window: 2px;
+  --nost-space: 8px;
+}
