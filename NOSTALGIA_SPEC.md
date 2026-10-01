@@ -500,3 +500,19 @@ Direção aprovada:
 - arquivos simples em `scenes/` podem existir como atalhos, aliases ou wrappers para facilitar a configuração no OBS;
 - esses atalhos não devem duplicar a implementação principal;
 - a mesma estratégia pode ser aplicada a outros temas no futuro.
+
+
+## 19. Decisões de implementação — arquitetura v1.9
+
+### Configuração das cenas
+
+A configuração seguirá uma estrutura **em camadas**.
+
+Direção aprovada:
+
+- configurações globais da marca ficam na camada mais alta;
+- o Nostalgia.exe define padrões próprios do tema;
+- cada cena pode sobrescrever apenas o que for necessário;
+- evitar duplicação de valores entre cenas;
+- preservar a possibilidade de ajustes específicos sem quebrar a consistência geral;
+- a resolução final de valores deve seguir a ordem: **marca → tema → cena**.
