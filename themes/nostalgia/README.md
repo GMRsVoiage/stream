@@ -10,7 +10,8 @@ Este diretório é o **novo tema em desenvolvimento**. A versão AquaWave perman
 - `css/base.css` — estilos do tema e componentes-base de demonstração.
 - `assets/shared/nostalgia-icon.svg` — primeiro esboço vetorial do símbolo aprovado (balão + horizonte).
 - `config/theme.json` — exemplo de configuração declarativa do tema.
-- `preview.html` — prévia estática da fundação visual, **não** um chat nem uma cena de produção.
+- `preview.html` — prévia estática original da fundação visual.
+- `portal-preview.html` + `css/preview.css` — segunda prévia exploratória inspirada pela estrutura de aplicações antigas, microdetalhes Web 2000 e atmosferas Vaporwave/Aero. Não é layout de gameplay aprovado.
 
 A infraestrutura compartilhável fica em `core/`. A lógica de mesclagem de configuração está em `core/js/config.mjs`: **marca → tema → cena**.
 
@@ -24,7 +25,12 @@ Na raiz do repositório, execute um servidor HTTP local (o projeto não precisa 
 python -m http.server 8000
 ```
 
-Abra `http://localhost:8000/themes/nostalgia/preview.html` no navegador.
+Compare as duas propostas:
+
+- Fundação original: `http://localhost:8000/themes/nostalgia/preview.html`
+- Portal retro experimental: `http://localhost:8000/themes/nostalgia/portal-preview.html`
+
+A prévia experimental usa apenas CSS e gráficos próprios: a estrutura de janelas é uma referência conceitual aos sites enviados pelo usuário, sem copiar artes ou código. A identidade aprovada em `NOSTALGIA_SPEC.md` não muda automaticamente por causa desta exploração.
 
 Para verificar o módulo de configuração com Node.js:
 
