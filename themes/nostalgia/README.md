@@ -12,6 +12,7 @@ Este diretório é o **novo tema em desenvolvimento**. A versão AquaWave perman
 - `config/theme.json` — exemplo de configuração declarativa do tema.
 - `preview.html` — prévia estática original da fundação visual.
 - `portal-preview.html` + `css/preview.css` — segunda prévia exploratória inspirada pela estrutura de aplicações antigas, microdetalhes Web 2000 e atmosferas Vaporwave/Aero. Não é layout de gameplay aprovado.
+- `transitions/` — [Stinger Alt+Tab + abertura de aplicativo](./transitions/README.md), com prévia HTML e script para exportar WebM transparente para o OBS.
 
 A infraestrutura compartilhável fica em `core/`. A lógica de mesclagem de configuração está em `core/js/config.mjs`: **marca → tema → cena**.
 
