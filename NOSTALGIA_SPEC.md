@@ -587,3 +587,20 @@ A implementação seguirá **desenvolvimento por etapas**, na seguinte ordem:
 4. **Integrações e automações** — Twitch, eventos, doações, OBS e possíveis dispositivos físicos em uma camada separada e controlada.
 
 Esta é a última decisão arquitetural desta rodada. Manter o AquaWave arquivado e preservar cenas atualmente usadas até que as substitutas sejam verificadas.
+
+
+## 25. Decisão aprovada — entrada do chat sem API direta da Twitch
+
+Se a implementação não consumir diretamente a API da Twitch, usar o **template de Chat Box fornecido pelo usuário**, com o contêiner `#log.sl__chat__layout` e o modelo `#chatlist_item`.
+
+**Contrato de markup a preservar:**
+
+- cada mensagem usa `data-from="{from}"` e `data-id="{messageId}"`;
+- `.meta` preserva `style="color: {color}"`;
+- `.badges` permanece disponível ao provedor do widget;
+- `.name` recebe `{from}`;
+- `.message` recebe `{message}`, incluindo eventuais emotes renderizados pelo provedor.
+
+O Nostalgia.exe modifica **CSS e apresentação**, não o contrato de placeholders. A direção visual aprovada é MSN/Web 2000: janela pastel clara, barra de título antiga, Tahoma para a interface, Verdana para mensagens e contraste forte. A fonte antiga VT323/Orbitron, os brilhos magenta/ciano e o blur do CSS anterior ficam como **referência histórica**, não como padrões obrigatórios para o chat novo.
+
+Esta alternativa entrega as mensagens por meio do provedor do widget; não significa que o projeto está conectado à API da Twitch nem que o widget por si só fornece eventos ao barramento de automações. Integrações de eventos/doações/ações físicas são uma camada separada.
