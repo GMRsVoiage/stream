@@ -573,3 +573,17 @@ A decisão aprovada é **arquivar AquaWave e concentrar o desenvolvimento em Nos
 - a existência de `themes/aquawave/` na arquitetura alvo não obriga a portar o tema arquivado.
 
 **Esta decisão mais recente substitui a intenção anterior de migrar o AquaWave depois da transição** (seções 11 e 12), sem alterar o princípio de migração gradual do repositório nem a preservação histórica do código. Esta alteração é documental; o arquivamento físico ainda dependerá da implementação.
+
+
+## 24. Decisões de implementação — arquitetura v2.4
+
+### Ordem de implementação
+
+A implementação seguirá **desenvolvimento por etapas**, na seguinte ordem:
+
+1. **Fundação técnica e visual** — estrutura neutra em `core/`, base do tema em `themes/nostalgia/`, tokens, tipografia e elementos visuais fundamentais;
+2. **Componentes individuais** — chat, webcam, alertas, metas e demais widgets de forma modular;
+3. **Cenas completas** — Gameplay, Just Chatting, Starting, BRB e Ending, reutilizando os componentes aprovados;
+4. **Integrações e automações** — Twitch, eventos, doações, OBS e possíveis dispositivos físicos em uma camada separada e controlada.
+
+Esta é a última decisão arquitetural desta rodada. Manter o AquaWave arquivado e preservar cenas atualmente usadas até que as substitutas sejam verificadas.
