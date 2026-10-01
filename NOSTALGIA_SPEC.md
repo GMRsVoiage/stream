@@ -425,3 +425,18 @@ Direção aprovada:
 - a simplicidade e a previsibilidade no OBS têm prioridade sobre flexibilidade em runtime;
 - se uma mesma composição precisar existir em outro tema, ela deve ter um arquivo próprio ou uma variante explícita;
 - a infraestrutura compartilhada continua neutra em `core/`, mas a cena declara diretamente qual tema utiliza.
+
+
+## 14. Decisões de implementação — arquitetura v1.4
+
+### HTML dos componentes
+
+Cada tema terá **HTML próprio por tema**.
+
+Direção aprovada:
+
+- `themes/nostalgia/` terá seus próprios arquivos HTML para chat, alertas, goal, webcam e demais componentes visuais;
+- a estrutura de markup pode divergir entre temas quando isso beneficiar a identidade visual;
+- o `core/` não deve impor uma árvore HTML única aos temas;
+- lógica reutilizável pode continuar compartilhada quando não depender da estrutura visual;
+- a prioridade é permitir que cada tema tenha liberdade estrutural sem contaminar o código comum.
