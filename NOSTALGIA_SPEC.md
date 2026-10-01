@@ -470,3 +470,18 @@ Direção aprovada:
 - assets exclusivos de um componente devem permanecer próximos ao HTML/CSS/JS correspondente;
 - assets realmente compartilhados entre vários componentes podem receber uma área comum específica dentro do tema;
 - a prioridade é facilitar manutenção, substituição e evolução isolada de cada parte da live.
+
+
+## 17. Decisões de implementação — arquitetura v1.7
+
+### Organização do CSS
+
+O CSS do Nostalgia.exe seguirá a estrutura **tokens + base + componentes**.
+
+Direção aprovada:
+
+- `tokens.css` concentra cores, tipografia, espaçamentos, bordas, sombras e demais variáveis visuais compartilhadas;
+- `base.css` define reset, regras globais, tipografia base e comportamentos comuns do tema;
+- cada componente terá seu próprio arquivo CSS, como `chat.css`, `alerts.css`, `webcam.css`, `goal.css` e equivalentes;
+- regras específicas de um componente não devem ficar espalhadas em arquivos genéricos;
+- o objetivo é facilitar manutenção, consistência visual e evolução independente dos componentes.
