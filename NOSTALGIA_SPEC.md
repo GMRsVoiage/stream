@@ -661,3 +661,16 @@ Estas regras complementam a direção de semelhança B+ da seção anterior. Nã
 - **Momento de aparição:** depende do tipo de cena ou aplicativo, sem impor entrada sempre antes ou sempre durante a troca.
 
 A arte final, o nome, as poses específicas e a animação serão avaliados separadamente. A mascote deve complementar a Stinger e não prejudicar a legibilidade.
+
+
+## 30. Mascote — decisões aprovadas v1.2
+
+- **Nome escolhido:** `Voya.exe`, relacionado à identidade GMRsVoiage.
+- **Expressão principal:** sorriso delicado; outras expressões permanecem disponíveis conforme a cena.
+- **Acabamento da ilustração:** anime com acabamento Frutiger Aero brilhante, adequado à direção Vista/7. Equilibrar reflexos e legibilidade, sem excesso de efeitos em overlays menores.
+- **Formato das mensagens:** pequenas janelas de assistente inspiradas nas interfaces do Windows, com texto legível, usadas para apresentar aplicativos e avisos de sistema.
+- **Estratégia de animação:** começar com imagens/poses e movimentos simples, deixando animação mais elaborada para evolução futura. Preferir animações leves e curtas nas transições.
+
+Aplicar às cenas já aprovadas: transições, Starting e BRB. Manter a mascote em papel secundário em relação ao conteúdo e à interface.
+
+**Nota de privacidade e publicação:** fotografias fornecidas como referência permanecem fora do repositório. Confirmar a autorização da pessoa retratada antes de publicar uma personagem claramente inspirada na aparência dela.
