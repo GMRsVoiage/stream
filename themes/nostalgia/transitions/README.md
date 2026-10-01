@@ -35,8 +35,10 @@ Com um servidor HTTP local na raiz do repositório:
 python -m http.server 8000
 ```
 
-Visite [transição genérica](http://localhost:8000/themes/nostalgia/transitions/app-switch.html)
-ou [abertura do mensageiro](http://localhost:8000/themes/nostalgia/transitions/app-switch.html?to=messenger).
+Abra a [demonstração interativa](http://localhost:8000/themes/nostalgia/transitions/demo.html): ela reproduz a transição em loop e permite escolher qual aplicativo será anunciado.
+
+Também é possível abrir o [arquivo animado genérico](http://localhost:8000/themes/nostalgia/transitions/app-switch.html)
+ou [a abertura do mensageiro](http://localhost:8000/themes/nostalgia/transitions/app-switch.html?to=messenger).
 Clique ou pressione **Espaço** para reproduzir novamente.
 
 A página é transparente fora da transição. Ela serve como **fonte para exportação**,
