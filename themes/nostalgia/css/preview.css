@@ -1,0 +1,99 @@
+/* Conceptual showcase only; not shipped to gameplay/OBS components.
+   Original CSS artwork inspired by the *structure* of user-provided 00s sites,
+   without copying external code, images, sprites, or layouts. */
+.nost-preview--portal {
+  --prev-outline: rgba(178, 192, 241, .5);
+  padding: 36px 22px 65px;
+  background:
+    radial-gradient(circle at 8% 11%, rgba(158,202,240,.15), transparent 23%),
+    radial-gradient(circle at 92% 76%, rgba(227,155,198,.11), transparent 24%),
+    repeating-linear-gradient(90deg, transparent 0 79px, rgba(161,170,233,.035) 79px 80px),
+    linear-gradient(160deg, var(--nost-bg-deep), var(--nost-bg) 54%, #302657);
+}
+.nost-preview__wrap--portal { max-width: 1160px; }
+.nost-portal-header {
+  display: flex; gap: 18px; align-items: center; justify-content: space-between;
+  padding: 12px 16px; margin-bottom: 14px;
+  background: rgba(11, 15, 39, .83); border: 1px solid var(--prev-outline);
+  box-shadow: 4px 4px 0 rgba(0,0,0,.33);
+}
+.nost-portal-brand { display:flex; align-items:center; gap:12px; min-width:0; }
+.nost-portal-brand img { width: 52px; height: 52px; image-rendering:auto; }
+.nost-portal-brand h1 { font: bold clamp(27px, 4vw, 43px)/1.1 var(--nost-font-title); margin:0; color:#f0d6f2; text-shadow: 2px 2px #382b6a; }
+.nost-portal-brand p { font: 12px var(--nost-font-ui); color: #bdd5fa; margin: 2px 0 0; }
+.nost-portal-header__tag { font: bold 11px var(--nost-font-ui); color: #d8e9fa; text-align:right; white-space:nowrap; }
+.nost-portal-header__tag b { color:#ffd3ec; display:block; font-size:14px; }
+.nost-portal-layout { display:grid; grid-template-columns: 204px minmax(0,1fr) 216px; gap:13px; align-items:start; }
+.nost-portal-layout__left,.nost-portal-layout__main,.nost-portal-layout__right { min-width:0; display:grid; gap:13px; }
+.nost-portal-layout .nost-window { box-shadow: 3px 3px 0 rgba(0,0,0,.42); }
+.nost-portal-layout .nost-window__body { padding:11px; }
+.nost-portal-layout .nost-window__titlebar { min-height:27px; padding:4px 7px; }
+.nost-portal-layout .nost-window__controls { font: bold 11px var(--nost-font-ui); }
+.nost-portal-layout .nost-window__heading img { width:16px; height:16px; }
+.nost-portal-nav { display:grid; gap:3px; }
+.nost-portal-nav a {
+  display:block; padding:5px 7px; font: bold 11px var(--nost-font-ui); color:var(--nost-ink);
+  background:linear-gradient(#fafaff,#d7e1f7); border:1px solid #b1b5d5; text-decoration:none;
+}
+.nost-portal-nav a:hover,.nost-portal-nav a:focus-visible { background:#c4bbeb; }
+.nost-portal-nav a[aria-current="page"] { background:#afa4da; color:#171b3e; }
+.nost-portal-mini { padding:8px; text-align:center; border:1px dashed var(--nost-border); background:var(--nost-window-highlight); font:10px var(--nost-font-ui); }
+.nost-portal-mini strong { display:block; margin-bottom:4px; }
+.nost-portal-mini--88 { width: 88px; height:31px; padding:2px; display:flex; align-items:center; justify-content:center; font-weight:bold; margin: 6px auto; background:linear-gradient(90deg,#7354a4,#dda0cb); color:#fff; border:1px outset #f9ecff; box-shadow:1px 1px #30345a; letter-spacing:-.03em; }
+.nost-portal-count { margin-top:8px; font:11px/1.7 monospace; text-align:center; letter-spacing:1px; color:var(--nost-ink); }
+.nost-portal-count output { display:inline-block; padding:0 5px; background:#1d2447; color:#dddcff; border:1px inset #8898c4; }
+.nost-portal-hero {
+  overflow:hidden; position:relative; min-height:226px; padding:14px;
+  background:linear-gradient(180deg,#44457c 0%,#8166a5 53%,#e7a0c8 82%,#c68fbd 100%);
+  border:2px inset #dddaf4; color:#fff; isolation:isolate;
+}
+.nost-portal-hero::before {
+  content:""; position:absolute; width:136px; height:136px; right:13%; top:19px; border-radius:50%;
+  background:repeating-linear-gradient(180deg,#ffd3bd 0 11px,#ffd3bd 11px 14px,transparent 14px 19px);
+  opacity:.89; z-index:-1;
+}
+.nost-portal-hero::after {
+  content:""; position:absolute; height:84px; left:-30%; right:-30%; bottom:-35px;
+  background:
+    linear-gradient(90deg,transparent 49.7%,#8ed2e8 50%,transparent 50.3%),
+    repeating-linear-gradient(0deg,transparent 0 13px,#8ed2e8 13px 14px);
+  transform:perspective(95px) rotateX(46deg);
+  opacity:.7; z-index:-1;
+}
+.nost-portal-hero h2 { max-width:440px; margin:7px 0; font:bold clamp(24px,4vw,39px)/1.05 var(--nost-font-title); text-shadow:2px 3px #342e68; }
+.nost-portal-hero p { max-width:325px; margin:0; color:#fcf3ff; text-shadow:1px 1px #342e68; font-size:13px; font-weight:bold; }
+.nost-portal-hero__ribbon { display:inline-block; padding:3px 7px; background:#191b42; border:1px solid #f2c8e6; font:11px var(--nost-font-ui); }
+.nost-portal-chat__head { font:bold 11px var(--nost-font-ui); border-bottom:1px solid #b2afd7; padding-bottom:8px; margin-bottom:10px; display:flex; justify-content:space-between; gap:4px; }
+.nost-portal-chat__head span { color:#388a71; }
+.nost-portal-message { margin-bottom:8px; padding:6px; background:#f7f6ff; border-left:2px solid #bbb3dc; }
+.nost-portal-message strong { color:var(--nost-link); font: bold 11px var(--nost-font-ui); }
+.nost-portal-message p { margin:3px 0 0; font:12px/1.4 var(--nost-font-body); }
+.nost-portal-widget-title { margin:0 0 8px; font:bold 13px var(--nost-font-title); }
+.nost-portal-quicklinks { font:11px/1.9 var(--nost-font-ui); }
+.nost-portal-meter { display:block; height:14px; width:100%; border:2px inset #8e91ba; background:#faf8ff; overflow:hidden; margin:8px 0; }
+.nost-portal-meter span { display:block; height:100%; width:64%; background:repeating-linear-gradient(90deg,#8c80c2 0 12px,#c8b9e8 12px 14px); }
+.nost-portal-status { margin:0; display:grid; gap:6px; font:11px var(--nost-font-ui); }
+.nost-portal-status div { padding:7px; background:#fafbff; border:1px solid #c3c5e4; }
+.nost-portal-status dt { font-weight:bold; color:#495b88; }
+.nost-portal-status dd { margin:2px 0 0; overflow-wrap:anywhere; }
+.nost-portal-note {
+  padding:11px; font:11px/1.5 var(--nost-font-body); color:#d9e5ff;
+  border:1px dashed rgba(207,201,246,.52); background:rgba(10,12,35,.55);
+}
+.nost-portal-note a { color:#d5cdfd; }
+.nost-portal-swatches { display:flex; gap:4px; margin:7px 0; }
+.nost-portal-swatches span { display:block; width:23px; height:14px; border:1px solid #a9add1; }
+.nost-portal-footer { margin-top:16px; text-align:center; font:11px var(--nost-font-ui); color:#b7c8f0; }
+@media (max-width:950px) {
+  .nost-portal-layout { grid-template-columns: 180px minmax(0,1fr); }
+  .nost-portal-layout__right { grid-column:1/-1; grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media (max-width:650px) {
+  .nost-preview--portal { padding:16px 10px 28px; }
+  .nost-portal-header__tag { display:none; }
+  .nost-portal-layout { grid-template-columns:minmax(0,1fr); }
+  .nost-portal-layout__left { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .nost-portal-layout__main { grid-row:1; }
+  .nost-portal-layout__right { grid-column:auto; grid-template-columns:1fr; }
+}
+@media (prefers-reduced-motion: reduce) { .nost-preview--portal *, .nost-preview--portal *::before,.nost-preview--portal *::after { animation:none !important; } }
