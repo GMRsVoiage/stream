@@ -545,3 +545,16 @@ Os componentes usarão uma **arquitetura híbrida**:
 - a arquitetura deve permitir futuras automações em que eventos da live provoquem ações em dispositivos físicos, além de atualizações visuais.
 
 A integração com dispositivos físicos fica como capacidade futura, **sem aprovar ainda** hardware, efeitos, acionamentos ou regras específicas. Ao implementá-la, separar o barramento da camada que executa comandos físicos, com autorizações e limites próprios.
+
+
+## 22. Decisões de implementação — arquitetura v2.2
+
+### Acesso do OBS às cenas
+
+A estratégia será **híbrida**:
+
+- as cenas serão servidas principalmente por **HTTP local** (`localhost`) durante desenvolvimento e uso no OBS;
+- componentes que precisem de acesso remoto poderão ser publicados via hospedagem Web;
+- preservar caminhos e configurações claros para executar localmente e, quando aplicável, remotamente;
+- endpoints remotos não devem expor controles locais ou automações físicas sem autenticação e autorização específicas;
+- evitar exigir hospedagem remota para componentes que funcionem apenas localmente.
