@@ -516,3 +516,18 @@ Direção aprovada:
 - evitar duplicação de valores entre cenas;
 - preservar a possibilidade de ajustes específicos sem quebrar a consistência geral;
 - a resolução final de valores deve seguir a ordem: **marca → tema → cena**.
+
+
+## 20. Decisões de implementação — arquitetura v2.0
+
+### Formato das configurações
+
+A configuração usará **JavaScript para configuração dinâmica + JSON para dados simples**.
+
+Direção aprovada:
+
+- usar JavaScript quando houver lógica, derivação, composição ou comportamento condicional;
+- usar JSON para valores puramente declarativos e dados simples;
+- evitar lógica desnecessária em arquivos de dados;
+- manter a configuração legível e fácil de editar;
+- preservar separação entre dados, comportamento e apresentação.
