@@ -1,10 +1,23 @@
 # GMRsVoiage Stream
 
-Sistema leve de overlays e peças visuais para o canal **twitch.tv/gmrsvoiage**, baseado no **GMRsVoiage AquaWave Visual System**.
+Sistema leve de overlays e peças visuais do **GMRsVoiage**. O tema principal aprovado é **Nostalgia.exe**; o protótipo anterior AquaWave está preservado como legado.
 
 A base usa **HTML + CSS + SVG** e JavaScript mínimo, sem frameworks. A ideia é manter as fontes de navegador do OBS leves, editáveis e reaproveitáveis também para banners e outras artes.
 
-## Protótipo atual
+## Novo tema: Nostalgia.exe (fundação em desenvolvimento)
+
+- Especificação aprovada: [NOSTALGIA_SPEC.md](./NOSTALGIA_SPEC.md).
+- Infraestrutura neutra: `core/` (configuração em camadas, reset CSS, dados da marca).
+- Tema novo: `themes/nostalgia/` (tokens, CSS-base, símbolo em SVG e configuração).
+- [Prévia visual](./themes/nostalgia/preview.html) — ainda não é uma cena operacional do OBS.
+
+Para ver a prévia, execute `python -m http.server 8000` na raiz do repositório e acesse:
+`http://localhost:8000/themes/nostalgia/preview.html`.
+
+Os novos arquivos não modificam as cenas existentes. Testes de configuração:
+`node --test tests/config.test.mjs`.
+
+## Protótipo legado AquaWave
 
 - `scenes/main.html` — overlay principal Dark Synthwave 1920×1080.
 - `scenes/webcam.html` — moldura responsiva com neon percorrendo exatamente a borda.
@@ -17,13 +30,13 @@ A base usa **HTML + CSS + SVG** e JavaScript mínimo, sem frameworks. A ideia é
 - `css/scenes.css` — composição visual e animações.
 - `assets/*.svg` — elementos vetoriais leves.
 
-## Testar no navegador
+## Testar o legado no navegador
 
 Clone o repositório e abra `index.html`.
 
 Para uma visualização mais consistente, também é possível servir a pasta com qualquer servidor HTTP local simples. O projeto não exige build.
 
-## Usar no OBS
+## Usar o legado no OBS
 
 1. Adicione uma **Fonte de Navegador**.
 2. Marque **Arquivo local**.
@@ -33,7 +46,7 @@ Para uma visualização mais consistente, também é possível servir a pasta co
 6. **30 FPS** é suficiente para as animações atuais.
 7. Ative **Desligar a fonte quando não estiver visível** quando fizer sentido.
 
-## Valores variáveis e futuras automações
+## Valores variáveis do legado e futuras automações
 
 As cenas carregam `js/scene-config.js`. Ele já deixa três valores prontos para automações:
 
