@@ -621,3 +621,21 @@ Implementação inicial:
 A narrativa completa de Starting (login → conexão → portal) permanece uma cena separada. O conjunto de transições pode evoluir, mas a seleção automática de destino pelo OBS e os efeitos sonoros **não fazem parte desta versão**.
 
 Código, exportador e instruções: [`themes/nostalgia/transitions/`](./themes/nostalgia/transitions/).
+
+
+## 27. Direção aprovada — semelhança da mascote
+
+O usuário escolheu o **nível B+ de semelhança**, isto é, **B (inspiração média) próximo de C (versão anime reconhecível)**. A mascote do Nostalgia.exe será inspirada visualmente em uma pessoa de referência, retratada em fotografias compartilhadas na conversa, mas tratada como **personagem ilustrada própria**, com identidade visual coerente com a estética anime/Y2K dos anos 2000.
+
+Elementos de estudo visual, sujeitos à aprovação dos primeiros desenhos:
+
+- cabelo curto/médio cacheado, escuro com tons avermelhados ou vinho;
+- óculos grandes de armação clara/transparente;
+- olhos expressivos e sobrancelhas marcantes;
+- possibilidade de representar discretamente o piercing labial e maquiagem característica, conforme a versão;
+- roupa e acessórios originais de assistente digital, com azul Aero, lavanda e pequenos acentos Vaporwave;
+- aparência ilustrada no espírito das antigas mascotes de software, sem replicar a mascote oficial do Windows 7 ou inserir logotipos proprietários.
+
+**Escopo desta decisão:** nível de semelhança e referências de aparência. Nome, roupa definitiva, expressões, poses e frequência de aparição ainda serão validados com arte de conceito. As fotos pessoais e os perfis sociais fornecidos como referência **não devem ser enviados ou versionados neste repositório**. Antes de publicar uma mascote reconhecivelmente baseada em outra pessoa, confirmar que ela concorda com o uso público da sua aparência.
+
+A mascote poderá acompanhar a futura transição estilo Vista/7 Aero e apresentar a troca de aplicativos. O design não substitui as decisões anteriores sobre a estrutura Alt+Tab da transição.
