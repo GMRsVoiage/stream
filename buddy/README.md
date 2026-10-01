@@ -1,0 +1,1 @@
+Readme dos buddy
