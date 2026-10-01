@@ -674,3 +674,16 @@ A arte final, o nome, as poses específicas e a animação serão avaliados sepa
 Aplicar às cenas já aprovadas: transições, Starting e BRB. Manter a mascote em papel secundário em relação ao conteúdo e à interface.
 
 **Nota de privacidade e publicação:** fotografias fornecidas como referência permanecem fora do repositório. Confirmar a autorização da pessoa retratada antes de publicar uma personagem claramente inspirada na aparência dela.
+
+
+## 31. Mascote — decisões aprovadas v1.3
+
+- **Conjunto inicial de poses:** conjunto completo por aplicativo, com variações planejadas para os contextos aprovados. A execução pode ser gradual; a escolha não implica produzir todas as poses imediatamente.
+- **Fundo das ilustrações:** artes compostas com paisagens e cenários Frutiger Aero integrados, em lugar de exigir ilustrações sempre transparentes. Para uso como overlay, definir recortes/versões adequados durante a produção sem presumir que o fundo integrado possa ser removido automaticamente.
+- **Notificações:** pequenas janelas com estética **Windows Vista/7 Aero Glass**, mantendo a estrutura legível já aprovada para mensagens da assistente.
+- **Personalidade dos diálogos:** **educada e objetiva**; frases curtas que anunciam aplicativos e eventos sem competir com a live.
+- **Entregáveis visuais para OBS:** **PNG estático e WebM animado quando necessário**. O formato das imagens-base e das animações deve ser compatível com cada composição (transparência apenas onde a camada exigir).
+
+O conjunto visual permanece baseado na Voya.exe: semelhança de inspiração B+, expressão-base de sorriso delicado, roupa de assistente Aero azul/branca e presença nas transições, Starting e BRB. A transição continuará sendo controlada pelo OBS, com corte configurável na Stinger.
+
+**Critérios de implementação:** criar e aprovar um primeiro exemplo representativo antes de produzir as variações de todos os aplicativos; preservar a legibilidade e a performance. Não versionar as fotografias pessoais de referência e confirmar o consentimento para publicação da personagem inspirada em outra pessoa.
