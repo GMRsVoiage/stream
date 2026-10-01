@@ -455,3 +455,18 @@ Direção aprovada:
 - integrações, eventos e modelos de dados devem ser compartilhados sempre que isso não limitar a identidade visual;
 - animações, renderização e comportamentos muito específicos do Nostalgia.exe podem permanecer em `themes/nostalgia/`;
 - evitar duplicação quando a lógica puder ser reutilizada sem acoplamento visual.
+
+
+## 16. Decisões de implementação — arquitetura v1.6
+
+### Organização dos assets
+
+Os assets do Nostalgia.exe serão organizados **por componente**.
+
+Direção aprovada:
+
+- cada componente terá sua própria pasta de assets;
+- exemplos: `chat/`, `alerts/`, `webcam/`, `starting/`, `brb/`, `ending/`, `goal/`;
+- assets exclusivos de um componente devem permanecer próximos ao HTML/CSS/JS correspondente;
+- assets realmente compartilhados entre vários componentes podem receber uma área comum específica dentro do tema;
+- a prioridade é facilitar manutenção, substituição e evolução isolada de cada parte da live.
