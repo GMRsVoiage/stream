@@ -1,0 +1,6 @@
+/* Neutral foundation; imported only by new themes.
+   The legacy AquaWave stylesheets are intentionally untouched. */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; }
+img, svg { display: block; max-width: 100%; }
+button, input, textarea, select { font: inherit; }
