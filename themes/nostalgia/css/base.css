@@ -25,6 +25,8 @@
   border: 1px solid var(--nost-border);
   border-radius: var(--nost-radius-window);
   background: var(--nost-window);
+  /* Explicit ink: don't inherit white text from the dark preview canvas. */
+  color: var(--nost-ink);
   box-shadow: var(--nost-shadow-hard);
 }
 
