@@ -558,3 +558,18 @@ A estratégia será **híbrida**:
 - preservar caminhos e configurações claros para executar localmente e, quando aplicável, remotamente;
 - endpoints remotos não devem expor controles locais ou automações físicas sem autenticação e autorização específicas;
 - evitar exigir hospedagem remota para componentes que funcionem apenas localmente.
+
+
+## 23. Decisões de implementação — arquitetura v2.3
+
+### Destino do legado AquaWave
+
+A decisão aprovada é **arquivar AquaWave e concentrar o desenvolvimento em Nostalgia.exe**.
+
+- preservar o código e os assets do AquaWave para consulta ou eventual recuperação;
+- não migrar nem desenvolver AquaWave como tema ativo nesta etapa;
+- concentrar a nova estrutura `core/` e o desenvolvimento dos componentes em `themes/nostalgia/`;
+- manter o legado intacto até que o arquivamento seja realizado de forma verificável, sem quebrar cenas em uso antes da substituição;
+- a existência de `themes/aquawave/` na arquitetura alvo não obriga a portar o tema arquivado.
+
+**Esta decisão mais recente substitui a intenção anterior de migrar o AquaWave depois da transição** (seções 11 e 12), sem alterar o princípio de migração gradual do repositório nem a preservação histórica do código. Esta alteração é documental; o arquivamento físico ainda dependerá da implementação.
