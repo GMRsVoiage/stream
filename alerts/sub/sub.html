@@ -1,0 +1,33 @@
+<!-- Streamlabs > Alert Box > Subscriptions. Message template: {name} -->
+<div id="alert-image-wrap" style="display:none" aria-hidden="true"><div id="alert-image">{img}</div></div>
+<div id="alert-text-wrap">
+  <div id="alert-text">
+    <section class="gmrs-sub-window" role="status" aria-label="Nova assinatura">
+      <header class="gmrs-titlebar">
+        <span class="gmrs-title-icon" aria-hidden="true"></span>
+        <span>Nostalgia.exe — Assistente de instalação</span>
+        <span class="gmrs-controls" aria-hidden="true"><i>—</i><i>×</i></span>
+      </header>
+      <div class="gmrs-main">
+        <div class="gmrs-side" aria-hidden="true">
+          <div class="gmrs-package">
+            <div class="gmrs-package-top"></div>
+            <div class="gmrs-package-front">G</div>
+          </div>
+          <span class="gmrs-side-glow"></span>
+        </div>
+        <div class="gmrs-info">
+          <div class="gmrs-step">NOVO PACOTE DETECTADO</div>
+          <div class="gmrs-heading">Assinatura instalada!</div>
+          <div id="alert-message">{messageTemplate}</div>
+          <div class="gmrs-description">entrou para a comunidade GMRsVoiage.</div>
+          <div class="gmrs-progress-label"><span>Configurando benefícios...</span><span>100%</span></div>
+          <div class="gmrs-progress" aria-hidden="true"><div class="gmrs-progress-fill"></div></div>
+        </div>
+      </div>
+      <footer class="gmrs-footer"><span class="gmrs-ok-dot"></span>Nostalgia.exe<span class="gmrs-footer-separator">·</span>Instalação concluída</footer>
+    </section>
+  </div>
+</div>
+<!-- User message intentionally not displayed for basic sub.
+     A future resub variant can display {userMessage} separately. -->
