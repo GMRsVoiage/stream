@@ -22,11 +22,14 @@ html, body, .widget-AlertBox {
   display: flex; justify-content: center; align-items: center; padding: 10px;
 }
 #alert-text {
-  display: block; position: relative; padding: 0; z-index: 2;
-  text-shadow: none !important;
+  display: block !important; position: relative; z-index: 2;
+  /* Reserve the full window width: Streamlabs text settings can narrow #alert-text. */
+  width: 358px !important; max-width: calc(100vw - 20px) !important;
+  min-width: 0 !important; padding: 0 !important;
+  text-shadow: none !important; text-align: left !important;
 }
 .gmrs-follow-window {
-  width: 358px; max-width: calc(100vw - 20px);
+  width: 100%; min-width: 0;
   overflow: hidden; isolation: isolate;
   border: 1px solid var(--aero-border);
   border-radius: 9px;
@@ -94,19 +97,44 @@ html, body, .widget-AlertBox {
   background:radial-gradient(circle at 35% 20%, #ceffc0, #62d762 53%, #258d4a);
   box-shadow:0 1px 3px rgba(25,82,55,.2);
 }
-.gmrs-follow-copy { position: relative; min-width: 0; flex: 1; }
+.gmrs-follow-copy {
+  position: relative; min-width: 0; flex: 1 1 auto;
+  /* Do not let Streamlabs text controls shrink the name to single letters. */
+  width: calc(100% - 69px);
+  overflow: hidden;
+}
 .gmrs-eyebrow {
   margin: 0 0 4px;
   font: 700 9px Tahoma, sans-serif;
   color: #657caa; letter-spacing: .8px;
 }
-#alert-message, #alert-message *, #alert-message > span > span {
-  display: block; margin: 0 !important; padding: 0 !important;
+#alert-message {
+  display: block !important;
+  width: 100% !important; min-width: 0 !important; max-width: 100% !important;
+  margin: 0 !important; padding: 0 !important;
   color: #246f9f !important;
   font: 700 19px/1.2 Tahoma, "Trebuchet MS", sans-serif !important;
   text-shadow: 0 1px 0 #fff !important;
   text-align: left !important;
-  overflow-wrap: anywhere;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+  text-overflow: ellipsis !important;
+}
+/* Streamlabs sometimes inserts several nested spans, each with its own styles. */
+#alert-message span, #alert-message span span {
+  display: inline !important;
+  position: static !important;
+  width: auto !important;
+  max-width: none !important;
+  margin: 0 !important; padding: 0 !important;
+  font: inherit !important; color: inherit !important;
+  text-shadow: inherit !important;
+  letter-spacing: normal !important;
+  white-space: inherit !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
   animation: none !important;
 }
 .gmrs-subtitle { margin-top: 3px; font-size: 11px; color: #485e75; }
