@@ -5,9 +5,9 @@
 ## Sequência e duração
 - **0–2s:** notificação estilo Skype aparece no canto inferior direito.
 - **1–2.3s:** cursor **fictício** percorre o canvas até a notificação e simula clique (não move o mouse real).
-- **2.1s:** abre janela de chamada em grupo no centro, com barra do Windows 7, Skype azul e controles de chamada.
-- **~6.5s:** botão verde é ativado; aparece a conexão.
-- **~7.5–10s:** saudação e finalização.
+- **2.1–4s:** abre a janela Nostalgia Call no centro, em tamanho normal; a saudação e o nome ficam visíveis.\n- **~4–5s:** a janela completa diminui para 70% e desliza até o **canto superior esquerdo**, preservando o canto superior direito da webcam.
+- **~6.5s:** o botão verde é ativado **já na janela reduzida**; aparece a conexão.
+- **~7.5–10s:** saudação próxima à janela reduzida e finalização.
 - Use **duração total de 11 segundos** na Raid do Streamlabs.
 
 ## Instalação

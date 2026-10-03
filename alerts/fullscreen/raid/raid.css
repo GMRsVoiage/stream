@@ -1,6 +1,6 @@
 /* Nostalgia.exe RAID v2 — Skype 5.x / Windows 7 era inspired prototype.
    Screen source: 1920x1080 transparent, no API, no image downloads.
-   Animation timeline: toast 0–1.5s; cursor 1–2s; main call 2–9s. */
+   Animation timeline: toast -> auto click -> center -> upper-left dock -> accept. */
 :root{--sk-blue:#00aff0;--sk-navy:#1076a9;--sk-ink:#25455b;--sk-green:#62b436}
 *{box-sizing:border-box}
 html,body,.widget-AlertBox,#wrap,#alert-box,#alert-text-wrap{width:100%!important;height:100%!important;margin:0!important;padding:0!important;overflow:hidden!important;background:transparent!important}
@@ -65,3 +65,48 @@ html,body,.widget-AlertBox,#wrap,#alert-box,#alert-text-wrap{width:100%!importan
 #alert-box.hidden,.hidden{opacity:0!important}
 @media(max-width:750px){.sk-call{max-width:88%}.sk-toast{right:12px;bottom:16px}.sk-profile-line{padding:12px}.sk-nav{gap:8px}.sk-toolbar{height:48px}}
 @media(prefers-reduced-motion:reduce){.sk-toast,.sk-cursor,.sk-click-ring,.sk-call,.sk-post-call,.sk-sound-waves span,.sk-accept,.sk-connecting,.sk-connected{animation:none!important}.sk-toast{opacity:0}.sk-call{opacity:1;transform:translate(-50%,-50%)}}
+
+/* FULL HD FLOW 2026-10-03
+   The group-call window is prominent for ~1.6s, then scales and travels
+   to the upper-left, away from the preferred upper-right webcam area.
+   Do NOT animate width/height: composite-only top/left + transform.
+   All timing is CSS-based so Streamlabs Test Alert replays consistently. */
+.sk-call{
+  --raid-dock-x:28px;
+  --raid-dock-y:28px;
+  left:calc(50% - 320px)!important;
+  top:calc(50% - 265px)!important;
+  transform:scale(.96);
+  transform-origin:top left;
+  animation:raid-center-then-dock 8.9s ease 2.1s both!important;
+}
+/* Starting with 1.0, keeping it full-size while the name is read,
+   then easing the entire application into the edge. */
+@keyframes raid-center-then-dock{
+  0%{left:calc(50% - 320px);top:calc(50% - 265px);transform:scale(.92) translateY(12px);opacity:0}
+  7%,21%{left:calc(50% - 320px);top:calc(50% - 265px);transform:scale(1);opacity:1}
+  32%,89%{left:var(--raid-dock-x);top:var(--raid-dock-y);transform:scale(.70);opacity:1}
+  100%{left:var(--raid-dock-x);top:var(--raid-dock-y);transform:scale(.70) translateY(-15px);opacity:0}
+}
+/* The internal accept and connection timings in the original stylesheet
+   are retained; only the outer application is repositioned. */
+.sk-post-call{
+  left:30px!important;top:405px!important;
+  transform:translateY(12px);
+  max-width:430px;
+  width:max-content;
+  animation:raid-docked-greeting 3.5s ease 7.5s both!important;
+}
+@keyframes raid-docked-greeting{
+  0%{opacity:0;transform:translateY(12px)}
+  15%,84%{opacity:1;transform:translateY(0)}
+  100%{opacity:0;transform:translateY(-8px)}
+}
+@media(max-width:900px){
+ .sk-call{--raid-dock-x:12px;--raid-dock-y:12px;left:calc(50% - 320px)!important;top:calc(50% - 265px)!important}
+ .sk-post-call{left:12px!important;top:380px!important}
+}
+@media(prefers-reduced-motion:reduce){
+ .sk-call{animation:none!important;left:28px!important;top:28px!important;transform:scale(.7)!important;opacity:1!important}
+ .sk-post-call{animation:none!important;opacity:1!important}
+}
