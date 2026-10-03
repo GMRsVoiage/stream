@@ -1,9 +1,10 @@
 /* Nostalgia.exe Desktop World v1 — lightweight, transparent OBS frame.
    Reference canvas: 1920x1080. Every region uses viewport proportions.
-   Game window intentionally sized so its INNER viewport is 16:9.\n   Capture inside that viewport (OBS 1920×1080: x243 y160, 1184×666).\n   Change the variables to move/resize the frame; then realign OBS sources. */
+   Game window intentionally sized so its INNER viewport is 16:9. 
+   Capture inside that viewport (OBS 1920×1080: x243 y160, 1184×666). 
+   Change the variables to move/resize the frame; then realign OBS sources. */
 :root {
   --game-x: 12.5%; --game-y: 11.9%; --game-w: 62%; --game-h: 66.7%;
-  --cam-x: 77.4%; --cam-y: 3.3%; --cam-w: 21.2%; --cam-h: 22.4%;
   --chat-x: 77.4%; --chat-y: 27.0%; --chat-w: 21.2%; --chat-h: 57.4%;
   --ui-ink: #20436d; --ui-pink: #f4a1e3; --ui-blue: #8bcefb;
   --ui-violet: #876ab7;
@@ -34,8 +35,6 @@ body { font-family:Tahoma,"Trebuchet MS",sans-serif; }
 .panel__bottom { height:19px;min-height:19px;display:flex;align-items:center;justify-content:space-between;padding:0 10px;background:linear-gradient(90deg,#b5dafa,#e9bbf8);border-top:1px solid #fff;font-size:10px;color:var(--ui-ink); }
 .game-panel{left:var(--game-x);top:var(--game-y);width:var(--game-w);height:var(--game-h);border-color:#64d9ec;}
 .game-panel__top{background:linear-gradient(#e6fbff 0%,#a6e2f1 15%,#57bcda 50%,#3697c0 51%,#3788b3 100%);}
-.webcam-panel{left:var(--cam-x);top:var(--cam-y);width:var(--cam-w);height:var(--cam-h);border-color:#f7b0f0;}
-.webcam-panel .panel__top{background:linear-gradient(#fff3ff 0%,#e8bff7 17%,#ae7fd3 50%,#8b6bb1 51%,#795c9e 100%);}
 .chat-panel{left:var(--chat-x);top:var(--chat-y);width:var(--chat-w);height:var(--chat-h);border-color:#efb6fa;}
 .chat-panel__top{background:linear-gradient(#fdf4ff 0%,#edcbf8 15%,#ba96d7 50%,#9876c4 51%,#9776bd 100%);}
 .chat-panel__body {flex:1;min-height:0; /* Transparent: put existing Twitch chat Browser Source beneath frame. */ }
