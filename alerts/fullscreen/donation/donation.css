@@ -102,14 +102,35 @@ html,body,.widget-AlertBox,#wrap,#alert-box,#alert-text-wrap{width:100%;height:1
 }
 @media(prefers-reduced-motion:reduce){.cheque,.paid-stamp,.assistant{animation:none;opacity:1}.paid-stamp{transform:rotate(-16deg)}}
 
-/* Full HD variant: render the original widget inside a 1920x1080 transparent
-   browser source, without enlarging its typography. This does not itself
-   implement full-screen interaction. */
-html,body,.widget-AlertBox,#wrap,#alert-box{width:100%!important;height:100%!important;margin:0!important;background:transparent!important;overflow:hidden!important;}
-#alert-box{position:absolute!important;inset:0!important;}
-#alert-text-wrap{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;display:block!important;padding:0!important;background:transparent!important;}
-
-/* Donation is a central cinematic event. Its animation stays inside the
-   full-screen alpha layer while keeping the cheque's original dimensions. */
-#alert-text-wrap{display:flex!important;align-items:center!important;justify-content:center!important;padding:0!important;}
-#alert-text{position:relative!important;width:690px!important;max-width:95vw!important;flex:0 1 690px!important;margin:0!important;padding:0!important;}
+/* Full HD donation sequence: cheque + Clippy remain readable at
+   screen center through their original entrance and stamp animations,
+   then the entire composition shrinks and docks at the lower-left. */
+html,body,.widget-AlertBox,#wrap,#alert-box{
+ width:100%!important;height:100%!important;margin:0!important;
+ background:transparent!important;overflow:hidden!important;
+}
+#alert-box,#alert-text-wrap{position:absolute!important;inset:0!important}
+#alert-text-wrap{display:block!important;padding:0!important;transform:none!important}
+#alert-text{
+ position:absolute!important;display:block!important;
+ left:calc(50% - 345px);top:calc(50% - 170px);
+ right:auto!important;bottom:auto!important;
+ width:690px!important;max-width:calc(100vw - 40px)!important;
+ min-width:0!important;height:auto!important;flex:none!important;
+ margin:0!important;padding:0!important;
+ transform-origin:top left;opacity:0;
+ animation:donation-center-dock 12s ease both!important;
+}
+@keyframes donation-center-dock{
+ 0%{left:calc(50% - 345px);top:calc(50% - 170px);opacity:1;transform:translateY(0) scale(1)}
+ 33%{left:calc(50% - 345px);top:calc(50% - 170px);opacity:1;transform:translateY(0) scale(1)}
+ 44%,93%{left:35px;top:calc(100% - 295px);opacity:1;transform:scale(.78)}
+ 100%{left:35px;top:calc(100% - 295px);opacity:0;transform:translateY(15px) scale(.78)}
+}
+/* Keep the Office speech legible once the whole alert is reduced. */
+@media(max-width:800px){
+ #alert-text{width:min(690px,calc(100% - 30px))!important}
+}
+@media(prefers-reduced-motion:reduce){
+ #alert-text{animation:none!important;left:35px;top:calc(100% - 295px);opacity:1;transform:scale(.78)}
+}
