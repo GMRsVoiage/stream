@@ -1,8 +1,8 @@
 /* Nostalgia.exe Desktop World v1 — lightweight, transparent OBS frame.
    Reference canvas: 1920x1080. Every region uses viewport proportions.
-   Change only these variables to move/resize the OBS source placeholders. */
+   Game window intentionally sized so its INNER viewport is 16:9.\n   Capture inside that viewport (OBS 1920×1080: x243 y160, 1184×666).\n   Change the variables to move/resize the frame; then realign OBS sources. */
 :root {
-  --game-x: 12.5%; --game-y: 11.9%; --game-w: 63.5%; --game-h: 66.7%;
+  --game-x: 12.5%; --game-y: 11.9%; --game-w: 62%; --game-h: 66.7%;
   --cam-x: 77.4%; --cam-y: 3.3%; --cam-w: 21.2%; --cam-h: 22.4%;
   --chat-x: 77.4%; --chat-y: 27.0%; --chat-w: 21.2%; --chat-h: 57.4%;
   --ui-ink: #20436d; --ui-pink: #f4a1e3; --ui-blue: #8bcefb;
