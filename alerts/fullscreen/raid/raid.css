@@ -28,7 +28,7 @@ html,body,.widget-AlertBox,#wrap,#alert-box,#alert-text-wrap{width:100%!importan
 .sk-system-actions .sk-x{width:42px;color:white;text-shadow:0 1px #843322;background:linear-gradient(#f7bbad,#d6533d);border-color:#bf6a55}
 .sk-client{overflow:hidden;border:1px solid #467fa7;border-radius:3px;background:white}
 .sk-toolbar{height:63px;display:flex;align-items:center;gap:20px;padding:7px 19px;border-bottom:1px solid #b8d9e8;background:linear-gradient(#fff,#e5f3f9)}
-.sk-wordmark{font:bold italic 36px/1 Tahoma,Arial;color:var(--sk-blue);letter-spacing:-3px;text-shadow:-1px 1px #fff,1px 2px #a4d8f0}.sk-trademark{font:8px Tahoma;vertical-align:top;letter-spacing:0}.sk-status{font-size:11px;color:#54809a}
+.sk-wordmark{font:bold italic 30px/1 Tahoma,Arial;color:var(--sk-blue);letter-spacing:-1.9px;text-shadow:-1px 1px #fff,1px 2px #a4d8f0}.sk-trademark{font:700 12px Tahoma;vertical-align:baseline;letter-spacing:-.6px;margin-left:2px;color:#2788bc}.sk-status{font-size:11px;color:#54809a}
 .sk-nav{display:flex;gap:17px;padding:7px 15px;font-size:11px;border-bottom:1px solid #accde4;color:#314f64;background:linear-gradient(#effaff,#d2e7f3)}
 .sk-profile-line{display:flex;align-items:center;gap:14px;padding:23px 25px 18px;background:linear-gradient(#fcfeff,#f1f9fc);border-bottom:1px solid #c6dce8;min-height:143px}
 .sk-thumb{width:75px;height:75px}.sk-head{position:absolute;top:10px;left:25px;width:20px;height:24px;border-radius:50%;background:#ecfcff}.sk-shoulders{position:absolute;top:38px;left:10px;width:52px;height:39px;border-radius:55% 55% 10% 10%;background:#e6faff}

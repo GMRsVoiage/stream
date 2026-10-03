@@ -30,3 +30,9 @@ Texto atrasado: 0 s. Em OBS: fonte de navegador de alertas **1920 × 1080**, sem
 - Se o Streamlabs sanitizar spans HTML do Message Template, a contagem poderá aparecer só na linha principal sem atualizar o texto secundário; confirmar no primeiro teste real/simulado.
 - Uma instância única do Alert Box evita sons duplicados em diferentes cenas.
 - Não interfere com os alertas antigos Follow/Sub/Doação.
+
+## Identidade própria — alteração aprovada após teste em OBS
+
+- Preservar geometria, cores, botões, layout e animações que funcionaram no teste.
+- Remover a marca Skype de **todos os textos visíveis**: programa fictício **Nostalgia Call**, assinatura visual **nostalgia.exe** e ícone **N** na barra/notificação. As referências históricas nos comentários e documentação podem citar Skype para descrever a inspiração.
+- Manter o toque clássico escolhido pelo criador nas configurações do Streamlabs; não adicionar áudio duplicado ao JS.
