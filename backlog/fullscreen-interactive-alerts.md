@@ -1,21 +1,24 @@
 # Backlog — alertas em 1920 × 1080 e interatividade
 
-**Status:** objetivo futuro aprovado para avaliação e implementação gradual, não está pronto.
+**Status em 2026-10-03:** usuário antecipou a migração para AGORA. **Primeira versão 1920×1080 criada**, ainda aguardando testes no Streamlabs/OBS e não aprovada como concluída. Instruções em [alerts/fullscreen/README.md](../alerts/fullscreen/README.md).
 
-## Decisão (2026-10-03)
-- Evoluir os alertas existentes de janelas localizadas para uma **fonte de navegador 1920×1080**, sem exigir que cada alerta visual ocupe a tela inteira.
-- Manter os alertas atuais de Follow, Sub e Doação em funcionamento; preservar código e assets aprovados enquanto o novo sistema é desenvolvido e testado.
-- Explorar alertas **cinematográficos e interativos** que possam entrar em cena e interagir com gameplay/câmera, em vez de aparecer apenas em um quadro central.
-- Referência criativa citada pelo criador: alerta de raid de outro streamer com personagem soltando fogo pela boca. Isso é **referência**, não aprovação para copiar o efeito nem decisão de implementá-lo literalmente.
+## Implementado como rascunho para testes
+- Novas cópias independentes de Follow, Sub e Doação preparadas para canvas transparente 1920×1080, sem modificar as versões aprovadas.
+- Primeira Raid fullscreen em estilo chamada clássica Skype com anéis de conexão, atender automático, nome e contagem via `{name}`/`{count}`; toque clássico configurado pelo usuário no Streamlabs.
+- Orientações para fonte de navegador OBS única 1920×1080 e inclusão em diferentes cenas sem alertas duplicados.
 
-## Considerações técnicas antes da migração
-- Uma fonte Browser Source 1920×1080 **transparente** pode posicionar animações livremente na cena; HTML/CSS/SVG funcionam para elementos leves, e WebM transparente pode ser útil para efeitos complexos e curtos.
-- Interagir visualmente com a webcam exige alinhamento da fonte/OBS e possível definição de pontos-alvo por cena. Interações reais que afetam o OBS/jogo precisam de controle próprio, permissões e medidas de segurança.
-- Para desempenho: evitar animações contínuas em tela cheia, efeitos pesados de blur/WebGL e vídeos permanentemente ativos; carregar efeitos apenas quando houver evento.
-- Criar testes para monitorar impacto em CPU/GPU, estabilidade e sincronização de áudio. Não prometer reação física ao streamer ou ao cenário sem implementação.
-- Pensar em camada de eventos única/compartilhável e layouts por cena; não ampliar escopo antes de finalizar Raid atual e Starting Soon.
+## Backlog pós-validação da primeira versão
+- **Interatividade espacial de verdade:** posicionamento de efeitos conforme a webcam/face/cena, com coordenadas por perfil OBS e possíveis triggers via Streamer.bot/OBS WebSocket.
+- **Referência criativa:** um alerta de raid visto pelo criador que tinha alguém soltando fogo pela boca. É inspiração para explorar, **não decisão de copiar ou implementar exatamente esse efeito**.
+- Explorar entrada de usuários que conversam após raid (não afirmar que são participantes confirmados) — detalhes em [raid-participants.md](raid-participants.md).
+- Se necessário, criar engine centralizada para eventos e variantes; não carregar browser sources/vídeos pesados permanentemente.
 
-## Sequência
-1. **Agora:** Raid estilo chamada do Skype, com toque clássico e tamanho atual suficiente.
-2. **Depois:** Starting Soon como inicialização do programa.
-3. **Futuro:** explorar e implementar alertas 1920×1080 com interatividade gradual.
+## Regras de desempenho e segurança
+- Canvas 1920×1080 **não significa** animação pesada em tela inteira ou aumento das janelas.
+- CSS `transform`/`opacity` e SVG leve para eventos atuais. WebM curto e transparente somente se justificar efeitos complexos.
+- Evitar vídeo permanente 1080p, WebGL, blur full-screen, requestAnimationFrame contínuo e duplicação das fontes de navegador.
+- Nunca colocar credenciais Twitch/Streamlabs no HTML público; passar ações que afetam a máquina/OBS por ferramentas autorizadas e com limites.
+
+## Próxima entrega após testes
+- Validar a Raid e os outros três alertas em 1920×1080 no OBS.
+- Construir **Starting Soon** representando inicialização do Nostalgia.exe, como próxima prioridade definida pelo criador.

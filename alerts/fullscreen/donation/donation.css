@@ -1,0 +1,115 @@
+/* Nostalgia.exe: cheque voador + assistente. Canvas sugerido 750x450. */
+*{box-sizing:border-box}
+html,body,.widget-AlertBox,#wrap,#alert-box,#alert-text-wrap{width:100%;height:100%;margin:0;background:transparent!important;overflow:hidden}
+#alert-box{position:absolute!important;inset:0!important}
+#alert-text-wrap{position:absolute!important;inset:0!important;width:100%!important;height:100%!important}
+#alert-text-wrap{display:flex!important;align-items:center!important;justify-content:center!important;padding:10px!important;transform:none!important}
+#alert-text{position:relative!important;display:block!important;flex:0 1 690px!important;height:auto!important;padding:0!important;width:690px!important;max-width:95vw!important;text-shadow:none!important;transform:none!important;text-align:left!important}
+.donation-stage{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;width:100%;min-height:340px;font-family:Tahoma,"Trebuchet MS",sans-serif;color:#294f72}
+.cheque{position:relative;flex-shrink:0;margin:0 auto;width:490px;max-width:92%;min-height:190px;padding:18px 21px 17px;border:1px solid #8caeb9;border-radius:5px;overflow:hidden;background:repeating-linear-gradient(0deg,rgba(120,179,194,.05) 0 1px,transparent 1px 8px),linear-gradient(133deg,#fbfffd 0%,#e8f8f1 65%,#d5eafb 100%);box-shadow:0 7px 20px rgba(9,35,60,.3),inset 0 0 0 3px rgba(255,255,255,.67);transform-origin:50% 10%;animation:cheque-in 1.15s cubic-bezier(.18,.85,.31,1.2) both}
+.cheque:before{content:"";position:absolute;inset:8px;border:1px solid rgba(65,149,153,.28);pointer-events:none}
+.cheque-header,.cheque-bottom{position:relative;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.cheque-bank{font:700 18px Georgia,serif;letter-spacing:1px;color:#327e97}
+.cheque-id{font:10px Tahoma,sans-serif;color:#7094a2}
+.cheque-label{margin:24px 0 4px;font:700 9px Tahoma,sans-serif;letter-spacing:1px;color:#617d85}
+#alert-message{position:relative;display:block!important;width:100%!important;margin:0!important;padding:0!important;font:700 20px/1.23 Tahoma,sans-serif!important;text-align:left!important;white-space:normal!important;overflow-wrap:anywhere!important;word-break:normal!important;color:#16486b!important;text-shadow:none!important}
+#alert-message span,#alert-message span span{display:inline!important;font:inherit!important;color:inherit!important;white-space:inherit!important;text-shadow:none!important;animation:none!important}
+.cheque-rule{margin:6px 0 12px;border-top:1px solid #77a2ac}
+.cheque-bottom{font:10px "Courier New",monospace;color:#537d8b}
+.cheque-decoration{letter-spacing:2px}
+.paid-stamp{position:absolute;right:10px;top:auto;bottom:29px;transform:rotate(-16deg) scale(2);opacity:0;border:4px double #319d7e;border-radius:4px;padding:8px 11px;font:900 15px Tahoma,sans-serif;color:#238b72;letter-spacing:2px;background:rgba(221,255,237,.26);animation:stamp .42s cubic-bezier(.13,.85,.32,1.18) 1.65s both}
+.assistant{
+  position:relative;width:100%;min-height:142px;
+  display:flex;align-items:flex-end;justify-content:center;gap:10px;
+  padding:8px 10px 0;opacity:0;
+  animation:assistant-show .38s ease-out 1.85s both;
+}
+.clippy {
+  /* Authentic Clippy rest pose: first 124x93 frame in Clippy.JS sprite. */
+  position: relative;
+  flex: 0 0 124px;
+  width: 124px;
+  height: 93px;
+  align-self: flex-end;
+  background-image: url("https://raw.githubusercontent.com/ElliotWood/clippyjs/d88943d529410114c9cea7f01e05de40254cd914/assets/agents/Clippy/map.png");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: auto;
+  image-rendering: auto;
+  filter: drop-shadow(1px 3px 2px rgba(17,37,63,.22));
+}
+.speech{
+  --office-balloon:#ffffd6;
+  position:relative;flex:0 1 420px;min-width:0;
+  padding:14px 17px 16px;
+  margin-bottom:25px;
+  border:1.5px solid #333;
+  border-radius:17px 17px 17px 7px;
+  background:var(--office-balloon);
+  box-shadow:2px 3px 0 rgba(0,0,0,.14);
+  font:14px/1.35 Tahoma,Arial,sans-serif;
+  color:#161616;
+}
+/* Two overlapping triangles create a crisp Office Assistant speech tail. */
+.speech:before,.speech:after{
+  content:"";position:absolute;top:auto;
+  width:0;height:0;background:none;
+}
+.speech:before{
+  left:-24px;bottom:15px;
+  border-top:16px solid transparent;
+  border-right:25px solid #333;
+  border-bottom:2px solid transparent;
+}
+.speech:after{
+  left:-20px;bottom:17px;
+  border-top:13px solid transparent;
+  border-right:23px solid var(--office-balloon);
+  border-bottom:1px solid transparent;
+}
+.speech-title{
+  margin-bottom:8px;
+  font:700 13px Tahoma,Arial,sans-serif;
+  letter-spacing:0;color:#171717;
+}
+#alert-user-message{
+  position:relative;
+  font:14px/1.4 Tahoma,Arial,sans-serif!important;
+  color:#111!important;text-align:left!important;
+  max-height:96px;overflow:hidden;overflow-wrap:anywhere;
+}
+#alert-user-message img{height:1em;vertical-align:middle}
+#speech-fallback{display:none;font:14px/1.4 Tahoma,Arial,sans-serif;color:#111}
+.speech.empty #speech-fallback{display:block}
+.speech.empty #alert-user-message{display:none}
+#alert-image-wrap{display:none!important}
+#alert-box.hidden,.hidden{opacity:0}
+/* Streamlabs may inject transition/animation styles; do not leave Clippy hidden when animations end. */
+.assistant{animation-fill-mode:forwards!important}
+@media(max-height:390px){.donation-stage{min-height:290px;gap:0}.cheque{min-height:165px;padding:12px 17px}.cheque-label{margin-top:14px}.assistant{min-height:112px;padding-top:0}.speech{margin-bottom:10px}}
+@keyframes cheque-in{0%{opacity:0;transform:translateY(-240px) rotate(-13deg)}55%{opacity:1;transform:translateY(10px) rotate(3deg)}77%{transform:translateY(-7px) rotate(-1deg)}100%{opacity:1;transform:translateY(0) rotate(0)}}
+@keyframes stamp{from{transform:rotate(-16deg) scale(2);opacity:0}to{transform:rotate(-16deg) scale(1);opacity:.82}}
+@keyframes assistant-show{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:520px){
+  .cheque{width:94%;padding:14px}
+  .cheque-bank{font-size:15px}
+  #alert-message{font-size:16px!important}
+  .assistant{justify-content:center;gap:5px}
+  .clippy{flex:0 0 124px;width:124px;height:93px;transform:scale(.78);transform-origin:right bottom;margin-left:-20px}
+  .speech{flex:1;max-width:calc(100% - 112px);padding:10px 11px;margin-bottom:20px}
+  .speech-title{font-size:11px}
+  #alert-user-message{font-size:12px!important}
+}
+@media(prefers-reduced-motion:reduce){.cheque,.paid-stamp,.assistant{animation:none;opacity:1}.paid-stamp{transform:rotate(-16deg)}}
+
+/* Full HD variant: render the original widget inside a 1920x1080 transparent
+   browser source, without enlarging its typography. This does not itself
+   implement full-screen interaction. */
+html,body,.widget-AlertBox,#wrap,#alert-box{width:100%!important;height:100%!important;margin:0!important;background:transparent!important;overflow:hidden!important;}
+#alert-box{position:absolute!important;inset:0!important;}
+#alert-text-wrap{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;display:block!important;padding:0!important;background:transparent!important;}
+
+/* Donation is a central cinematic event. Its animation stays inside the
+   full-screen alpha layer while keeping the cheque's original dimensions. */
+#alert-text-wrap{display:flex!important;align-items:center!important;justify-content:center!important;padding:0!important;}
+#alert-text{position:relative!important;width:690px!important;max-width:95vw!important;flex:0 1 690px!important;margin:0!important;padding:0!important;}

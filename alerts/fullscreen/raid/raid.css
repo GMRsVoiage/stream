@@ -1,0 +1,47 @@
+/* Nostalgia.exe — fullscreen Raid; Browser Source MUST be 1920x1080.
+ * Fullscreen transparent layer: visual UI occupies only a limited area.
+ * No external API or full-screen animated background.
+ */
+*{box-sizing:border-box}
+html,body,.widget-AlertBox,#wrap,#alert-box,#alert-text-wrap{margin:0!important;padding:0!important;width:100%!important;height:100%!important;overflow:hidden!important;background:transparent!important}
+#alert-box,#alert-text-wrap{position:absolute!important;inset:0!important}
+#alert-text-wrap{display:block!important}
+#alert-text.raid-layer{position:absolute!important;inset:0!important;display:block!important;width:100%!important;height:100%!important;padding:0!important;margin:0!important;text-shadow:none!important;text-align:left!important}
+.raid-window{position:absolute;z-index:2;top:24%;left:50%;transform:translateX(-50%);width:530px;max-width:88vw;overflow:hidden;border:1px solid #4c91c2;border-radius:11px;font-family:Tahoma,"Trebuchet MS",sans-serif;background:linear-gradient(145deg,#f9ffff 0%,#e1f5ff 55%,#dde3fc 100%);box-shadow:inset 0 0 0 1px #fff,0 13px 48px rgba(0,35,85,.4);animation:raid-enter .6s cubic-bezier(.16,.89,.29,1.13) both}
+.raid-titlebar{height:38px;display:flex;align-items:center;gap:10px;padding:0 13px;font:700 13px Tahoma,sans-serif;color:white;text-shadow:0 1px #195c93;background:linear-gradient(#b4ecff,#77c6ee 13%,#318bcb 50%,#1c67ac 53%,#317ebb)}
+.raid-app-icon{width:21px;height:21px;display:grid;place-items:center;border:1px solid #d7f8ff;border-radius:8px;background:linear-gradient(#7bdcf5,#218cbe);font:bold 14px Tahoma}
+.raid-title-controls{margin-left:auto;font:700 13px Arial;color:#f8ffff}
+.raid-body{position:relative;display:flex;flex-direction:column;align-items:center;padding:20px 22px 28px;background:radial-gradient(ellipse at 50% 10%,rgba(255,255,255,.98),transparent 66%)}
+.raid-headline{font:700 12px Tahoma;color:#4383b2;letter-spacing:2px}
+.raid-avatar{width:115px;height:115px;margin:15px 0 8px;position:relative;overflow:hidden;border:5px solid #fff;border-radius:50%;background:linear-gradient(140deg,#86dcf2,#7ab8e7 58%,#a99ae7);box-shadow:0 1px 0 #c2ecf9 inset,0 0 0 1px #70b9dc,0 5px 14px #7aaccf5c}
+.raid-avatar-head{position:absolute;left:38px;top:19px;width:31px;height:32px;background:linear-gradient(#fff,#d1f4fa);border-radius:50%}
+.raid-avatar-body{position:absolute;left:17px;top:60px;width:72px;height:60px;background:linear-gradient(#fff,#d4f5fb);border-radius:50% 50% 0 0}
+#alert-message{width:100%!important;max-width:100%!important;margin:0!important;padding:0!important;font:700 27px/1.2 Tahoma,sans-serif!important;color:#2073a7!important;text-align:center!important;overflow-wrap:anywhere!important;text-shadow:0 1px white!important}
+#alert-message span,#alert-message span span{font:inherit!important;color:inherit!important;animation:none!important;text-shadow:none!important}
+.raid-source{display:block!important;font:700 27px/1.2 Tahoma,sans-serif!important;color:#2073a7!important;overflow-wrap:anywhere!important}
+.raid-count{display:none!important}
+.raid-calling{font:14px/1.4 Tahoma;color:#5c7793;text-align:center;margin-top:8px}
+.raid-count-readout{color:#3f65aa}
+.raid-actions{display:flex;justify-content:center;gap:80px;margin-top:22px}
+.raid-action{display:flex;align-items:center;flex-direction:column;gap:6px;font:12px Tahoma;color:#55728e}
+.raid-action>span{display:grid;place-items:center;width:54px;height:43px;border:1px solid #ffffffcf;border-radius:19px;color:white;font:700 25px Arial;box-shadow:0 2px 7px #28527650}
+.raid-reject>span{background:linear-gradient(#f6a1aa,#d95170)}
+.raid-accept>span{background:linear-gradient(#baf7b8,#49be87)}
+.raid-accept{animation:raid-pulse .66s ease-in-out 3 alternate 1s}
+.raid-connected{position:absolute;inset:auto 16px 19px;padding:10px 6px;border-radius:6px;background:#e9fff0;color:#298b63;font:700 13px Tahoma;text-align:center;opacity:0;animation:raid-connect .5s ease 4.25s both}
+.raid-footer{border-top:1px solid #c3e3f2;padding:10px 12px;background:linear-gradient(90deg,#d4f6fd,#e9e4fc);font:11px Tahoma;color:#587e9d}
+.raid-footer span{color:#9178cf;margin:0 6px}
+.raid-signal{position:absolute;inset:0;pointer-events:none}
+.raid-signal span{position:absolute;left:50%;top:47%;height:200px;width:200px;border:2px solid rgba(73,180,239,.19);border-radius:50%;transform:translate(-50%,-50%) scale(.35);opacity:0;animation:raid-ring 3.2s ease-out 1 both}
+.raid-signal span:nth-child(2){animation-delay:.55s}.raid-signal span:nth-child(3){animation-delay:1.1s}
+.raid-welcome{position:absolute;z-index:3;left:50%;top:77%;width:max-content;max-width:90vw;transform:translate(-50%,15px);opacity:0;display:flex;flex-direction:column;align-items:center;gap:5px;font:700 12px Tahoma;color:#fff;text-shadow:0 1px 5px #15377c;animation:raid-welcome 1s ease 4.8s both}
+.raid-welcome strong{font:700 32px Tahoma;color:#dbf7ff;text-shadow:0 0 9px #237fc0,0 3px 8px #28427c}
+@keyframes raid-enter{from{opacity:0;transform:translate(-50%,-160px) scale(.91)}to{opacity:1;transform:translate(-50%,0) scale(1)}}
+@keyframes raid-ring{0%{opacity:.75;transform:translate(-50%,-50%) scale(.4)}100%{opacity:0;transform:translate(-50%,-50%) scale(5)}}
+@keyframes raid-pulse{from{filter:brightness(1)}to{filter:brightness(1.27)}}
+@keyframes raid-connect{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes raid-welcome{to{opacity:1;transform:translate(-50%,0)}}
+#alert-image-wrap,#alert-user-message{display:none!important}
+#alert-box.hidden,.hidden{opacity:0!important}
+@media(max-width:800px){.raid-window{width:450px;top:16%}.raid-welcome{top:86%}}
+@media(prefers-reduced-motion:reduce){.raid-window,.raid-signal span,.raid-accept,.raid-connected,.raid-welcome{animation:none!important}.raid-window{opacity:1}.raid-connected,.raid-welcome{opacity:1}}

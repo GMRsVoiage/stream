@@ -1,0 +1,27 @@
+<!-- Streamlabs Raid message template: <span class="raid-source">{name}</span><span class="raid-count">{count}</span> -->
+<div id="alert-image-wrap" style="display:none"><div id="alert-image">{img}</div></div>
+<div id="alert-text-wrap">
+  <div id="alert-text" class="raid-layer">
+    <div class="raid-signal" aria-hidden="true"><span></span><span></span><span></span></div>
+    <section class="raid-window" role="status" aria-label="Chamada recebida">
+      <header class="raid-titlebar">
+        <span class="raid-app-icon">S</span>
+        <span>Nostalgia.exe — Chamadas</span>
+        <span class="raid-title-controls" aria-hidden="true">— &nbsp; □ &nbsp; ×</span>
+      </header>
+      <div class="raid-body">
+        <div class="raid-headline">CHAMADA RECEBIDA</div>
+        <div class="raid-avatar" aria-hidden="true"><span class="raid-avatar-head"></span><span class="raid-avatar-body"></span></div>
+        <div id="alert-message">{messageTemplate}</div>
+        <div class="raid-calling">está chamando você e trouxe <strong class="raid-count-readout">uma comunidade</strong></div>
+        <div class="raid-actions" aria-hidden="true">
+          <div class="raid-action raid-reject"><span>✕</span><small>Recusar</small></div>
+          <div class="raid-action raid-accept"><span>☎</span><small>Atender</small></div>
+        </div>
+        <div class="raid-connected">CHAMADA ATENDIDA — SEJAM BEM-VINDOS!</div>
+      </div>
+      <footer class="raid-footer">Nostalgia.exe <span>•</span> Modo chamada coletiva</footer>
+    </section>
+    <div class="raid-welcome" aria-hidden="true"><span>CONEXÃO ESTABELECIDA</span><strong>Bem-vindos à live!</strong></div>
+  </div>
+</div>

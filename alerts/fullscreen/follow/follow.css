@@ -1,0 +1,161 @@
+/* Nostalgia.exe • Follow • Frutiger Aero / Web 2000
+   Designed for Streamlabs Alert Box. Follow message template: {name}.
+   The preview's dark background is not part of this widget.
+*/
+:root {
+  --aero-sky: #91dcf4;
+  --aero-deep: #1977b4;
+  --aero-border: #61add1;
+  --aero-ink: #25506d;
+  --vapor-lilac: #9b80d6;
+}
+* { box-sizing: border-box; }
+html, body, .widget-AlertBox {
+  width: 100%; height: 100%; margin: 0; overflow: hidden;
+  background: transparent !important;
+}
+#alert-box, #alert-text-wrap {
+  position: relative; width: 100%; height: 100%;
+  background: transparent;
+}
+#alert-text-wrap {
+  display: flex; justify-content: center; align-items: center; padding: 10px;
+}
+#alert-text {
+  display: block !important; position: relative; z-index: 2;
+  /* Reserve the full window width: Streamlabs text settings can narrow #alert-text. */
+  width: 358px !important; max-width: calc(100vw - 20px) !important;
+  min-width: 0 !important; padding: 0 !important;
+  text-shadow: none !important; text-align: left !important;
+}
+.gmrs-follow-window {
+  width: 100%; min-width: 0;
+  overflow: hidden; isolation: isolate;
+  border: 1px solid var(--aero-border);
+  border-radius: 9px;
+  background: linear-gradient(155deg,
+    rgba(255,255,255,.99) 0%, rgba(242,252,255,.98) 48%,
+    rgba(219,240,254,.98) 100%);
+  box-shadow: 0 0 0 1px rgba(255,255,255,.85) inset,
+    0 3px 0 rgba(255,255,255,.4) inset,
+    0 7px 22px rgba(11,59,104,.20),
+    0 1px 3px rgba(26,79,125,.22);
+  font-family: Tahoma, "Trebuchet MS", sans-serif;
+  color: var(--aero-ink);
+}
+.gmrs-titlebar {
+  height: 28px; padding: 0 9px;
+  display: flex; align-items: center; gap: 5px;
+  border-bottom: 1px solid rgba(54,126,174,.7);
+  color: #fff;
+  font-size: 10px; font-weight: 700;
+  background: linear-gradient(180deg,
+    #c0f3fd 0%, #7ad2ee 8%, #3ca4d2 42%,
+    #2588bf 50%, #1974ad 100%);
+  text-shadow: 0 1px 1px rgba(12,71,116,.52);
+}
+.gmrs-app-dot {
+  width: 9px; height: 9px; border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.85);
+  background: radial-gradient(circle at 30% 25%, #fff 0%, #d9ffdc 20%, #62da92 45%, #179461 95%);
+  box-shadow: 0 0 3px rgba(255,255,255,.7);
+}
+.gmrs-app-name { letter-spacing: .1px; }
+.gmrs-title-separator { opacity: .55; padding: 0 1px; }
+.gmrs-window-controls { margin-left: auto; display: flex; gap: 4px; }
+.gmrs-window-controls i {
+  display: flex; align-items: center; justify-content: center;
+  width: 15px; height: 15px; font: 700 11px Arial, sans-serif;
+  font-style: normal; line-height: 1;
+  color: #e5f9ff; border-radius: 3px;
+  border: 1px solid rgba(239,253,255,.64);
+  background: linear-gradient(#9fdcf4, #519acb 55%, #2e74a9);
+  box-shadow: 0 1px 1px rgba(20,57,92,.2);
+}
+.gmrs-window-controls i:last-child {
+  background: linear-gradient(#f8c4da, #d58dbc 55%, #a26aa9);
+}
+.gmrs-content {
+  position: relative; display: flex; align-items: center; gap: 11px;
+  padding: 12px 13px 9px; min-height: 80px;
+}
+.gmrs-content::before {
+  content: ""; position: absolute; inset: 0 0 auto; height: 22px;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(255,255,255,.83), rgba(255,255,255,0));
+}
+.gmrs-avatar-frame {
+  position: relative; width: 58px; height: 58px; flex: 0 0 58px;
+  border: 1px solid #69b5d5; border-radius: 7px; padding: 4px;
+  background: linear-gradient(145deg, #fff 0%, #ecfbff 58%, #c6eaf9 100%);
+  box-shadow: inset 0 1px #fff, 0 1px 4px rgba(26,95,149,.18);
+}
+.gmrs-avatar { display:block; width:100%; height:100%; object-fit:contain; }
+.gmrs-online {
+  position:absolute; right:-3px; bottom:-3px; width:13px; height:13px;
+  border-radius:50%; border:2px solid #fff;
+  background:radial-gradient(circle at 35% 20%, #ceffc0, #62d762 53%, #258d4a);
+  box-shadow:0 1px 3px rgba(25,82,55,.2);
+}
+.gmrs-follow-copy {
+  position: relative; min-width: 0; flex: 1 1 auto;
+  /* Do not let Streamlabs text controls shrink the name to single letters. */
+  width: calc(100% - 69px);
+  overflow: hidden;
+}
+.gmrs-eyebrow {
+  margin: 0 0 4px;
+  font: 700 9px Tahoma, sans-serif;
+  color: #657caa; letter-spacing: .8px;
+}
+#alert-message {
+  display: block !important;
+  width: 100% !important; min-width: 0 !important; max-width: 100% !important;
+  margin: 0 !important; padding: 0 !important;
+  color: #246f9f !important;
+  font: 700 19px/1.2 Tahoma, "Trebuchet MS", sans-serif !important;
+  text-shadow: 0 1px 0 #fff !important;
+  text-align: left !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+  text-overflow: ellipsis !important;
+}
+/* Streamlabs sometimes inserts several nested spans, each with its own styles. */
+#alert-message span, #alert-message span span {
+  display: inline !important;
+  position: static !important;
+  width: auto !important;
+  max-width: none !important;
+  margin: 0 !important; padding: 0 !important;
+  font: inherit !important; color: inherit !important;
+  text-shadow: inherit !important;
+  letter-spacing: normal !important;
+  white-space: inherit !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+  animation: none !important;
+}
+.gmrs-subtitle { margin-top: 3px; font-size: 11px; color: #485e75; }
+.gmrs-footer {
+  display:flex; align-items:center; gap:6px; min-height:20px;
+  padding:3px 11px 5px;
+  border-top:1px solid rgba(126,178,213,.25);
+  background: linear-gradient(90deg, rgba(218,245,251,.75), rgba(235,224,251,.64));
+  color:#65849a; font:10px Tahoma, sans-serif;
+}
+.gmrs-footer-dot { width:6px; height:6px; background:#57ca7e; border-radius:50%; }
+.gmrs-footer-divider { color:var(--vapor-lilac); }
+#alert-image-wrap, #alert-user-message { display:none !important; }
+#alert-box.hidden, .hidden { opacity: 0; }
+
+/* Full HD variant: render the original widget inside a 1920x1080 transparent
+   browser source, without enlarging its typography. This does not itself
+   implement full-screen interaction. */
+html,body,.widget-AlertBox,#wrap,#alert-box{width:100%!important;height:100%!important;margin:0!important;background:transparent!important;overflow:hidden!important;}
+#alert-box{position:absolute!important;inset:0!important;}
+#alert-text-wrap{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;display:block!important;padding:0!important;background:transparent!important;}
+
+#alert-text{position:absolute!important;left:72px!important;bottom:78px!important;top:auto!important;right:auto!important;width:358px!important;max-width:calc(100% - 144px)!important;margin:0!important;padding:0!important;}
+@media(max-width:600px){#alert-text{left:18px!important;bottom:20px!important;max-width:calc(100% - 36px)!important;}}
