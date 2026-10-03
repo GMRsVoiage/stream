@@ -13,7 +13,8 @@ html,body{width:100%;height:100%;margin:0;background:transparent!important;overf
 .voya-world{position:relative;width:100vw;height:100vh;overflow:hidden;background:transparent;pointer-events:none}
 .voya-character{
   position:absolute;left:0;top:0;
-  height:15.5%;width:auto;
+  /* Four times the previous 15.5% height. Individual blue Buddy only. */
+  height:62%;width:auto;
   transform:translate(-50%,-100%);transform-origin:50% 100%;
   pointer-events:none;
   transition:left 3s linear,top 3s linear;
@@ -22,7 +23,7 @@ html,body{width:100%;height:100%;margin:0;background:transparent!important;overf
 .voya-character img{display:block;height:100%;width:auto;object-fit:contain}
 .voya-character::after{
   content:"";position:absolute;left:50%;bottom:-2px;
-  width:42%;height:5px;border-radius:50%;transform:translateX(-50%);
+  width:42%;height:8px;border-radius:50%;transform:translateX(-50%);
   background:rgba(54,34,92,.25);
 }
 .voya-character[hidden],.voya-debug[hidden],.voya-marker[hidden],.voya-debug-note[hidden]{display:none!important}

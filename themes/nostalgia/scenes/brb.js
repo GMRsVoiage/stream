@@ -17,10 +17,12 @@
     [500,765],[1015,747],[1275,777],[1510,819],[1575,875],
     [1460,942],[1165,1000],[740,995],[490,891],[452,836]
   ];
-  // Loop within the middle/front-left of the rug. Avoid scenery and chat.
+  // Much larger (4×) character: constrain CENTER movement to left/middle rug.
+  // The 62vh sprite extends sideways and upwards from its foot anchor.
+  // Limiting x prevents the enlarged body from covering the right-hand chat.
   const ROUTE = [
-    [750,905],[900,895],[1040,900],[1190,922],
-    [1060,953],[880,947],[680,901]
+    [660,895],[740,890],[820,900],[850,930],
+    [750,940],[650,910]
   ];
   const place = (node, point) => {
     node.style.left = point[0] / 1920 * 100 + "%";
@@ -64,7 +66,7 @@
   // An explicit sprite may be supplied as a relative same-origin file.
   // Without one, use an existing PUBLIC buddy graphic from the repository.
   const override = params.get("sprite");
-  let sprite = "../../../buddy/viewer_idle.svg";
+  let sprite = "./assets/buddy-blue-solo.svg";
   if(override){
     try {
       const proposed = new URL(override, location.href);

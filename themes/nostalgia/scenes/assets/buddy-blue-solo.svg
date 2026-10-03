@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="35 13 96 110" role="img" aria-label="Buddy azul individual">
+<defs>
+<linearGradient id="body" x1="0" y1="0" x2=".82" y2="1"><stop stop-color="#c2f5ff"/><stop offset=".40" stop-color="#49afea"/><stop offset="1" stop-color="#1459b7"/></linearGradient>
+<radialGradient id="head" cx=".26" cy=".12" r=".96"><stop stop-color="#e2fcff"/><stop offset=".33" stop-color="#68caff"/><stop offset="1" stop-color="#1774ca"/></radialGradient>
+</defs>
+<!-- Single MSN-inspired figure, separate from the preexisting two-user Buddy icon. -->
+<path d="M39 108c0-28 19-44 44-44s44 16 44 44v10H39z" fill="url(#body)" stroke="#12559d" stroke-width="3.2" stroke-linejoin="round"/>
+<circle cx="83" cy="43" r="27" fill="url(#head)" stroke="#12559d" stroke-width="3.2"/>
+<path d="M54 108C54 88 64 77 82 76" fill="none" stroke="#efffff" stroke-opacity=".78" stroke-width="4.6" stroke-linecap="round"/>
+<path d="M69 31c4-6 10-9 18-9" fill="none" stroke="white" stroke-opacity=".85" stroke-width="5" stroke-linecap="round"/>
+</svg>
