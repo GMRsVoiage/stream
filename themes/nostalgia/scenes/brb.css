@@ -13,8 +13,8 @@ html,body{width:100%;height:100%;margin:0;background:transparent!important;overf
 .voya-world{position:relative;width:100vw;height:100vh;overflow:hidden;background:transparent;pointer-events:none}
 .voya-character{
   position:absolute;left:0;top:0;
-  /* Full-body redraw: taller proportions without enlarging the entire icon. */
-  height:30%;width:auto;
+  /* Small, single classic Buddy icon, not a stretched or full-body drawing. */
+  height:15.5%;width:auto;
   transform:translate(-50%,-100%);transform-origin:50% 100%;
   pointer-events:none;
   transition:left 3s linear,top 3s linear;
