@@ -19,3 +19,8 @@
 7. Fonte de navegador no OBS: dimensões suficientes (recomendação a partir de 750×450) para evitar corte. Confirme no teste que o Clippy aparece: a imagem depende de carregamento de sprite externo.\n8. Fonte do sprite: [ElliotWood/clippyjs Clippy](https://github.com/ElliotWood/clippyjs/tree/master/assets/agents/Clippy), originalmente extraído do assistente Microsoft Office. O código da biblioteca Clippy.JS é MIT; isso não é, por si só, licença de marca/personagem. O proprietário do canal informou ter autorização para uso e deve manter os termos correspondentes.
 
 O código não representa banco real: cheque fictício e números decorativos, sem código de barras utilizável.
+
+## OBS — posicionamento e recorte (correção posterior)
+- A prévia mostrou o cheque encostado no topo da fonte e não exibiu o assistente no instante da captura. O layout agora **centraliza o conjunto no canvas** e antecipa a entrada de Clippy para 1,85s. O cheque não deve cobrir o nome com o carimbo.
+- Nas propriedades da fonte de navegador: usar **800×600**, sem recorte (crop) nem filtros de corte inicialmente, depois redimensionar o conjunto no OBS. Pode colocar a fonte em outra resolução, desde que mantenha espaço suficiente para cheque e balão.
+- Se o recorte persistir: **Transformar → Redefinir transformação**, confirmar dimensões na fonte de navegador, desativar temporariamente filtro Crop/Pad e testar após esperar **pelo menos 3 segundos**. Não confundir o limite vermelho do OBS com as dimensões CSS originais, pois o OBS pode estar escalando a fonte.
