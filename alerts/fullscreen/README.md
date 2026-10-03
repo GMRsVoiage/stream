@@ -11,10 +11,10 @@
 
 ## Arquivos
 
-- [Follow](follow/follow.html) — janela Messenger compacta, canto inferior esquerdo da tela, + [CSS](follow/follow.css) + [JS](follow/follow.js).
-- [Sub](sub/sub.html) — instalador compacto, canto inferior esquerdo, + [CSS](sub/sub.css) + [JS](sub/sub.js).
-- [Doação](donation/donation.html) — cheque voador central com sprite original do Clippy, + [CSS](donation/donation.css) + [JS](donation/donation.js).
-- [Raid](raid/raid.html) — **novo**: chamada recebida inspirada no Skype clássico, com anéis de chamada expandindo na tela, atender automático e texto de boas-vindas, + [CSS](raid/raid.css) + [JS](raid/raid.js).
+- [Follow](follow/follow.html) — Messenger aparece no centro e reduz até o canto inferior esquerdo, + [CSS](follow/follow.css) + [JS](follow/follow.js).
+- [Sub](sub/sub.html) — instalador abre no centro, depois reduz até o canto inferior esquerdo, + [CSS](sub/sub.css) + [JS](sub/sub.js).
+- [Doação](donation/donation.html) — cheque voador + Clippy aparecem no centro, depois o conjunto reduz até o canto inferior esquerdo, + [CSS](donation/donation.css) + [JS](donation/donation.js).
+- [Raid](raid/raid.html) — Nostalgia Call: notificação no canto inferior direito, cursor fictício, janela central que reduz para o canto superior esquerdo **antes** do atendimento automático, + [CSS](raid/raid.css) + [JS](raid/raid.js).
 
 ## Configuração por tipo no Streamlabs
 
@@ -24,7 +24,7 @@ Ativar Custom HTML/CSS/JS em cada tipo **apenas após salvar uma cópia de seus 
 | --- | --- | --- | --- | --- |
 | Follow | `{name}` | 0 s | 6 s | atual aprovado |
 | Sub básico | `{name}` | 0 s | 7 s | Windows 7 Balloon aprovado |
-| Doação | `{name} doou {amount}!` | 0 s | 10 s | escolher |
+| Doação | `{name} doou {amount}!` | 0 s | **12 s** | escolher |
 | Raid | `<span class="raid-source">{name}</span><span class="raid-count">{count}</span>` | 0 s | 9–11 s | **toque de chamada Skype clássico** |
 
 A documentação oficial Streamlabs informa `{name}` e `{count}` para Raid e permite HTML no modelo da mensagem. A Raid não usa EventSub nem lista indivíduos da Raid.
@@ -43,7 +43,13 @@ O áudio da Raid fica configurado **somente no campo de som do Streamlabs**. Nã
 
 - **Não mover automaticamente os alertas existentes.** Reversão: recolocar os arquivos anteriores por tipo no Streamlabs.
 - As versões Full HD preservam o design aprovado; não pressupor que já foi testado no OBS.
-- O posicionamento atualmente escolhido é Follow/Sub no canto inferior esquerdo e Doação central, enquanto Raid entra ao centro. Coordenadas serão adaptadas depois ao layout final do OBS para não cobrir chat/webcam.
+- **Fluxos implementados nesta versão (pendentes de teste no OBS):** Raid notificação → centro → **canto superior esquerdo** → atender (11 s); Follow centro → canto inferior esquerdo (6 s); Sub centro → canto inferior esquerdo (7 s); Doação centro até Clippy e carimbo → canto inferior esquerdo (12 s). Para ajustar os docks a cada cena, editar os keyframes do CSS antes de usar em produção. Sem nova automação de OBS.
 - Recursos de raid com participantes identificados e efeitos interagindo com a webcam continuam em backlog, não estão implementados.
 
 Referência oficial: https://support.streamlabs.com/hc/en-us/articles/360007779154-Message-Template-Parameters-for-Alert-Box-Widget-on-Streamlabs-Twitch-and-Youtube
+
+## Padrão aprovado: centro → canto → conclusão
+
+A janela é exibida brevemente no centro para anunciar o evento. Depois, o contêiner inteiro diminui com CSS e segue para uma posição lateral, mantendo o gameplay livre. Somente então ocorre a ação final, quando aplicável. Nenhum dos widgets move o cursor real ou controla o OBS.
+
+**Observação:** a duração de 12 s da Doação substitui a sugestão anterior de 10 s. Todos os efeitos ainda dependem de teste real no Streamlabs/OBS.

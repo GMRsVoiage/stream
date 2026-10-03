@@ -1,11 +1,18 @@
 # Backlog — alertas em 1920 × 1080 e interatividade
 
-**Status em 2026-10-03:** usuário antecipou a migração para AGORA. **Primeira versão 1920×1080 criada**, ainda aguardando testes no Streamlabs/OBS e não aprovada como concluída. Instruções em [alerts/fullscreen/README.md](../alerts/fullscreen/README.md).
+**Status em 2026-10-03:** usuário antecipou a migração para AGORA. **Versões 1920×1080 e fluxos centro → canto implementados**, ainda aguardando testes no Streamlabs/OBS e não aprovados como concluídos. Instruções em [alerts/fullscreen/README.md](../alerts/fullscreen/README.md).
 
 ## Implementado como rascunho para testes
 - Novas cópias independentes de Follow, Sub e Doação preparadas para canvas transparente 1920×1080, sem modificar as versões aprovadas.
 - Primeira Raid fullscreen em estilo chamada clássica Skype com anéis de conexão, atender automático, nome e contagem via `{name}`/`{count}`; toque clássico configurado pelo usuário no Streamlabs.
 - Orientações para fonte de navegador OBS única 1920×1080 e inclusão em diferentes cenas sem alertas duplicados.
+
+## Implementação dos novos fluxos (2026-10-03)
+- Raid: notificação → clique fictício → chamada central → reduz e vai ao canto superior esquerdo → atende.
+- Follow: Messenger central → reduz e segue para canto inferior esquerdo.
+- Sub: instalador central → reduz sem reiniciar a barra e segue para canto inferior esquerdo.
+- Doação: cheque central + carimbo + Clippy → reduz como conjunto e segue para canto inferior esquerdo.
+- Não foram alterados os códigos legados fora de `alerts/fullscreen/`; migração para Streamlabs deve ocorrer apenas após teste.
 
 ## Backlog pós-validação da primeira versão
 - **Direção aprovada:** efeitos especiais podem ocupar o canvas inteiro de 1920×1080 e percorrer suas bordas. A referência mencionada pelo criador não interagia com a webcam; **interação com webcam não é requisito**.
