@@ -1,0 +1,80 @@
+/*
+ * Nostalgia Cam v1 — Windows XP/7 + subtle CRT enclosure.
+ * Browser Source 1920x1080; position at 0,0 in nested OBS WEBCAM scene.
+ * Fully transparent camera viewport, no JavaScript, video effects or animations.
+ * Border/titlebar/chin OVERLAY the outermost webcam pixels; do not scale or stretch the feed.
+ */
+:root {
+  --edge: 17px;                /* Outer edge overlaid on the camera */
+  --title-height: 39px;        /* Top overlay band */
+  --chin-height: 48px;         /* Bottom overlay band */
+  --aero-light: #edfaff;
+  --aero-cyan: #86d8f6;
+  --vapor-lilac: #bc9cde;
+  --vapor-pink: #e5a1d9;
+  --ink: #4c4e85;
+}
+* { box-sizing: border-box; }
+html, body { width:100%;height:100%;margin:0;overflow:hidden;background:transparent!important; }
+body { font-family:Tahoma,"Trebuchet MS",sans-serif; }
+.cam-root { position:relative;width:100vw;height:100vh;background:transparent;overflow:hidden;pointer-events:none; }
+
+/* A narrow physical monitor casing. The feed is NOT masked or filtered. */
+.cam-bezel {
+  position:absolute;inset:0;
+  border:var(--edge) solid rgba(186,220,241,.96);
+  border-top-color:#def7ff;
+  border-left-color:#e0f7fc;
+  border-right-color:#b7a6d7;
+  border-bottom-color:#baa2d5;
+  border-radius:42px;
+  box-shadow:
+    inset 0 0 0 3px rgba(247,253,255,.8),
+    inset 0 0 0 6px rgba(41,61,99,.24),
+    inset 0 0 20px rgba(14,23,55,.30),
+    0 0 0 2px #786ca3;
+  background:transparent;
+}
+.cam-highlight { position:absolute;inset:2px;pointer-events:none;border-radius:40px;border:2px solid rgba(255,255,255,.68);border-bottom-color:rgba(255,255,255,.12);background:transparent; }
+.cam-titlebar {
+  position:absolute;top:var(--edge);left:var(--edge);right:var(--edge);
+  height:var(--title-height);display:flex;align-items:center;gap:11px;padding:0 15px;
+  color:#fff;font-size:19px;
+  background:linear-gradient(180deg,#edfaff 0%,#aedff9 9%,#8ec4e8 39%,#5d91c7 49%,#637cb7 51%,#816eae 100%);
+  border-bottom:2px solid #d8f7ff;
+  text-shadow:0 1px 1px #464477;
+}
+.cam-appicon{width:26px;height:26px;display:grid;place-items:center;border-radius:6px;border:1px solid #effcff;color:#3273a3;font:bold 19px Tahoma,sans-serif;text-shadow:0 1px #fff;background:linear-gradient(145deg,#faffff,#aee4fb 55%,#d6c2ed);}
+.cam-title{font-weight:bold;white-space:nowrap;}
+.cam-divider{height:17px;width:1px;background:rgba(255,255,255,.7);}
+.cam-brand{font-size:15px;color:#f4edff;white-space:nowrap;}
+.cam-spacer{flex:1;}
+.cam-controls{display:flex;gap:4px;align-items:center;}
+.cam-controls i{display:grid;place-items:center;width:28px;height:23px;border:1px solid rgba(255,255,255,.7);border-radius:4px;background:linear-gradient(#cceafb,#7da9cf 55%,#6676ac);font:700 16px Arial,sans-serif;font-style:normal;box-shadow:inset 0 1px rgba(255,255,255,.8);}
+.cam-controls i:last-child{background:linear-gradient(#ffdaea,#dd9fc5 55%,#ab83ae);}
+.cam-corner{position:absolute;width:32px;height:32px;border-color:rgba(246,252,255,.9);border-style:solid;border-width:0;pointer-events:none;}
+.cam-corner--tl{top:var(--edge);left:var(--edge);border-top-width:3px;border-left-width:3px;border-top-left-radius:21px;}
+.cam-corner--tr{top:var(--edge);right:var(--edge);border-top-width:3px;border-right-width:3px;border-top-right-radius:21px;}
+.cam-corner--bl{bottom:var(--edge);left:var(--edge);border-bottom-width:3px;border-left-width:3px;border-bottom-left-radius:21px;}
+.cam-corner--br{bottom:var(--edge);right:var(--edge);border-bottom-width:3px;border-right-width:3px;border-bottom-right-radius:21px;}
+.cam-chin{
+  position:absolute;left:var(--edge);right:var(--edge);bottom:var(--edge);
+  height:var(--chin-height);
+  display:flex;align-items:center;gap:16px;padding:0 20px;
+  background:linear-gradient(180deg,#f2f9ff,#c3e2f6 36%,#c4cbe9 69%,#b2a2ce 100%);
+  color:var(--ink);border-top:2px solid rgba(255,255,255,.9);
+  font-size:17px;font-weight:bold;text-shadow:0 1px #fff;
+}
+.cam-chin__accent{position:absolute;left:0;top:0;right:0;height:3px;background:linear-gradient(90deg,var(--aero-cyan),var(--vapor-lilac),var(--vapor-pink),var(--aero-cyan));}
+.cam-chin__left{display:flex;align-items:center;gap:10px;white-space:nowrap;}
+.cam-led{height:13px;width:13px;flex:none;border-radius:50%;border:1px solid #26744a;background:radial-gradient(circle at 32% 23%,#efffe3,#81e59e 37%,#32a86c 78%);box-shadow:0 0 3px rgba(74,182,109,.65);}
+.cam-chin__center{position:absolute;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:9px;font-size:16px;color:#7c67a3;white-space:nowrap;}
+.cam-button{width:17px;height:17px;border:2px solid white;border-radius:50%;background:linear-gradient(#e4cff1,#ae87d5);box-shadow:0 1px 3px #8573a8;}
+.cam-chin__right{margin-left:auto;font:14px Consolas,"Courier New",monospace;white-space:nowrap;}
+/* CSS pixel dimensions deliberately defined for a full-HD independent OBS source.
+   OBS scales the completed nested WEBCAM scene, including camera and frame, as one unit. */
+@media (max-width:800px) {
+  .cam-titlebar{font-size:clamp(8px,1.1vw,19px);}
+  .cam-brand,.cam-chin__center,.cam-chin__right{display:none;}
+  .cam-chin{font-size:clamp(8px,1vw,17px);}
+}

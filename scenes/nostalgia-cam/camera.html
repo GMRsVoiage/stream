@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nostalgia Cam — GMRsVoiage</title>
+  <link rel="stylesheet" href="./camera.css">
+</head>
+<body>
+  <!-- Browser Source overlay 1920x1080, transparent. Camera feed is an OBS video source BELOW this one. -->
+  <main class="cam-root" aria-label="Nostalgia Cam">
+    <div class="cam-bezel" aria-hidden="true"></div>
+    <div class="cam-highlight" aria-hidden="true"></div>
+
+    <header class="cam-titlebar" aria-label="Nostalgia Cam">
+      <span class="cam-appicon" aria-hidden="true">N</span>
+      <span class="cam-title">Nostalgia Cam</span>
+      <span class="cam-divider" aria-hidden="true"></span>
+      <span class="cam-brand">GMRsVoiage</span>
+      <span class="cam-spacer"></span>
+      <span class="cam-controls" aria-hidden="true"><i>_</i><i>□</i><i>×</i></span>
+    </header>
+
+    <!-- No webcam image here: entire middle is fully transparent. -->
+    <div class="cam-corner cam-corner--tl" aria-hidden="true"></div>
+    <div class="cam-corner cam-corner--tr" aria-hidden="true"></div>
+    <div class="cam-corner cam-corner--bl" aria-hidden="true"></div>
+    <div class="cam-corner cam-corner--br" aria-hidden="true"></div>
+
+    <footer class="cam-chin" aria-label="Barra de status">
+      <div class="cam-chin__accent" aria-hidden="true"></div>
+      <div class="cam-chin__left"><span class="cam-led" aria-hidden="true"></span><span>LIVE · CAMERA ONLINE</span></div>
+      <div class="cam-chin__center"><span class="cam-button" aria-hidden="true"></span><span>Nostalgia.exe</span></div>
+      <span class="cam-chin__right">1920 × 1080</span>
+    </footer>
+  </main>
+</body>
+</html>
