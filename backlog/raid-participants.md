@@ -6,6 +6,7 @@
 - Próximo alerta a construir: Raid inspirada em **chamada recebida do Skype clássico**, reinterpretada no Nostalgia.exe / Frutiger Aero.
 - Mostrar nome do streamer que iniciou a raid e o total de espectadores informado pela Twitch/Streamlabs.
 - Simular interface de chamada recebida, botão de atender e boas-vindas, sem afirmar conhecer a identidade de todos os espectadores.
+- **Som aprovado:** toque clássico de chamada recebida do Skype (o criador afirmou possuir autorização para usar esses materiais). Configurar o áudio no Streamlabs; evitar reprodução simultânea pelo código para não duplicar o toque.
 - Após a Raid, a próxima prioridade escolhida pelo criador é **Starting Soon**.
 
 ## Backlog — contatos que aparecem após Raid
