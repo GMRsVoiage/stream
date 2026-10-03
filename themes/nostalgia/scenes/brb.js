@@ -17,9 +17,8 @@
     [500,765],[1015,747],[1275,777],[1510,819],[1575,875],
     [1460,942],[1165,1000],[740,995],[490,891],[452,836]
   ];
-  // Much larger (4×) character: constrain CENTER movement to left/middle rug.
-  // The 62vh sprite extends sideways and upwards from its foot anchor.
-  // Limiting x prevents the enlarged body from covering the right-hand chat.
+  // Tall single Buddy, visually smaller than prior 62vh upscale.
+  // Keep the ground path on the left side of the rug and away from chat.
   const ROUTE = [
     [660,895],[740,890],[820,900],[850,930],
     [750,940],[650,910]
