@@ -1,6 +1,6 @@
-# Nostalgia.exe Desktop World — OBS overlay v1
+# Nostalgia.exe Desktop World — OBS overlay v1.1
 
-Status: implemented in GitHub; **OBS visual test still pending**.
+Status: first OBS screenshot received; Gameplay frame 16:9 interior correction ready for retest.
 
 This scene is a **transparent 1920×1080 browser overlay for FRAME ELEMENTS ONLY**. Do not use it as a replacement for the native game or webcam sources. There is no JavaScript, permanent video loop, background-image download, blur or external dependency. The previously approved alerts and Buddy are unchanged.
 
@@ -23,12 +23,12 @@ Reference positions (in native 1920×1080 canvas; frame outer boxes):
 
 | Region | X | Y | Width | Height |
 |---|---:|---:|---:|---:|
-| Gameplay outer | 240 | 129 | 1219 | 720 |
+| Gameplay outer | 240 | 129 | 1190 | 720 |
 | Webcam outer | 1486 | 36 | 407 | 242 |
 | Chat outer | 1486 | 292 | 407 | 620 |
 
 Approximate usable interiors after the thin borders and UI title/footer:
-- Gameplay: x 242, y 160, width 1215, height 667. Recommended capture source aspect ratio **16:9** (e.g. 1184×666), centered in this interior.
+- Gameplay **inner capture**: **x 243, y 160, width 1184, height 666** (16:9). This region excludes titlebar, 2px frame and bottom status line. The gameplay frame intentionally has a slightly wider margin than the video.\n- In OBS select the *game/display capture source*, not the HTML overlay source: Transform → Edit Transform; Position **243, 160**; Bounding Box **Scale to inner bounds** / **1184×666** (or transform using the native source and crop as appropriate). Keep the capture BELOW the transparent overlay in the sources stack. For a full-HD source, scaling to 1184×666 is precisely 16:9, without distortion.\n- Avoid setting the capture to the outer frame box (1190×720), because then the game extends behind the titlebar and status footer. OBS Display Capture of OBS itself will naturally show a recursive preview; test with a game or another window.
 - Webcam: x 1488, y 67, width 403, height 209. May crop 16:9 slightly or adjust `--cam-h` to fit a source.
 - Chat: x 1488, y 323, width 403, height 564. Set the chat Browser Source to this size and keep its own background transparent.
 
