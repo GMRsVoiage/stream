@@ -23,7 +23,7 @@ Both Browser Sources are **1920×1080**, transparent over the **approved static 
 
 ### Calibração antes de liberar a caminhada
 
-Abra `brb.html?debug=1` na fonte de navegador de 1920×1080 sobre a imagem chibi no OBS. A área verde marca o polígono **provisório** onde os pés da Voya poderiam caminhar; o círculo marca sua posição inicial. Envie um print para acertarmos os pontos no `brb.js`, evitando móveis e vazios. O tamanho do sprite e a perspectiva serão ajustados quando tivermos a arte definitiva. Sem `debug=1`, tudo fica transparente.
+Abra `brb.html?debug=1` na fonte de navegador de 1920×1080 sobre a imagem chibi no OBS. A área verde marca o polígono **provisório e conservador** onde os pés da Voya poderiam caminhar; o círculo marca sua posição inicial. Envie um print para acertarmos os pontos no `brb.js`, evitando móveis e vazios. No print marcado pelo criador: **verde = chão caminhável**, **roxo = paisagem**, **amarelo = chat independente**. A nova zona foi estimada pela região verde com margem interna; o trajeto inicial ficou no lado esquerdo para evitar que o corpo da Voya oculte o chat. Calibrar o tamanho do sprite, obstáculos, perspectiva e possíveis oclusões só quando houver arte definitiva. Sem `debug=1`, tudo fica transparente.
 
 Ordem de fontes do OBS, de cima para baixo:
 1. Voya BRB — fonte HTML 1920×1080 (invisível enquanto o sprite não estiver pronto)
