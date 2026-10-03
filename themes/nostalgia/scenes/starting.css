@@ -1,0 +1,35 @@
+/* CSS-only 12-second startup narrative, then stable readable holding screen.
+   Initial delays occur once whenever OBS reloads this Browser Source. */
+.starting-scene .ndw-veil{background:linear-gradient(100deg,rgba(16,15,51,.76),rgba(39,26,74,.24) 60%,rgba(35,29,74,.58))}
+.boot-sequence{position:absolute;left:calc(50% - 365px);top:13%;width:730px;z-index:2;animation:boot-out 1.25s ease 10.4s forwards}
+.boot-logo{display:flex;justify-content:center;align-items:center;gap:14px;margin:0 auto 22px;color:white;text-shadow:2px 2px #3a3976}
+.boot-logo strong{font:700 34px "Trebuchet MS",Tahoma,sans-serif;display:block}
+.boot-logo small{font:14px Tahoma,sans-serif;color:#d9e6fa}
+.boot-logo__square{width:65px;height:65px;border:2px solid white;border-radius:14px;display:grid;place-items:center;font:bold 37px Tahoma,sans-serif;color:#689ac7;background:linear-gradient(135deg,#dffbfe,#c1c6f4 60%,#e9b8d9);box-shadow:4px 5px 0 #5a4778}
+.boot-window{height:350px}
+.boot-window__body{height:266px;position:relative;overflow:hidden;padding:0}
+.boot-phase{position:absolute;inset:0;text-align:center;padding:38px 30px;opacity:0;visibility:hidden}
+.boot-phase__number{font:700 13px Consolas,monospace;color:#9587bd}
+.boot-phase h2{font:700 27px "Trebuchet MS",Tahoma,sans-serif;margin:20px 0 12px;color:#405e94}
+.boot-phase p{font:16px Verdana,sans-serif;color:#7883a9;margin:0 0 22px}
+.boot-phase--login{animation:phase-login 3.3s linear forwards}
+.boot-phase--connect{animation:phase-connect 4.5s linear 3.25s forwards}
+.boot-phase--portal{animation:phase-portal 4s linear 7.7s forwards}
+.boot-progress{width:80%;height:20px;margin:28px auto 0;padding:3px;background:#e5dff3;border:1px solid #b8a7c7;box-shadow:inset 1px 1px 1px #777}
+.boot-progress span{display:block;width:0;height:100%;background:repeating-linear-gradient(90deg,#62b1d9 0 16px,#8bd5ee 16px 22px);animation:load-connection 4s linear 3.35s forwards}
+.boot-portal{margin:20px auto 0;width:64px;height:64px;display:grid;place-items:center;border:4px double #88b7d6;border-radius:8px;background:linear-gradient(135deg,#f4fcff,#d3ecf5,#e5cce9);font-size:36px;color:#8283be;box-shadow:2px 3px 0 #97a9d2}
+.boot-window__footer{display:flex;align-items:center;gap:9px;height:45px;background:linear-gradient(90deg,#d9eefa,#e9d9f3);border-top:1px solid #b8b2d3;padding:0 16px;font:12px Consolas,monospace}
+.boot-window__footer span:last-child{margin-left:auto}
+.starting-message{position:absolute;inset:31% 7% auto;text-align:center;opacity:0;transform:translateY(26px);animation:message-in 1.2s ease 11s forwards}
+.starting-message__eyebrow{display:block;font:700 20px Tahoma,sans-serif;letter-spacing:4px;color:#ceeeff;text-shadow:1px 2px #48396e}
+.starting-message h1{margin:17px 0 10px;font:700 clamp(52px,5.2vw,103px)/1.12 "Trebuchet MS",Tahoma,sans-serif;color:white;text-shadow:3px 4px 0 #63549b,0 0 16px rgba(195,216,255,.46)}
+.starting-message p{font:23px Verdana,sans-serif;color:#f8edff;text-shadow:1px 2px #3b3a67}
+.starting-message__underline{height:5px;width:360px;max-width:80%;margin:34px auto;background:linear-gradient(90deg,transparent,#99e7ed,#f9addb,transparent)}
+.starting-side{position:absolute;right:42px;bottom:75px}
+@keyframes phase-login{0%{visibility:visible;opacity:0}8%,85%{visibility:visible;opacity:1}100%{visibility:hidden;opacity:0}}
+@keyframes phase-connect{0%{visibility:visible;opacity:0}8%,85%{visibility:visible;opacity:1}100%{visibility:hidden;opacity:0}}
+@keyframes phase-portal{0%{visibility:visible;opacity:0}8%,98%{visibility:visible;opacity:1}100%{visibility:hidden;opacity:0}}
+@keyframes load-connection{from{width:0}to{width:100%}}
+@keyframes boot-out{to{opacity:0;visibility:hidden;transform:translateY(-20px)}}
+@keyframes message-in{to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.boot-sequence{display:none}.starting-message{opacity:1;transform:none}}
