@@ -11,7 +11,7 @@
     function refresh(){
       const text=(userMessage.textContent||"").trim();
       const hasEmote=!!userMessage.querySelector("img");
-      speech.classList.toggle("empty",!text&&!hasEmote);
+      speech.classList.toggle("empty",(!text || text === "{userMessage}")&&!hasEmote);
       const chequeText=(payment.textContent||"").trim();
       if(chequeText && chequeText!=="{messageTemplate}"){
         const long=chequeText.length>65;

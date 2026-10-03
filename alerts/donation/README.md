@@ -1,10 +1,10 @@
 # Nostalgia.exe — cheque voador / doações
 
-**Status:** primeira versão para teste no Streamlabs, ainda NÃO aprovada visualmente. Não modificar os widgets Follow e Sub já aprovados.
+**Status:** segunda versão para teste no Streamlabs; o criador pediu balão mais fiel ao Office Assistant clássico, mas ainda NÃO aprovou o alerta completo. Não modificar os widgets Follow e Sub já aprovados.
 
 ## Decisões de design
 - Doações: **cheque voador** com aparência de documento de banco fictício (Nostalgia Bank), nome/valor e carimbo COMPENSADO.
-- Mensagem da doação: assistente **Clippy** ao lado de balão de fala em linguagem antiga/Aero; o assistente é uma ilustração SVG leve integrada ao HTML, não um GIF pesado.
+- Mensagem da doação: assistente **Clippy** ao lado de balão **estilo Office Assistant clássico** (amarelo-claro, borda preta fina e seta apontando ao personagem), em vez da versão anterior em vidro Aero, que foi rejeitada pelo criador. O assistente segue como ilustração SVG leve integrada ao HTML, não um GIF pesado.
 - Mensagem ausente: “Parece que você recebeu uma doação!”.
 - Duração pensada para 10 segundos; papel cai/quica, depois carimbo, depois assistente.
 - Sem conexão Twitch ou API externa. O som de doação continua pendente de escolha.
