@@ -3,9 +3,11 @@
 **Status:** conceito da Raid aprovado; identificação complementar de participantes fica em backlog. Não implementar nesta fase.
 
 ## Raid — escopo imediato
-- Próximo alerta a construir: Raid inspirada em **chamada recebida do Skype clássico**, reinterpretada no Nostalgia.exe / Frutiger Aero.
+- **Exigência atualizada:** a Raid deverá reproduzir a **interface original do Skype antigo com fidelidade visual 1:1**, em vez de uma releitura genérica Frutiger Aero. Precisamos fixar uma versão histórica específica (por exemplo, Skype 5.x no Windows 7) e uma captura de referência da tela de chamada recebida antes de considerar o visual final aprovado.
+- O alerta é renderizado sobre uma fonte transparente 1920×1080; o aplicativo pode ocupar uma janela localizada, e efeitos especiais adicionais podem percorrer todo o quadro. Não exigir interação com webcam.
 - Mostrar nome do streamer que iniciou a raid e o total de espectadores informado pela Twitch/Streamlabs.
-- Simular interface de chamada recebida, botão de atender e boas-vindas, sem afirmar conhecer a identidade de todos os espectadores.
+- Reproduzir geometria, tipografia, botões, barras, ícones, cores, avisos e sequência visual da **versão histórica selecionada**. Adaptar apenas os dados dinâmicos do evento (nome do streamer e contagem), sem afirmar conhecer a identidade dos espectadores.
+- A Raid fullscreen atual em `alerts/fullscreen/raid` é um **protótipo inspirado no Skype**, não uma reprodução 1:1. Não tratar a versão atual como entrega final.
 - **Som aprovado:** toque clássico de chamada recebida do Skype (o criador afirmou possuir autorização para usar esses materiais). Configurar o áudio no Streamlabs; evitar reprodução simultânea pelo código para não duplicar o toque.
 - Após a Raid, a próxima prioridade escolhida pelo criador é **Starting Soon**.
 

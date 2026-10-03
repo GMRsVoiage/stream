@@ -8,9 +8,11 @@
 - Orientações para fonte de navegador OBS única 1920×1080 e inclusão em diferentes cenas sem alertas duplicados.
 
 ## Backlog pós-validação da primeira versão
-- **Interatividade espacial de verdade:** posicionamento de efeitos conforme a webcam/face/cena, com coordenadas por perfil OBS e possíveis triggers via Streamer.bot/OBS WebSocket.
+- **Direção aprovada:** efeitos especiais podem ocupar o canvas inteiro de 1920×1080 e percorrer suas bordas. A referência mencionada pelo criador não interagia com a webcam; **interação com webcam não é requisito**.
+- **Ideia não aprovada para agora:** interatividade espacial dependente da webcam/face/cena; só avaliar se solicitada.
 - **Referência criativa:** um alerta de raid visto pelo criador que tinha alguém soltando fogo pela boca. É inspiração para explorar, **não decisão de copiar ou implementar exatamente esse efeito**.
 - Explorar entrada de usuários que conversam após raid (não afirmar que são participantes confirmados) — detalhes em [raid-participants.md](raid-participants.md).
+- **Backlog aprovado (não implementar agora):** importação dos widgets do GitHub/CDN para colar somente pequenos imports HTML/CSS/JS no Streamlabs. Investigar a compatibilidade de carregamento externo e interpolação dos placeholders do Streamlabs. Não mudar a instalação atual nesta etapa.
 - Se necessário, criar engine centralizada para eventos e variantes; não carregar browser sources/vídeos pesados permanentemente.
 
 ## Regras de desempenho e segurança
