@@ -11,20 +11,11 @@
 *{box-sizing:border-box}
 html,body{width:100%;height:100%;margin:0;background:transparent!important;overflow:hidden}
 .voya-world{position:relative;width:100vw;height:100vh;overflow:hidden;background:transparent;pointer-events:none}
-.voya-character{
- position:absolute;left:var(--voya-start-x);top:var(--voya-floor-y);
- height:var(--voya-height);width:auto;transform:translateY(-100%);
- transform-origin:50% 100%;
- animation:voya-route var(--voya-walk-time) ease-in-out infinite alternate;
- will-change:transform;
-}
-.voya-character[hidden]{display:none!important}
+.voya-character{position:absolute;left:0;top:0;height:24%;width:auto;transform:translate(-50%,-100%);transform-origin:50% 100%;pointer-events:none}
+.voya-character[hidden],.voya-debug[hidden],.voya-marker[hidden],.voya-debug-note[hidden]{display:none!important}
 .voya-character img{display:block;height:100%;width:auto;object-fit:contain}
-@keyframes voya-route{
- 0%,12%{left:var(--voya-start-x);transform:translateY(-100%) scaleX(1)}
- 45%{left:var(--voya-end-x);transform:translateY(-100%) scaleX(1)}
- 55%,100%{left:var(--voya-end-x);transform:translateY(-100%) scaleX(-1)}
-}
-@media(prefers-reduced-motion:reduce){
- .voya-character{animation:none;left:var(--voya-start-x)}
-}
+.voya-debug{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+#walk-boundary{fill:rgba(102,255,163,.28);stroke:#55ffae;stroke-width:4;stroke-dasharray:14 9}
+.voya-marker{position:absolute;transform:translate(-50%,-100%);border:2px solid #fff;background:#67448add;border-radius:50%;width:70px;height:70px;display:grid;place-items:center;font:700 12px Tahoma,sans-serif;color:white}
+.voya-debug-note{position:absolute;top:12px;left:12px;padding:12px;color:#fff;background:#282245dd;font:16px Consolas,monospace}
+

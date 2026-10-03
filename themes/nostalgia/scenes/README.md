@@ -18,8 +18,12 @@ Both Browser Sources are **1920×1080**, transparent over the **approved static 
 - O quarto chibi aprovado é um **arquivo de imagem estático** em [`assets/backgrounds/desktop-world-brb-chibi.png`](../../../assets/backgrounds/desktop-world-brb-chibi.png), posicionado abaixo no OBS.
 - O chat já existente deve ser uma **fonte de navegador separada**, não faz parte deste arquivo: posicione e dimensione livremente no OBS.
 - Para dar perspectiva real ao chat, instale e configure separadamente um filtro compatível com **Corner Pin / quatro cantos**; simples redimensionamento e arraste do OBS não deformam individualmente os quatro vértices. Testar compatibilidade do filtro com sua versão do OBS antes de instalar.
-- A arte final da Voya ainda **não está presente**: até informar um sprite aprovado, a camada BRB ficará intencionalmente invisível. Para ativar futuramente, use `brb.html?sprite=CAMINHO_RELATIVO_DO_SPRITE.png` (asset hospedado na mesma origem); personalize o caminho de caminhada em `brb.css`.
+- A arte final ainda não está presente. A camada permanece invisível sem sprite aprovado; mesmo com sprite, **movimento desativado até calibração do chão**.
 - O código anterior que desenhava outro quarto e outra moldura de chat foi preservado apenas para consulta em `themes/nostalgia/scenes/archive/brb-prototype-2026-10.html` e `brb-prototype-2026-10.css`.
+
+### Calibração antes de liberar a caminhada
+
+Abra `brb.html?debug=1` na fonte de navegador de 1920×1080 sobre a imagem chibi no OBS. A área verde marca o polígono **provisório** onde os pés da Voya poderiam caminhar; o círculo marca sua posição inicial. Envie um print para acertarmos os pontos no `brb.js`, evitando móveis e vazios. O tamanho do sprite e a perspectiva serão ajustados quando tivermos a arte definitiva. Sem `debug=1`, tudo fica transparente.
 
 Ordem de fontes do OBS, de cima para baixo:
 1. Voya BRB — fonte HTML 1920×1080 (invisível enquanto o sprite não estiver pronto)
