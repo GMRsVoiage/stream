@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="pt-BR">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Nostalgia Cam — Máscara OBS</title>
+<style>body{background:#18172c;color:#f6eefb;font:16px Tahoma,sans-serif;max-width:680px;margin:50px auto;padding:0 20px}button{cursor:pointer;font:700 17px Tahoma;background:#d6c4f2;color:#362c55;border:2px solid #fff;border-radius:5px;padding:14px}p{line-height:1.6}</style>
+</head>
+<body>
+<h1>Máscara arredondada — Nostalgia Cam</h1>
+<p>Este utilitário gera uma máscara alfa em PNG de 1920 × 1080, com raio de 42 px igual à moldura <code>camera.css</code>. Nada é enviado à internet: a imagem é gerada no seu navegador.</p>
+<button id="export">Gerar PNG para OBS</button>
+<p>OBS → sua fonte da webcam → Filtros → Máscara de imagem/mistura → Tipo: <strong>Alpha Mask (Alpha Channel)</strong> → selecione o PNG baixado. A moldura HTML permanece acima da webcam.</p>
+<script>
+document.querySelector('#export').addEventListener('click', function(){
+ const canvas=document.createElement('canvas');
+ canvas.width=1920;canvas.height=1080;
+ const ctx=canvas.getContext('2d');
+ const x=0,y=0,w=1920,h=1080,r=42;
+ ctx.fillStyle='#ffffff';
+ ctx.beginPath();
+ ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);
+ ctx.quadraticCurveTo(x+w,y,x+w,y+r);
+ ctx.lineTo(x+w,y+h-r);ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);
+ ctx.lineTo(x+r,y+h);ctx.quadraticCurveTo(x,y+h,x,y+h-r);
+ ctx.lineTo(x,y+r);ctx.quadraticCurveTo(x,y,x+r,y);
+ ctx.closePath();ctx.fill();
+ canvas.toBlob(function(blob){
+  if(!blob)return;
+  const url=URL.createObjectURL(blob),a=document.createElement('a');
+  a.href=url;a.download='nostalgia-cam-rounded-mask-1920x1080.png';
+  document.body.appendChild(a);a.click();a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),1000);
+ },'image/png');
+});
+</script>
+</body></html>
