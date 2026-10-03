@@ -1,36 +1,21 @@
 <!doctype html>
 <html lang="pt-BR">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Nostalgia.exe — BRB</title>
-<link rel="stylesheet" href="./desktop-world.css"><link rel="stylesheet" href="./brb.css"></head>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nostalgia.exe — Voya BRB Layer</title>
+  <link rel="stylesheet" href="./brb.css">
+  <script defer src="./brb.js"></script>
+</head>
 <body>
-<main class="ndw-scene brb-scene" aria-label="Já volto">
-  <!-- Use the same approved static Desktop World art as an independent OBS Image source below. -->
-  <div class="ndw-veil"></div>
-  <div class="ndw-topline"><span class="ndw-topline__brand">◈ GMRsVoiage</span><span class="ndw-topline__tag">AWAY.EXE / STATUS: AUSENTE</span><span>▣</span></div>
-
-  <section class="room" aria-label="Pequeno ambiente digital da Voya">
-    <div class="room__roof" aria-hidden="true"></div>
-    <div class="room__floor" aria-hidden="true"></div>
-    <div class="room__desk" aria-hidden="true"><span class="room__desk-leg room__desk-leg--left"></span><span class="room__desk-leg room__desk-leg--right"></span></div>
-    <div class="room__computer" aria-hidden="true"><div class="room__computer-display"><span>nostalgia.exe</span><strong>◈</strong><small>AWAY MODE</small></div><span class="room__computer-stand"></span></div>
-    <!-- Future character artwork (with permission/approval) can be placed here as independent OBS media. -->
-    <div class="room__voya-place" aria-label="Área reservada à futura Voya"><span>VOYA / FUTURA INTEGRAÇÃO</span></div>
-    <div class="room__floor-label">DESKTOP WORLD / VOYA HUB</div>
-  </section>
-
-  <section class="away-window ndw-window" aria-label="Mensagem de intervalo">
-    <div class="ndw-titlebar"><span class="ndw-appicon">N</span><span>away.exe — Nostalgia Messenger</span><span class="ndw-window__controls">_ □ ×</span></div>
-    <div class="away-window__body"><span class="away-window__status">● STATUS: AUSENTE</span><h1>JÁ VOLTO!</h1><p>Sessão pausada. O mundo digital continua conectado.</p><div class="away-window__line"><span>GMRsVoiage</span><span>voltamos em breve</span></div></div>
-  </section>
-
-  <section class="chat-monitor ndw-window" aria-label="Monitor do chat ao vivo">
-    <div class="ndw-titlebar"><span class="ndw-appicon">✉</span><span>Nostalgia Messenger / Chat</span><span class="ndw-window__controls">_ □ ×</span></div>
-    <!-- Put the already-functioning chat Browser Source BEHIND this overlay in OBS,
-         positioned over the transparent rectangle below. Never fake live messages. -->
-    <div class="chat-monitor__transparent" aria-hidden="true"></div>
-    <div class="chat-monitor__footer"><span class="ndw-statusdot"></span><span>CONNECTED</span><span>GMRsVoiage</span></div>
-    <div class="chat-monitor__stand" aria-hidden="true"></div>
-  </section>
-  <div class="ndw-bottomline"><span>Nostalgia.exe / sessão suspensa</span><span>O CHAT CONTINUA ONLINE</span></div>
-</main>
-</body></html>
+  <!--
+    This is ONLY the transparent Voya layer. Keep the approved chibi bedroom
+    as an OBS Image source, and your existing live chat as a separate
+    Browser Source. No redundant room drawing, fixed chat or fake messages.
+    Add ?sprite=YOUR_SAME_ORIGIN_ASSET_URL after the character art is approved.
+  -->
+  <main class="voya-world" aria-label="Camada da Voya no BRB">
+    <div id="voya-character" class="voya-character" hidden aria-label="Voya"></div>
+  </main>
+</body>
+</html>

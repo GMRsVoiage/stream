@@ -12,19 +12,21 @@ Both Browser Sources are **1920×1080**, transparent over the **approved static 
 - In OBS set the Browser Source to reload when scene becomes active if you want the login sequence on **every** entrance; leave this unchecked if you prefer not to restart it when returning to the scene.
 - Put this source above the static background; music/audio remain separate OBS sources.
 
-## BRB
+## BRB — cama​​da exclusiva da Voya
 
-- `brb.html` imports `desktop-world.css` and `brb.css`.
-- Fixed **JÁ VOLTO!** status window, illustrated lightweight desktop hub on the left and transparent chat monitor on the right.
-- The Voya placement is a **temporary designated slot, not final character art**. Add Voya as a separate OBS media/image source when their artwork is approved and publishing rights confirmed. Do not commit personal reference photos.
-- Chat monitor **does not fetch or fake messages**. Put the existing real chat Browser Source **below the BRB HTML overlay but above the background**. Set chat background transparent, and position its content within the clear region.
-- Suggested native 1920×1080 chat source placement (rounded): **X 1151, Y 226, W 657, H 632**. Check visually in OBS and adjust source if its built-in padding differs.
-- Layout source order, from top to bottom:
-  1. BRB HTML overlay (1920×1080)
-  2. Real chat widget Browser Source (transparent)
-  3. Static Desktop World background (same artwork as existing gameplay)
-- Existing raid/follow/sub/donation alerts can stay on top if you want alerts active while away.
-- No webcam automatically appears in BRB; opt in via nested `WEBCAM` source if desired.
+- O `brb.html` agora importa apenas `brb.css` + `brb.js` e permanece **100% transparente**.
+- O quarto chibi aprovado é um **arquivo de imagem estático** em [`assets/backgrounds/desktop-world-brb-chibi.png`](../../../assets/backgrounds/desktop-world-brb-chibi.png), posicionado abaixo no OBS.
+- O chat já existente deve ser uma **fonte de navegador separada**, não faz parte deste arquivo: posicione e dimensione livremente no OBS.
+- Para dar perspectiva real ao chat, instale e configure separadamente um filtro compatível com **Corner Pin / quatro cantos**; simples redimensionamento e arraste do OBS não deformam individualmente os quatro vértices. Testar compatibilidade do filtro com sua versão do OBS antes de instalar.
+- A arte final da Voya ainda **não está presente**: até informar um sprite aprovado, a camada BRB ficará intencionalmente invisível. Para ativar futuramente, use `brb.html?sprite=CAMINHO_RELATIVO_DO_SPRITE.png` (asset hospedado na mesma origem); personalize o caminho de caminhada em `brb.css`.
+- O código anterior que desenhava outro quarto e outra moldura de chat foi preservado apenas para consulta em `themes/nostalgia/scenes/archive/brb-prototype-2026-10.html` e `brb-prototype-2026-10.css`.
+
+Ordem de fontes do OBS, de cima para baixo:
+1. Voya BRB — fonte HTML 1920×1080 (invisível enquanto o sprite não estiver pronto)
+2. Chat real — fonte independente com tamanho e perspectiva definidos por você
+3. Quarto chibi — fonte de imagem `desktop-world-brb-chibi.png`
+
+Não adicionar uma janela de chat ou quarto CSS duplicados ao `brb.html`.
 
 ## Common
 
