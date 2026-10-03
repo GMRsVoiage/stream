@@ -150,29 +150,36 @@ html, body, .widget-AlertBox {
 #alert-image-wrap, #alert-user-message { display:none !important; }
 #alert-box.hidden, .hidden { opacity: 0; }
 
-/* Full HD flow — compact MSN contact appears at center, then docks
-   at lower-left. No new images, JS timers, or extra browser source. */
+/* Follow Full HD v2: Streamlabs may animate #alert-text itself.
+   Never animate that container: keep it full canvas, and move only
+   the inner Messenger panel. This matches the working Raid structure. */
 html,body,.widget-AlertBox,#wrap,#alert-box{
-  width:100%!important;height:100%!important;margin:0!important;
-  background:transparent!important;overflow:hidden!important;
+ width:100%!important;height:100%!important;margin:0!important;
+ background:transparent!important;overflow:hidden!important;
 }
-#alert-box,#alert-text-wrap{position:absolute!important;inset:0!important}
-#alert-text-wrap{display:block!important;padding:0!important;transform:none!important}
+#alert-box,#alert-text-wrap{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;}
+#alert-text-wrap{display:block!important;padding:0!important;transform:none!important;}
 #alert-text{
-  position:absolute!important;
-  left:calc(50% - 179px);top:calc(50% - 83px);
-  bottom:auto!important;right:auto!important;
-  width:358px!important;max-width:calc(100vw - 36px)!important;
-  margin:0!important;padding:0!important;
-  transform-origin:top left;
-  animation:follow-center-dock 6s ease both!important;
+ display:block!important;position:absolute!important;inset:0!important;
+ width:100%!important;max-width:none!important;
+ height:100%!important;min-width:0!important;
+ padding:0!important;margin:0!important;text-align:left!important;
+ transform:none!important;
 }
-@keyframes follow-center-dock{
-  0%{left:calc(50% - 179px);top:calc(50% - 83px);opacity:0;transform:translateY(32px) scale(.95)}
-  12%,25%{left:calc(50% - 179px);top:calc(50% - 83px);opacity:1;transform:translateY(0) scale(1)}
-  39%,89%{left:38px;top:calc(100% - 166px);opacity:1;transform:scale(.91)}
-  100%{left:38px;top:calc(100% - 166px);opacity:0;transform:translateY(12px) scale(.91)}
+/* Animated component is a child of Streamlabs-controlled #alert-text. */
+.gmrs-follow-window{
+ position:absolute;z-index:3;
+ top:calc(50% - 83px);left:calc(50% - 179px);
+ width:358px;max-width:calc(100vw - 36px);
+ transform-origin:top left;
+ animation:follow-window-center-dock 6s ease both;
+}
+@keyframes follow-window-center-dock{
+ 0%{left:calc(50% - 179px);top:calc(50% - 83px);opacity:0;transform:translateY(20px) scale(.95)}
+ 10%,26%{left:calc(50% - 179px);top:calc(50% - 83px);opacity:1;transform:scale(1)}
+ 42%,89%{left:38px;top:calc(100% - 165px);opacity:1;transform:scale(.91)}
+ 100%{left:38px;top:calc(100% - 165px);opacity:0;transform:translateY(12px) scale(.91)}
 }
 @media(prefers-reduced-motion:reduce){
- #alert-text{animation:none!important;left:38px;top:calc(100% - 166px);opacity:1;transform:scale(.91)}
+ .gmrs-follow-window{animation:none!important;top:calc(100% - 165px);left:38px;opacity:1;transform:scale(.91)}
 }
