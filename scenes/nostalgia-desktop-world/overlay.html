@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Nostalgia.exe Desktop World — Molduras OBS</title>
+  <link rel="stylesheet" href="./overlay.css">
+</head>
+<body>
+  <!-- OBS Browser Source: 1920×1080. Transparent. No video or images embedded. -->
+  <main class="desktop-world" aria-label="Molduras da live Nostalgia.exe">
+    <!-- Camera and gameplay stay separate OBS native sources, underneath this layer. -->
+    <section class="panel game-panel" aria-label="Moldura da captura de jogo">
+      <div class="panel__top game-panel__top">
+        <span class="panel__app">▣</span><span class="panel__title">gameplay.exe</span>
+        <span class="panel__state">● ONLINE</span>
+        <span class="panel__controls" aria-hidden="true">_ □ ×</span>
+      </div>
+      <div class="panel__viewport" aria-hidden="true"></div>
+      <div class="panel__bottom" aria-hidden="true"><span>GMRsVoiage</span><span>Desktop World / 01</span></div>
+    </section>
+    <section class="panel webcam-panel" aria-label="Moldura da câmera">
+      <div class="panel__top">
+        <span class="panel__app">▣</span><span class="panel__title">camera.exe</span>
+        <span class="panel__state">● LIVE</span>
+        <span class="panel__controls" aria-hidden="true">_ □ ×</span>
+      </div>
+      <div class="panel__viewport" aria-hidden="true"></div>
+    </section>
+    <section class="panel chat-panel" aria-label="Moldura do chat">
+      <div class="panel__top chat-panel__top">
+        <span class="panel__app">✉</span><span class="panel__title">Nostalgia Messenger</span>
+        <span class="panel__state">● CONNECTED</span>
+        <span class="panel__controls" aria-hidden="true">_ □ ×</span>
+      </div>
+      <div class="chat-panel__body" aria-hidden="true"></div>
+      <div class="chat-panel__footer" aria-hidden="true"><span class="status-dot"></span> Canal conectado <span class="chat-panel__footer-right">GMRsVoiage</span></div>
+    </section>
+    <!-- Optional bottom status tabs; no animation, API calls or running JS. -->
+    <div class="desktop-world__tabs" aria-hidden="true">
+      <span>✧ Nostalgia.exe</span><span>◈ Desktop World</span><span>GMRsVoiage</span>
+    </div>
+  </main>
+</body>
+</html>

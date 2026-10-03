@@ -1,0 +1,54 @@
+/* Nostalgia.exe Desktop World v1 — lightweight, transparent OBS frame.
+   Reference canvas: 1920x1080. Every region uses viewport proportions.
+   Change only these variables to move/resize the OBS source placeholders. */
+:root {
+  --game-x: 12.5%; --game-y: 11.9%; --game-w: 63.5%; --game-h: 66.7%;
+  --cam-x: 77.4%; --cam-y: 3.3%; --cam-w: 21.2%; --cam-h: 22.4%;
+  --chat-x: 77.4%; --chat-y: 27.0%; --chat-w: 21.2%; --chat-h: 57.4%;
+  --ui-ink: #20436d; --ui-pink: #f4a1e3; --ui-blue: #8bcefb;
+  --ui-violet: #876ab7;
+}
+* { box-sizing: border-box; }
+html,body { margin:0;width:100%;height:100%;overflow:hidden;background:transparent!important; }
+body { font-family:Tahoma,"Trebuchet MS",sans-serif; }
+.desktop-world { position:relative;width:100vw;height:100vh;overflow:hidden;isolation:isolate;pointer-events:none; }
+.panel {
+  position:absolute;display:flex;flex-direction:column;overflow:hidden;
+  border:2px solid #a3eafa;border-radius:9px;
+  background:transparent;
+  box-shadow:0 0 0 1px #faf2ff,2px 3px 0 rgba(46,27,97,.38),0 2px 12px rgba(97,178,234,.16);
+}
+.panel__top {
+  height:29px;min-height:29px;display:flex;align-items:center;
+  gap:7px;padding:0 9px;
+  background:linear-gradient(#f5faff 0%,#cce9fa 15%,#77b4e8 52%,#527fbf 53%,#6277b5 100%);
+  border-bottom:1px solid #fef2ff;
+  color:#fff;font-size:12px;letter-spacing:.04px;
+  text-shadow:0 1px 1px #354b7e;
+}
+.panel__title { font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis; }
+.panel__app {width:16px;height:16px;display:grid;place-items:center;border-radius:3px;background:#f1fcff;color:#6373a6;font-size:13px;text-shadow:none;}
+.panel__state{margin-left:auto;white-space:nowrap;font-size:9px;font-weight:700;color:#f0ffe8;}
+.panel__controls{letter-spacing:3px;white-space:nowrap;padding-left:5px;font-weight:bold;}
+.panel__viewport { flex:1;min-height:0;background:transparent; }
+.panel__bottom { height:19px;min-height:19px;display:flex;align-items:center;justify-content:space-between;padding:0 10px;background:linear-gradient(90deg,#b5dafa,#e9bbf8);border-top:1px solid #fff;font-size:10px;color:var(--ui-ink); }
+.game-panel{left:var(--game-x);top:var(--game-y);width:var(--game-w);height:var(--game-h);border-color:#64d9ec;}
+.game-panel__top{background:linear-gradient(#e6fbff 0%,#a6e2f1 15%,#57bcda 50%,#3697c0 51%,#3788b3 100%);}
+.webcam-panel{left:var(--cam-x);top:var(--cam-y);width:var(--cam-w);height:var(--cam-h);border-color:#f7b0f0;}
+.webcam-panel .panel__top{background:linear-gradient(#fff3ff 0%,#e8bff7 17%,#ae7fd3 50%,#8b6bb1 51%,#795c9e 100%);}
+.chat-panel{left:var(--chat-x);top:var(--chat-y);width:var(--chat-w);height:var(--chat-h);border-color:#efb6fa;}
+.chat-panel__top{background:linear-gradient(#fdf4ff 0%,#edcbf8 15%,#ba96d7 50%,#9876c4 51%,#9776bd 100%);}
+.chat-panel__body {flex:1;min-height:0; /* Transparent: put existing Twitch chat Browser Source beneath frame. */ }
+.chat-panel__footer {height:24px;min-height:24px;padding:0 9px;display:flex;align-items:center;gap:6px;background:linear-gradient(90deg,#e6f9ff,#eedafa);border-top:1px solid #eabaff;font-size:10px;color:#48658e;}
+.chat-panel__footer-right{margin-left:auto;}
+.status-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#43b875;box-shadow:0 0 0 1px white;}
+.desktop-world__tabs{
+  position:absolute;left:23.8%;bottom:5.5%;width:50%;
+  display:flex;gap:11px;justify-content:space-between;
+}
+.desktop-world__tabs span{display:block;white-space:nowrap;flex:1;text-align:center;background:linear-gradient(#fafaff,#cfdbf7 45%,#d0bce9);border:1px solid #a6d5f2;outline:1px solid rgba(255,255,255,.6);border-radius:4px;padding:6px;color:#53609b;font:700 12px Tahoma,sans-serif;box-shadow:2px 3px 0 rgba(53,38,99,.25);}
+@media(max-width:900px){
+ .panel__state,.panel__controls,.panel__bottom,.desktop-world__tabs {display:none;}
+ .panel__top{font-size:clamp(7px,1vw,12px);height:clamp(16px,2vw,29px);min-height:0;}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
