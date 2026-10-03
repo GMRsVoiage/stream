@@ -74,8 +74,8 @@ html,body,.widget-AlertBox,#wrap,#alert-box,#alert-text-wrap{width:100%!importan
 .sk-call{
   --raid-dock-x:28px;
   --raid-dock-y:28px;
-  left:calc(50% - 320px)!important;
-  top:calc(50% - 265px)!important;
+  left:calc(50% - 320px);
+  top:calc(50% - 265px);
   transform:scale(.96);
   transform-origin:top left;
   animation:raid-center-then-dock 8.9s ease 2.1s both!important;
@@ -103,7 +103,7 @@ html,body,.widget-AlertBox,#wrap,#alert-box,#alert-text-wrap{width:100%!importan
   100%{opacity:0;transform:translateY(-8px)}
 }
 @media(max-width:900px){
- .sk-call{--raid-dock-x:12px;--raid-dock-y:12px;left:calc(50% - 320px)!important;top:calc(50% - 265px)!important}
+ .sk-call{--raid-dock-x:12px;--raid-dock-y:12px;left:calc(50% - 320px);top:calc(50% - 265px)}
  .sk-post-call{left:12px!important;top:380px!important}
 }
 @media(prefers-reduced-motion:reduce){
