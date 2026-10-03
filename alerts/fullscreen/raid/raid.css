@@ -50,7 +50,6 @@ html,body,.widget-AlertBox,#wrap,#alert-box,#alert-text-wrap{width:100%!importan
 .sk-connecting{animation:connecting 8s ease 2.1s both}.sk-connected{animation:connected 8s ease 2.1s both;flex-direction:column}.sk-connected strong{font:700 24px Tahoma;color:#2986bd}
 .sk-spinner{width:20px;height:20px;border-radius:50%;border:3px solid #c9e9f8;border-top-color:#138dcc;animation:spin .8s linear infinite}
 .sk-client-footer{display:flex;justify-content:space-between;align-items:center;height:32px;padding:0 13px;border-top:1px solid #b9d8e8;background:linear-gradient(#edf8fb,#d1ebf6);font-size:10px;color:#43728b}.sk-footer-right{margin-left:auto;color:#63859b}
-.sk-post-call strong{display:block;font-size:22px;margin-top:5px}
 @keyframes toast-life{0%{opacity:0;transform:translateY(140px)}17%,75%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(75px)}}
 @keyframes cursor-click{0%,25%{opacity:0;transform:translate(-140px,40px)}40%{opacity:1;transform:translate(-135px,40px)}73%{opacity:1;transform:translate(215px,-88px)}79%{opacity:1;transform:translate(215px,-88px) scale(.93)}92%,100%{opacity:0;transform:translate(215px,-88px)}}
 @keyframes cursor-ring{0%,74%{opacity:0;transform:scale(.3)}77%{opacity:1;transform:scale(.5)}94%,100%{opacity:0;transform:scale(1.5)}}
