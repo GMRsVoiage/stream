@@ -5,9 +5,10 @@
 ## Sequência e duração
 - **0–2s:** notificação estilo Skype aparece no canto inferior direito.
 - **1–2.3s:** cursor **fictício** percorre o canvas até a notificação e simula clique (não move o mouse real).
-- **2.1–4s:** abre a janela Nostalgia Call no centro, em tamanho normal; a saudação e o nome ficam visíveis.\n- **~4–5s:** a janela completa diminui para 70% e desliza até o **canto superior esquerdo**, preservando o canto superior direito da webcam.
+- **2.1–4s:** abre a janela Nostalgia Call no centro, em tamanho normal; a saudação e o nome ficam visíveis.
+- **~4–5s:** a janela completa diminui para 70% e desliza até o **canto superior esquerdo**, preservando o canto superior direito da webcam.
 - **~6.5s:** o botão verde é ativado **já na janela reduzida**; aparece a conexão.
-- **~7.5–10s:** saudação próxima à janela reduzida e finalização.
+- **~7.5–10s:** saudação dentro da própria janela reduzida e finalização.
 - Use **duração total de 11 segundos** na Raid do Streamlabs.
 
 ## Instalação
@@ -36,3 +37,7 @@ Texto atrasado: 0 s. Em OBS: fonte de navegador de alertas **1920 × 1080**, sem
 - Preservar geometria, cores, botões, layout e animações que funcionaram no teste.
 - Remover a marca Skype de **todos os textos visíveis**: programa fictício **Nostalgia Call**, assinatura visual **nostalgia.exe** e ícone **N** na barra/notificação. As referências históricas nos comentários e documentação podem citar Skype para descrever a inspiração.
 - Manter o toque clássico escolhido pelo criador nas configurações do Streamlabs; não adicionar áudio duplicado ao JS.
+
+## Correção de sobreposição
+- Removido o segundo cartão externo “Novo grupo conectado”, que ficava coberto pela janela reduzida.
+- A mensagem “Sejam bem-vindos!” permanece dentro da própria janela conectada. Nenhuma mudança no tempo do alerta, toque ou modelo da mensagem.

@@ -50,7 +50,6 @@ html,body,.widget-AlertBox,#wrap,#alert-box,#alert-text-wrap{width:100%!importan
 .sk-connecting{animation:connecting 8s ease 2.1s both}.sk-connected{animation:connected 8s ease 2.1s both;flex-direction:column}.sk-connected strong{font:700 24px Tahoma;color:#2986bd}
 .sk-spinner{width:20px;height:20px;border-radius:50%;border:3px solid #c9e9f8;border-top-color:#138dcc;animation:spin .8s linear infinite}
 .sk-client-footer{display:flex;justify-content:space-between;align-items:center;height:32px;padding:0 13px;border-top:1px solid #b9d8e8;background:linear-gradient(#edf8fb,#d1ebf6);font-size:10px;color:#43728b}.sk-footer-right{margin-left:auto;color:#63859b}
-.sk-post-call{position:absolute;left:50%;top:77%;transform:translate(-50%,15px);z-index:2;opacity:0;padding:10px 22px;background:#e4f9ffed;border:1px solid #79bad6;border-radius:9px;box-shadow:0 4px 21px #16466360;color:#286e9e;font:14px Tahoma;text-align:center;animation:post-call 3.5s ease 7.5s both}
 .sk-post-call strong{display:block;font-size:22px;margin-top:5px}
 @keyframes toast-life{0%{opacity:0;transform:translateY(140px)}17%,75%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(75px)}}
 @keyframes cursor-click{0%,25%{opacity:0;transform:translate(-140px,40px)}40%{opacity:1;transform:translate(-135px,40px)}73%{opacity:1;transform:translate(215px,-88px)}79%{opacity:1;transform:translate(215px,-88px) scale(.93)}92%,100%{opacity:0;transform:translate(215px,-88px)}}
@@ -60,11 +59,10 @@ html,body,.widget-AlertBox,#wrap,#alert-box,#alert-text-wrap{width:100%!importan
 @keyframes accept-press{0%,51%{filter:brightness(1)}54%{filter:brightness(1.5);transform:scale(.94)}57%,100%{filter:brightness(1);transform:scale(1)}}
 @keyframes connecting{0%,54%{opacity:0}57%,64%{opacity:1}69%,100%{opacity:0}}
 @keyframes connected{0%,66%{opacity:0}70%,91%{opacity:1}100%{opacity:0}}
-@keyframes post-call{0%{opacity:0;transform:translate(-50%,15px)}18%,85%{opacity:1;transform:translate(-50%,0)}100%{opacity:0;transform:translate(-50%,-8px)}}
 @keyframes spin{to{transform:rotate(360deg)}}
 #alert-box.hidden,.hidden{opacity:0!important}
 @media(max-width:750px){.sk-call{max-width:88%}.sk-toast{right:12px;bottom:16px}.sk-profile-line{padding:12px}.sk-nav{gap:8px}.sk-toolbar{height:48px}}
-@media(prefers-reduced-motion:reduce){.sk-toast,.sk-cursor,.sk-click-ring,.sk-call,.sk-post-call,.sk-sound-waves span,.sk-accept,.sk-connecting,.sk-connected{animation:none!important}.sk-toast{opacity:0}.sk-call{opacity:1;transform:translate(-50%,-50%)}}
+@media(prefers-reduced-motion:reduce){.sk-toast,.sk-cursor,.sk-click-ring,.sk-call,.sk-sound-waves span,.sk-accept,.sk-connecting,.sk-connected{animation:none!important}.sk-toast{opacity:0}.sk-call{opacity:1;transform:translate(-50%,-50%)}}
 
 /* FULL HD FLOW 2026-10-03
    The group-call window is prominent for ~1.6s, then scales and travels
@@ -88,25 +86,10 @@ html,body,.widget-AlertBox,#wrap,#alert-box,#alert-text-wrap{width:100%!importan
   32%,89%{left:var(--raid-dock-x);top:var(--raid-dock-y);transform:scale(.70);opacity:1}
   100%{left:var(--raid-dock-x);top:var(--raid-dock-y);transform:scale(.70) translateY(-15px);opacity:0}
 }
-/* The internal accept and connection timings in the original stylesheet
-   are retained; only the outer application is repositioned. */
-.sk-post-call{
-  left:30px!important;top:405px!important;
-  transform:translateY(12px);
-  max-width:430px;
-  width:max-content;
-  animation:raid-docked-greeting 3.5s ease 7.5s both!important;
-}
-@keyframes raid-docked-greeting{
-  0%{opacity:0;transform:translateY(12px)}
-  15%,84%{opacity:1;transform:translateY(0)}
-  100%{opacity:0;transform:translateY(-8px)}
-}
+/* Internal accept and connection animations stay inside the compact window. */
 @media(max-width:900px){
  .sk-call{--raid-dock-x:12px;--raid-dock-y:12px;left:calc(50% - 320px);top:calc(50% - 265px)}
- .sk-post-call{left:12px!important;top:380px!important}
 }
 @media(prefers-reduced-motion:reduce){
  .sk-call{animation:none!important;left:28px!important;top:28px!important;transform:scale(.7)!important;opacity:1!important}
- .sk-post-call{animation:none!important;opacity:1!important}
 }
