@@ -350,11 +350,19 @@ Pode combinar:
 
 ### Starting
 
-O Starting seguirá uma **sequência narrativa**:
+A direção original login → conexão → portal foi **substituída pela decisão mais recente**.
 
-1. login;
-2. conexão;
-3. revelação/carregamento do portal ou ambiente principal.
+O Starting seguirá uma narrativa de inicialização do próprio computador/sistema:
+
+1. computador desligado;
+2. power-on / boot;
+3. entrada no desktop Nostalgia.exe;
+4. abertura de navegador/página com tratamento CRT moderado;
+5. abertura de um programa a partir do desktop;
+6. permanência nesse programa em **loop leve de espera**;
+7. o loop funciona como deixa visual para a troca manual para a cena em que a live começará.
+
+A temporização final e o aplicativo exibido no loop serão calibrados visualmente; não são valores fixos desta especificação.
 
 ### Consistência entre cenas
 
@@ -687,3 +695,78 @@ Aplicar às cenas já aprovadas: transições, Starting e BRB. Manter a mascote 
 O conjunto visual permanece baseado na Voya.exe: semelhança de inspiração B+, expressão-base de sorriso delicado, roupa de assistente Aero azul/branca e presença nas transições, Starting e BRB. A transição continuará sendo controlada pelo OBS, com corte configurável na Stinger.
 
 **Critérios de implementação:** criar e aprovar um primeiro exemplo representativo antes de produzir as variações de todos os aplicativos; preservar a legibilidade e a performance. Não versionar as fotografias pessoais de referência e confirmar o consentimento para publicação da personagem inspirada em outra pessoa.
+
+
+## 32. Starting Soon — direção aprovada v2.0
+
+A implementação existente de login → conexão → portal permanece apenas como versão funcional anterior até ser substituída.
+
+A nova implementação deve:
+
+- representar o computador sendo ligado;
+- fazer a passagem para o desktop Nostalgia.exe;
+- abrir uma página/navegador com efeitos CRT moderados e leves;
+- abrir um programa a partir desse ambiente;
+- permanecer nesse programa em loop de espera;
+- usar esse loop como sinal visual para o operador iniciar a próxima cena manualmente;
+- evitar vídeo permanente ou efeitos pesados apenas para sustentar o estado de espera.
+
+A cena continua sendo 1920×1080 e o áudio permanece separado no OBS.
+
+
+## 33. BRB — ciclo de iluminação por horário
+
+Foi aprovado evoluir o quarto do BRB com variação visual por período do dia.
+
+Direção:
+
+- manter a solução **simples e funcional**;
+- usar estados amplos como amanhecer, dia, entardecer e noite;
+- alterar a iluminação/camada do quarto, sem deformar ou recolorir chat e Voya junto;
+- preferir lógica local pequena em HTML/CSS/JS ou filtros/camadas equivalentes;
+- não introduzir Home Assistant, Streamer.bot, API externa ou infraestrutura maior apenas para essa função;
+- horários exatos e transições serão definidos durante a implementação visual.
+
+Esta decisão substitui o status anterior de mera ideia em discussão.
+
+
+## 34. Automações — prioridade adiada, não backlog
+
+Streamer.bot + OBS WebSocket continuam aprovados como direção para a camada de automações.
+
+Estado de prioridade:
+
+- não são o próximo trabalho imediato;
+- permanecem na fila técnica após os acabamentos visuais atuais;
+- **não** devem ser classificados como backlog abandonado ou indefinido;
+- automações com ações físicas continuam exigindo separação, autorização e limites próprios conforme a seção 21.
+
+
+## 35. Voya.exe — produção da arte final
+
+A arte definitiva da Voya.exe será aguardada em vez de substituir o desenho manual por um placeholder gerado automaticamente.
+
+Antes da integração final, preparar uma folha técnica para orientar a produção da arte, contendo no mínimo:
+
+- dimensões e proporções recomendadas;
+- ponto de ancoragem/posição dos pés;
+- áreas seguras do canvas;
+- posições e direções de olhar;
+- gestos e poses necessários por uso;
+- requisitos de transparência/recorte;
+- aplicações previstas em Starting, BRB e transições.
+
+O Buddy temporário pode continuar servindo como placeholder técnico até a entrega da arte final.
+
+
+## 36. Estado de validação técnica — 2026-10-04
+
+As seguintes partes são consideradas validadas no estado atual e não bloqueiam o avanço do projeto:
+
+- configuração de áudio do OBS;
+- alertas Full HD Follow, Sub, Doação e Raid;
+- layout de gameplay e chat;
+- Ambilight/shader da gameplay;
+- desempenho geral observado no OBS.
+
+Streamer.bot/WebSocket e o redesign do Starting são evolução posterior, não correções necessárias para tornar essa base utilizável.
