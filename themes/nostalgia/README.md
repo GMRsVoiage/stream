@@ -1,42 +1,56 @@
-# Nostalgia.exe — implementação inicial
+# Nostalgia.exe — tema ativo
 
 A identidade visual aprovada está registrada em [NOSTALGIA_SPEC.md](../../NOSTALGIA_SPEC.md).
 
-Este diretório é o **novo tema em desenvolvimento**. A versão AquaWave permanece no legado e não foi alterada nesta etapa.
+Este diretório contém o **tema principal em desenvolvimento e uso no OBS**. AquaWave permanece apenas como legado preservado; novas cenas e componentes devem seguir Nostalgia.exe salvo decisão explícita em contrário.
 
-## Organização inicial
+## Estado atual
 
-- `css/tokens.css` — valores de design iniciais. Os tons exatos são protótipos sujeitos a validação visual.
-- `css/base.css` — estilos do tema e componentes-base de demonstração.
-- `assets/shared/nostalgia-icon.svg` — primeiro esboço vetorial do símbolo aprovado (balão + horizonte).
-- `config/theme.json` — exemplo de configuração declarativa do tema.
-- `preview.html` — prévia estática original da fundação visual.
-- `portal-preview.html` + `css/preview.css` — segunda prévia exploratória inspirada pela estrutura de aplicações antigas, microdetalhes Web 2000 e atmosferas Vaporwave/Aero. Não é layout de gameplay aprovado.
-- `transitions/` — [Stinger Alt+Tab + abertura de aplicativo](./transitions/README.md), [demonstração interativa](./transitions/demo.html) e script para exportar WebM transparente para o OBS.
+A fundação já evoluiu para componentes e cenas operacionais:
 
-A infraestrutura compartilhável fica em `core/`. A lógica de mesclagem de configuração está em `core/js/config.mjs`: **marca → tema → cena**.
+- `css/tokens.css` — tokens de design compartilhados.
+- `css/base.css` — base do tema.
+- `assets/shared/` — assets realmente compartilhados.
+- `config/theme.json` — configuração declarativa do tema.
+- `preview.html` e `portal-preview.html` — prévias conceituais, não fontes obrigatórias do OBS.
+- `transitions/` — Stinger Alt+Tab + abertura de aplicativo.
+- `scenes/starting.html` — Starting Soon com login → conexão → portal.
+- `scenes/brb.html` — camada transparente da Voya/Buddy para o BRB.
+- `components/chat/` — adaptador alternativo de janela Messenger; o chat atualmente usado na live está documentado em [../../buddy/README.md](../../buddy/README.md).
 
-O chat opcional sem API direta já possui um [template de Chat Box com HTML/CSS para copiar e colar](./components/chat/README.md), mantendo os placeholders de mensagens e badges fornecidos pelo usuário. Os demais componentes terão HTML, CSS, JS quando necessário e assets organizados por componente dentro do tema.
+Outras partes ativas vivem fora desta pasta quando são integrações/atalhos específicos de OBS:
 
-## Ver a prévia
+- [Desktop World gameplay](../../scenes/nostalgia-desktop-world/README.md)
+- [Nostalgia Cam](../../scenes/nostalgia-cam/README.md)
+- [Chat Buddy / Streamlabs](../../buddy/README.md)
+- [Alertas Full HD](../../alerts/fullscreen/README.md)
 
-Na raiz do repositório, execute um servidor HTTP local (o projeto não precisa de build):
+## Princípios de implementação
+
+- OBS continua responsável por gameplay, webcam, áudio, transformações e filtros quando isso for mais barato do que reproduzir a mesma função no navegador.
+- Browser Sources devem permanecer transparentes e leves quando funcionam apenas como molduras/camadas.
+- O chat real e os alertas continuam sendo alimentados pelo provedor; não inventar eventos em prévias estáticas.
+- Cenas do BRB, gameplay e chat podem reutilizar a mesma identidade visual, mas **não precisam compartilhar a mesma instância de fonte no OBS** quando filtros diferentes forem necessários.
+- Credenciais de Twitch, OBS, Streamer.bot ou dispositivos físicos nunca devem ser versionadas.
+
+## Visualizar localmente
+
+Na raiz do repositório:
 
 ```sh
 python -m http.server 8000
 ```
 
-Compare as duas propostas:
+Páginas úteis:
 
-- Fundação original: `http://localhost:8000/themes/nostalgia/preview.html`
-- Portal retro experimental: `http://localhost:8000/themes/nostalgia/portal-preview.html`
+- `http://localhost:8000/themes/nostalgia/preview.html`
+- `http://localhost:8000/themes/nostalgia/portal-preview.html`
+- `http://localhost:8000/themes/nostalgia/transitions/demo.html`
 
-A prévia experimental usa apenas CSS e gráficos próprios: a estrutura de janelas é uma referência conceitual aos sites enviados pelo usuário, sem copiar artes ou código. A identidade aprovada em `NOSTALGIA_SPEC.md` não muda automaticamente por causa desta exploração.
-
-Para verificar o módulo de configuração com Node.js:
+Teste da configuração:
 
 ```sh
 node --test tests/config.test.mjs
 ```
 
-Não coloque credenciais de Twitch, OBS, Streamer.bot ou dispositivos físicos nos arquivos do tema.
+A especificação é a fonte de verdade das decisões aprovadas; README descreve **estado de implementação e uso** e deve ser atualizado quando o OBS ou os componentes mudarem.
