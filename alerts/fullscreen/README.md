@@ -1,6 +1,6 @@
 # Nostalgia.exe — camada de alertas Full HD
 
-**Status:** primeira implementação técnica 1920×1080 publicada para **testes no Streamlabs/OBS**. Não substitui automaticamente as versões aprovadas.
+**Status em 2026-10-04:** conjunto Full HD **validado no Streamlabs/OBS e considerado correto no estado atual**. Follow, Sub, Doação e Raid usam o fluxo centro → canto aprovado.
 
 ## Arquitetura
 
@@ -31,19 +31,21 @@ A documentação oficial Streamlabs informa `{name}` e `{count}` para Raid e per
 
 O áudio da Raid fica configurado **somente no campo de som do Streamlabs**. Não reproduzir toque via JS para evitar som duplicado. A entrada/saída configurada no Streamlabs deve ser Fade In/Fade Out moderada; os movimentos internos da janela são do CSS. Se a transição estiver duplicada, prefira "None" na entrada e mantenha somente o CSS.
 
-## Ordem segura de testes
+## Revalidação segura
 
-1. Salvar os códigos anteriores em arquivo local ou usar os arquivos `alerts/follow`, `alerts/sub`, `alerts/donation` que foram preservados.
-2. Testar primeiro **Raid** em uma fonte Browser Source temporária **1920×1080**, após inserir o HTML/CSS/JS e o modelo com `{name}`/`{count}`. Verificar nome longo, espectadores, som, animação e ausência de recorte.
-3. Em seguida testar Follow, Sub e Doação, um por vez, com os arquivos sob `alerts/fullscreen/`.
-4. Só depois atualizar a cena compartilhada em produção e conferir que não há duas fontes Alert Box habilitadas.
-5. Medir uso OBS/CPU/GPU em cena com e sem o alerta. GIF, blur pesado e loops de processamento contínuos estão fora desta fase.
+O conjunto atual já passou pela validação visual. Se houver mudança futura em HTML/CSS/JS, repetir de forma isolada:
+
+1. preservar uma cópia da versão funcional;
+2. testar o tipo alterado em Browser Source 1920×1080;
+3. conferir nome longo, som, animação, recorte e duração;
+4. confirmar que apenas uma Alert Box compartilhada está habilitada;
+5. comparar uso de CPU/GPU antes de promover a mudança.
 
 ## Notas
 
 - **Não mover automaticamente os alertas existentes.** Reversão: recolocar os arquivos anteriores por tipo no Streamlabs.
-- As versões Full HD preservam o design aprovado; não pressupor que já foi testado no OBS.
-- **Fluxos implementados nesta versão (pendentes de teste no OBS):** Raid notificação → centro → **canto superior esquerdo** → atender (11 s); Follow centro → canto inferior esquerdo (6 s); Sub centro → canto inferior esquerdo (7 s); Doação centro até Clippy e carimbo → canto inferior esquerdo (12 s). Para ajustar os docks a cada cena, editar os keyframes do CSS antes de usar em produção. Sem nova automação de OBS.
+- As versões Full HD foram testadas e aprovadas visualmente no OBS/Streamlabs no estado atual.
+- **Fluxos atuais:** Raid notificação → centro → **canto superior esquerdo** → atender (11 s); Follow centro → canto inferior esquerdo (6 s); Sub centro → canto inferior esquerdo (7 s); Doação centro até Clippy e carimbo → canto inferior esquerdo (12 s). Ajustes futuros de dock exigem nova validação.
 - Recursos de raid com participantes identificados e efeitos interagindo com a webcam continuam em backlog, não estão implementados.
 
 Referência oficial: https://support.streamlabs.com/hc/en-us/articles/360007779154-Message-Template-Parameters-for-Alert-Box-Widget-on-Streamlabs-Twitch-and-Youtube
@@ -52,4 +54,4 @@ Referência oficial: https://support.streamlabs.com/hc/en-us/articles/3600077791
 
 A janela é exibida brevemente no centro para anunciar o evento. Depois, o contêiner inteiro diminui com CSS e segue para uma posição lateral, mantendo o gameplay livre. Somente então ocorre a ação final, quando aplicável. Nenhum dos widgets move o cursor real ou controla o OBS.
 
-**Observação:** a duração de 12 s da Doação substitui a sugestão anterior de 10 s. Todos os efeitos ainda dependem de teste real no Streamlabs/OBS.
+**Observação:** a duração de 12 s da Doação substitui a sugestão anterior de 10 s. O conjunto atual já foi validado; alterações futuras devem ser revalidadas antes de substituir a versão funcional.
