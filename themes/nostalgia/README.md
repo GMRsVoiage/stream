@@ -14,7 +14,7 @@ A fundação já evoluiu para componentes e cenas operacionais:
 - `config/theme.json` — configuração declarativa do tema.
 - `preview.html` e `portal-preview.html` — prévias conceituais, não fontes obrigatórias do OBS.
 - `transitions/` — Stinger Alt+Tab + abertura de aplicativo.
-- `scenes/starting.html` — Starting Soon com login → conexão → portal.
+- `scenes/starting.html` — implementação atual do Starting Soon; a direção final aprovada agora é computador ligando → desktop → navegador/página com efeito CRT → abertura de programa → loop de espera.
 - `scenes/brb.html` — camada transparente da Voya/Buddy para o BRB.
 - `components/chat/` — adaptador alternativo de janela Messenger; o chat atualmente usado na live está documentado em [../../buddy/README.md](../../buddy/README.md).
 
@@ -54,3 +54,13 @@ node --test tests/config.test.mjs
 ```
 
 A especificação é a fonte de verdade das decisões aprovadas; README descreve **estado de implementação e uso** e deve ser atualizado quando o OBS ou os componentes mudarem.
+
+
+## Prioridades aprovadas a partir de 2026-10-04
+
+1. Redesenhar o Starting Soon segundo a nova narrativa de inicialização do computador e loop final.
+2. Implementar no BRB um ciclo de iluminação por horário com código simples e local, sem criar infraestrutura desnecessária.
+3. Preparar futuramente uma folha técnica da Voya.exe para a arte manual: tamanhos, posições, áreas seguras, gestos e usos por cena.
+4. Retomar Streamer.bot + OBS WebSocket depois desses acabamentos; essa integração está adiada, mas permanece na fila de curto/médio prazo e não no backlog.
+
+Áudio, alertas Full HD e a base de performance atual do OBS estão considerados validados no estado corrente.
