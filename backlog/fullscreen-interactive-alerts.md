@@ -1,6 +1,6 @@
 # Backlog — alertas em 1920 × 1080 e interatividade
 
-**Status em 2026-10-03:** usuário antecipou a migração para AGORA. **Versões 1920×1080 e fluxos centro → canto implementados**, ainda aguardando testes no Streamlabs/OBS e não aprovados como concluídos. Instruções em [alerts/fullscreen/README.md](../alerts/fullscreen/README.md).
+**Status em 2026-10-04:** a migração Full HD e os fluxos centro → canto foram **implementados e validados no Streamlabs/OBS**. A parte básica dos alertas está concluída; este arquivo permanece apenas para ideias avançadas ainda adiadas. Instruções atuais em [alerts/fullscreen/README.md](../alerts/fullscreen/README.md).
 
 ## Implementado como rascunho para testes
 - Novas cópias independentes de Follow, Sub e Doação preparadas para canvas transparente 1920×1080, sem modificar as versões aprovadas.
@@ -12,7 +12,7 @@
 - Follow: Messenger central → reduz e segue para canto inferior esquerdo.
 - Sub: instalador central → reduz sem reiniciar a barra e segue para canto inferior esquerdo.
 - Doação: cheque central + carimbo + Clippy → reduz como conjunto e segue para canto inferior esquerdo.
-- Não foram alterados os códigos legados fora de `alerts/fullscreen/`; migração para Streamlabs deve ocorrer apenas após teste.
+- A versão Full HD foi validada no Streamlabs/OBS; códigos legados continuam preservados como retorno seguro.
 
 ## Backlog pós-validação da primeira versão
 - **Direção aprovada:** efeitos especiais podem ocupar o canvas inteiro de 1920×1080 e percorrer suas bordas. A referência mencionada pelo criador não interagia com a webcam; **interação com webcam não é requisito**.
@@ -28,6 +28,8 @@
 - Evitar vídeo permanente 1080p, WebGL, blur full-screen, requestAnimationFrame contínuo e duplicação das fontes de navegador.
 - Nunca colocar credenciais Twitch/Streamlabs no HTML público; passar ações que afetam a máquina/OBS por ferramentas autorizadas e com limites.
 
-## Próxima entrega após testes
-- Validar a Raid e os outros três alertas em 1920×1080 no OBS.
-- Construir **Starting Soon** representando inicialização do Nostalgia.exe, como próxima prioridade definida pelo criador.
+## Próxima prioridade fora deste backlog
+
+A validação de Raid, Follow, Sub e Doação foi concluída. A prioridade visual seguinte é o **redesign do Starting Soon**: computador ligando → desktop → navegador/página com efeito CRT → abertura de programa → loop final de espera.
+
+Streamer.bot + OBS WebSocket continuam planejados para uma fase técnica posterior próxima; estão adiados por ordem de execução, não classificados como backlog.
