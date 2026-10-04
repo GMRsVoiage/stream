@@ -88,3 +88,17 @@ Esses valores descrevem a moldura do Desktop World; transformações finas das f
 ## Performance
 
 Manter gameplay e câmera como fontes nativas. O HTML deve continuar apenas com UI estática/leve. Blur dinâmico e efeitos dependentes da imagem do jogo ficam no OBS, onde podem ser controlados e desativados sem modificar o overlay.
+
+### Snapshot aceito — 2026-10-04
+
+Com a composição atual ativa, incluindo a camada Ambilight/shader:
+
+- CPU OBS: **4,2%**
+- FPS: **60,00**
+- tempo médio para renderizar um quadro: **1,2 ms**
+- atraso de renderização: **0,1%**
+- atraso de codificação: **0,00%**
+- perda de rede observada: **0,1%**
+- bitrate: aproximadamente **5950 kb/s**
+
+O resultado foi aceito como suficiente para considerar a configuração atual estável. Só reabrir otimização se novos jogos, fontes ou efeitos elevarem esses valores de forma persistente.
