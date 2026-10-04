@@ -9,11 +9,13 @@ A base continua propositalmente leve: **HTML + CSS + SVG + JavaScript mínimo**,
 - **Gameplay / Desktop World:** layout horizontal 1920×1080 implementado e já ajustado no OBS. Documentação: [scenes/nostalgia-desktop-world](./scenes/nostalgia-desktop-world/README.md).
 - **Webcam:** cena OBS reutilizável `WEBCAM` com moldura Nostalgia Cam e máscara opcional para cantos arredondados. Documentação: [scenes/nostalgia-cam](./scenes/nostalgia-cam/README.md).
 - **Chat:** integração atual usa o Chat Box do Streamlabs com Buddies por categoria e balões transparentes. Documentação: [buddy](./buddy/README.md). O adaptador de janela Messenger em `themes/nostalgia/components/chat/` permanece como alternativa.
-- **BRB:** quarto chibi estático + chat real como fonte independente com perspectiva no OBS + camada transparente da futura Voya.exe; enquanto a arte final não existe, um Buddy azul pequeno é usado como placeholder. Documentação: [themes/nostalgia/scenes](./themes/nostalgia/scenes/README.md).
-- **Starting Soon:** sequência login → conexão → portal já implementada em `themes/nostalgia/scenes/starting.html`; ainda deve ser considerada sujeita a ajuste visual final no OBS.
-- **Alertas Full HD:** Follow, Sub, Doação e Raid possuem implementações 1920×1080 com fluxo centro → canto, ainda dependentes de validação real no Streamlabs/OBS. Documentação: [alerts/fullscreen](./alerts/fullscreen/README.md).
+- **BRB:** quarto chibi estático + chat real como fonte independente com perspectiva no OBS + camada transparente da futura Voya.exe. O próximo refinamento aprovado é um ciclo simples de iluminação por horário, mantendo o código pequeno e funcional. Documentação: [themes/nostalgia/scenes](./themes/nostalgia/scenes/README.md).
+- **Starting Soon:** a implementação atual login → conexão → portal continua versionada, mas foi **substituída como direção final**. O redesign aprovado passa por computador ligando → desktop → navegador/página com tratamento CRT → abertura de um programa → estado final em loop; esse loop será a deixa para trocar manualmente para a cena da live.
+- **Alertas Full HD:** Follow, Sub, Doação e Raid em 1920×1080 foram validados no Streamlabs/OBS e estão considerados corretos no estado atual. Documentação: [alerts/fullscreen](./alerts/fullscreen/README.md).
+- **Áudio:** configuração atual considerada correta/consolidada; gain staging fino continua podendo ser revisitado sem bloquear o restante do projeto.
 - **Transições:** Stinger Alt+Tab + abertura de aplicativo implementada, com corte recomendado em 600 ms. Documentação: [themes/nostalgia/transitions](./themes/nostalgia/transitions/README.md).
-- **Voya.exe:** conceito e regras estão aprovados em [NOSTALGIA_SPEC.md](./NOSTALGIA_SPEC.md), mas a arte final ainda não foi versionada.
+- **Voya.exe:** conceito e regras estão aprovados em [NOSTALGIA_SPEC.md](./NOSTALGIA_SPEC.md). A arte final aguardará desenho manual; antes da integração final será preparada uma folha técnica com tamanhos, posições, áreas seguras e gestos necessários.
+- **Automações:** Streamer.bot + OBS WebSocket continuam planejados para uma fase técnica próxima. Foram adiados por prioridade, **não enviados ao backlog**.
 
 ## Referência atual do OBS
 
@@ -24,6 +26,19 @@ Na configuração atual da gameplay, a captura foi ajustada aproximadamente para
 O chat da gameplay é uma fonte independente de aproximadamente **407×620**, posicionada na região direita do layout e **sem Corner Pin**. O chat do BRB deve ser outra fonte/instância, pois recebe deformação de perspectiva própria.
 
 Existe também um efeito de **Ambilight dinâmico feito no próprio OBS**, usando uma cópia/reuso visual da gameplay atrás da captura principal, centralizada no mesmo ponto, com `obs-shaderfilter` (box blur) + correção de cor. Esse efeito é configuração de OBS, não código obrigatório do repositório.
+
+### Validação de performance
+
+Snapshot de 2026-10-04 com a composição atual ativa:
+
+- CPU OBS: **4,2%**
+- tempo médio de render: **1,2 ms**
+- quadros perdidos por atraso de renderização: **0,1%**
+- quadros ignorados por atraso de codificação: **0,00%**
+- perda de rede observada: **0,1%**
+- saída em aproximadamente **5950 kb/s**
+
+Esse teste foi aceito como suficiente para considerar a base visual atual — incluindo Ambilight/shaders — estável. Reabrir otimização apenas se jogos/cenas futuras aumentarem esses indicadores de forma perceptível.
 
 ## Estrutura principal
 
