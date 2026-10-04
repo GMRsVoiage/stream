@@ -1,6 +1,10 @@
-# Nostalgia.exe — MSN buddies para Streamlabs
+# Nostalgia.exe — MSN Buddies para Streamlabs
 
-Avatares com silhuetas clássicas do MSN, em SVG transparente 128×128.
+**Status:** esta é a implementação de chat atualmente usada como base na live.
+
+Cada mensagem recebe um Buddy inspirado na linguagem dos mensageiros dos anos 2000 e um balão transparente/leve. O Streamlabs continua responsável por entregar mensagens, badges e emotes; o JavaScript desta pasta só classifica a categoria visual.
+
+## Assets
 
 | Tipo | Normal | Ativo |
 | --- | --- | --- |
@@ -12,27 +16,59 @@ Avatares com silhuetas clássicas do MSN, em SVG transparente 128×128.
 | Moderator | [mod_idle.svg](mod_idle.svg) | [mod_talk.svg](mod_talk.svg) |
 | Broadcaster | [broadcaster_idle.svg](broadcaster_idle.svg) | [broadcaster_talk.svg](broadcaster_talk.svg) |
 
-## Como instalar
+## Instalação no Streamlabs
 
-Substitua o conteúdo de cada aba em **Streamlabs > Chat Box > Custom HTML** pelos respectivos arquivos:
+Em **Chat Box → Custom HTML/CSS/JS**, use:
+
 - [streamlabs.html](streamlabs.html)
 - [streamlabs.css](streamlabs.css)
 - [streamlabs.js](streamlabs.js)
 
-A aba JS é essencial para identificar as categorias. Salve as três abas e atualize o cache do navegador no OBS para recarregar a versão nova.
+O JavaScript é necessário para a classificação das categorias.
 
-### Reconhecimento das categorias
+Prioridade:
 
-Prioridade: **broadcaster > mod > artist > founder > sub > VIP > viewer**.
+**broadcaster > mod > artist > founder > sub > VIP > viewer**
 
-A versão atual corrige um problema da anterior: o avatar era frequentemente marcado como viewer antes da chegada das badges, e o código deixava de verificá-las. Agora, ele pode ser atualizado quando o Streamlabs preencher as badges ou quando os metadados do evento chegarem. Há identificação adicional pelo texto visível das badges e pelo nome do dono do canal.
+Quando os dados de badges chegam depois da criação inicial da mensagem, o script pode atualizar o Buddy. Se não houver informação suficiente, a categoria cai para viewer.
 
-Se não houver dados nem identificação legível nas badges, usa viewer. A aparência real ainda precisa ser testada com mensagens das categorias desejadas no Streamlabs. Não desative as badges no widget durante os testes.
+## OBS — configuração atual
 
-Para diagnóstico no navegador do widget, cole temporariamente no console:
+### Gameplay
+
+Use uma Browser Source independente:
+
+- URL do Chat Box do Streamlabs;
+- tamanho aproximado **407×620**;
+- fundo transparente;
+- mensagens alinhadas de baixo para cima;
+- **sem Corner Pin**.
+
+No Desktop World, a região externa do chat fica aproximadamente em **X 1486 / Y 292 / 407×620**.
+
+### BRB
+
+O quarto do BRB precisa deformar o chat para combinar com a perspectiva da arte. Por isso:
+
+- use outra fonte/instância do chat;
+- aplique o Corner Pin somente nessa fonte;
+- a configuração atual usa **obs-shaderfilter 2.6.0** com **User-defined shader**;
+- mantenha o chat, o quarto e a camada da Voya/Buddy como fontes separadas.
+
+Não reutilize no gameplay uma fonte que já carrega os filtros do BRB.
+
+## Diagnóstico
+
+Para inspecionar eventos no navegador do widget, temporariamente:
+
 ```js
 document.addEventListener("onEventReceived", e => {
   if (e.detail?.listener === "message") console.log("CHAT EVENT", e.detail);
 });
 ```
-Não publique capturas completas de eventos sem ocultar identificadores ou outras informações pessoais.
+
+Não publique dumps completos de eventos sem remover identificadores e outras informações pessoais.
+
+## Variante alternativa
+
+Existe também uma apresentação em formato de janela Messenger completa em [`themes/nostalgia/components/chat/`](../themes/nostalgia/components/chat/README.md). Ela é uma alternativa visual e não deve ser confundida com este chat Buddy atualmente usado no OBS.
