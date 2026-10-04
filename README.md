@@ -1,90 +1,78 @@
 # GMRsVoiage Stream
 
-Sistema leve de overlays e peças visuais do **GMRsVoiage**. O tema principal aprovado é **Nostalgia.exe**; o protótipo anterior AquaWave está preservado como legado.
+Overlays, cenas e peças visuais da live **GMRsVoiage**. O tema ativo é **Nostalgia.exe — A internet que nunca existiu**. O protótipo anterior **AquaWave** permanece preservado como legado e não é mais a direção principal de desenvolvimento.
 
-A base usa **HTML + CSS + SVG** e JavaScript mínimo, sem frameworks. A ideia é manter as fontes de navegador do OBS leves, editáveis e reaproveitáveis também para banners e outras artes.
+A base continua propositalmente leve: **HTML + CSS + SVG + JavaScript mínimo**, sem framework obrigatório. Gameplay, webcam e áudio permanecem fontes nativas do OBS sempre que isso reduz custo e complexidade.
 
-## Novo tema: Nostalgia.exe (fundação em desenvolvimento)
+## Estado atual — 2026-10-04
 
-- Especificação aprovada: [NOSTALGIA_SPEC.md](./NOSTALGIA_SPEC.md).
-- Infraestrutura neutra: `core/` (configuração em camadas, reset CSS, dados da marca).
-- Tema novo: `themes/nostalgia/` (tokens, CSS-base, símbolo em SVG e configuração).
-- [Prévia visual](./themes/nostalgia/preview.html) — ainda não é uma cena operacional do OBS.
+- **Gameplay / Desktop World:** layout horizontal 1920×1080 implementado e já ajustado no OBS. Documentação: [scenes/nostalgia-desktop-world](./scenes/nostalgia-desktop-world/README.md).
+- **Webcam:** cena OBS reutilizável `WEBCAM` com moldura Nostalgia Cam e máscara opcional para cantos arredondados. Documentação: [scenes/nostalgia-cam](./scenes/nostalgia-cam/README.md).
+- **Chat:** integração atual usa o Chat Box do Streamlabs com Buddies por categoria e balões transparentes. Documentação: [buddy](./buddy/README.md). O adaptador de janela Messenger em `themes/nostalgia/components/chat/` permanece como alternativa.
+- **BRB:** quarto chibi estático + chat real como fonte independente com perspectiva no OBS + camada transparente da futura Voya.exe; enquanto a arte final não existe, um Buddy azul pequeno é usado como placeholder. Documentação: [themes/nostalgia/scenes](./themes/nostalgia/scenes/README.md).
+- **Starting Soon:** sequência login → conexão → portal já implementada em `themes/nostalgia/scenes/starting.html`; ainda deve ser considerada sujeita a ajuste visual final no OBS.
+- **Alertas Full HD:** Follow, Sub, Doação e Raid possuem implementações 1920×1080 com fluxo centro → canto, ainda dependentes de validação real no Streamlabs/OBS. Documentação: [alerts/fullscreen](./alerts/fullscreen/README.md).
+- **Transições:** Stinger Alt+Tab + abertura de aplicativo implementada, com corte recomendado em 600 ms. Documentação: [themes/nostalgia/transitions](./themes/nostalgia/transitions/README.md).
+- **Voya.exe:** conceito e regras estão aprovados em [NOSTALGIA_SPEC.md](./NOSTALGIA_SPEC.md), mas a arte final ainda não foi versionada.
 
-Para ver a prévia, execute `python -m http.server 8000` na raiz do repositório e acesse:
-`http://localhost:8000/themes/nostalgia/preview.html`.
+## Referência atual do OBS
 
-Os novos arquivos não modificam as cenas existentes. Testes de configuração:
-`node --test tests/config.test.mjs`.
+Canvas principal: **1920×1080**.
 
-## Protótipo legado AquaWave
+Na configuração atual da gameplay, a captura foi ajustada aproximadamente para **X 242 / Y 161 / 1185×667**, com centro em **X 834,5 / Y 494,5**. O HTML do Desktop World usa como referência nominal o interior 16:9 em torno de **X 243 / Y 160 / 1184×666**; pequenas diferenças de 1 px podem ocorrer pelo transform do OBS.
 
-- `scenes/main.html` — overlay principal Dark Synthwave 1920×1080.
-- `scenes/webcam.html` — moldura responsiva com neon percorrendo exatamente a borda.
-- `scenes/starting.html` — tela Starting Soon animada 1920×1080.
-- `render/twitch-banner.html` — composição de banner 1200×480.
-- `render/profile-icon.html` — base de ícone 512×512 com o sol Synthwave.
-- `js/scene-config.js` — configuração leve para nomes/status/jogo variáveis.
-- `css/tokens.css` — tokens do AquaWave.
-- `css/components.css` — componentes reutilizáveis.
-- `css/scenes.css` — composição visual e animações.
-- `assets/*.svg` — elementos vetoriais leves.
+O chat da gameplay é uma fonte independente de aproximadamente **407×620**, posicionada na região direita do layout e **sem Corner Pin**. O chat do BRB deve ser outra fonte/instância, pois recebe deformação de perspectiva própria.
 
-## Testar o legado no navegador
+Existe também um efeito de **Ambilight dinâmico feito no próprio OBS**, usando uma cópia/reuso visual da gameplay atrás da captura principal, centralizada no mesmo ponto, com `obs-shaderfilter` (box blur) + correção de cor. Esse efeito é configuração de OBS, não código obrigatório do repositório.
 
-Clone o repositório e abra `index.html`.
+## Estrutura principal
 
-Para uma visualização mais consistente, também é possível servir a pasta com qualquer servidor HTTP local simples. O projeto não exige build.
+- `NOSTALGIA_SPEC.md` — fonte de verdade das decisões visuais e arquiteturais aprovadas.
+- `core/` — infraestrutura neutra e configuração compartilhável.
+- `themes/nostalgia/` — tema ativo, cenas, componentes e transições.
+- `scenes/nostalgia-desktop-world/` — moldura/layout principal de gameplay.
+- `scenes/nostalgia-cam/` — moldura reutilizável da webcam.
+- `buddy/` — Chat Box ativo com Buddies por categoria.
+- `alerts/fullscreen/` — alertas Full HD.
+- `backlog/` — ideias adiadas ou ainda não aprovadas como implementação atual.
+- `scenes/`, `css/`, `js/` e partes antigas — legado AquaWave e arquivos históricos ainda preservados.
 
-## Usar o legado no OBS
+## Desenvolvimento local
 
-1. Adicione uma **Fonte de Navegador**.
-2. Marque **Arquivo local**.
-3. Selecione a cena desejada.
-4. Para `main.html` e `starting.html`, use **1920 × 1080**.
-5. Para `webcam.html`, use diretamente a resolução da câmera, por exemplo **1280 × 720** ou **640 × 360**.
-6. **30 FPS** é suficiente para as animações atuais.
-7. Ative **Desligar a fonte quando não estiver visível** quando fizer sentido.
+O projeto não exige build para as páginas estáticas. Na raiz:
 
-## Valores variáveis do legado e futuras automações
+```sh
+python -m http.server 8000
+```
 
-As cenas carregam `js/scene-config.js`. Ele já deixa três valores prontos para automações:
-
-- `name` — nome exibido.
-- `game` — jogo/perfil atual.
-- `status` — estado da transmissão.
-
-Exemplo ao abrir por URL:
+A prévia base do tema fica em:
 
 ```text
-webcam.html?name=GMRsVoiage&game=CS2&status=AO%20VIVO
+http://localhost:8000/themes/nostalgia/preview.html
 ```
 
-Também é possível alterar os valores em runtime:
+Testes de configuração:
 
-```js
-AquaWave.set({
-  name: "GMRsVoiage",
-  game: "Counter-Strike 2",
-  status: "RANQUEADA"
-});
+```sh
+node --test tests/config.test.mjs
 ```
 
-Isso é uma base para, futuramente, OBS WebSocket, scripts locais ou automações por jogo trocarem textos e perfis de cena sem reconstruir o overlay.
+Não aponte o OBS para URLs `github.com/.../blob/...`: essas páginas são o visualizador de código do GitHub. Use arquivo local ou uma hospedagem estática.
 
 ## Direção de desempenho
 
-O projeto evita por padrão:
+Evitar por padrão:
 
-- frameworks de frontend;
+- frameworks de frontend quando HTML/CSS simples resolve;
 - WebGL/Three.js;
-- partículas em JavaScript;
 - vídeos 1920×1080 permanentes;
 - GIFs;
-- blur animado em tela inteira;
+- blur animado em tela inteira dentro de Browser Source;
 - `backdrop-filter` em grandes áreas;
-- animações contínuas que alterem layout.
+- loops JavaScript contínuos sem necessidade.
 
-As animações usam principalmente `transform` e `opacity`.
+Efeitos de gameplay que o OBS já executa bem — como blur/ambiente dinâmico — devem continuar no OBS em vez de serem reimplementados em HTML.
 
-Quando uma animação mais complexa fizer sentido, a ideia é usar **WebM pequeno e localizado**, em vez de transformar a cena inteira em vídeo.
+## Legado AquaWave
+
+AquaWave está arquivado conceitualmente e preservado para consulta/recuperação. Não tratar `scenes/main.html`, `scenes/starting.html`, `css/scenes.css` e arquivos relacionados como a implementação atual do Nostalgia.exe.
