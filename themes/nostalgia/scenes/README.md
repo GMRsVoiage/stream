@@ -1,29 +1,34 @@
 # Nostalgia.exe — Starting Soon + BRB
 
-**Status em 2026-10-04:** Starting Soon e BRB estão implementados como cenas do Nostalgia.exe. O BRB já usa o quarto chibi real no OBS e o chat foi separado para receber perspectiva própria. A arte final da Voya.exe ainda não está no repositório.
+**Status em 2026-10-04:** o BRB está montado e funcionando no OBS. O Starting Soon atual continua versionado, mas sua narrativa foi substituída por um redesign aprovado ainda não implementado. A arte final da Voya.exe aguardará desenho manual antes da integração definitiva.
 
 As cenas são pensadas para canvas **1920×1080**.
 
 ## Starting Soon
 
-Arquivo principal: `starting.html`.
+Arquivo atual: `starting.html`.
 
-Sequência atual:
+A versão existente ainda executa login → conexão → portal, mas **não é mais a direção final aprovada**. Ela deve permanecer funcional até o redesign ser implementado.
 
-1. login — 0 a ~3,3 s;
-2. conexão — ~3,3 a 7,7 s;
-3. portal — ~7,7 a 11,7 s;
-4. estado permanente: **A LIVE JÁ VAI COMEÇAR**.
+### Nova narrativa aprovada
 
-A animação é CSS-only e permanece leve. O background é uma fonte separada do OBS.
+1. computador inicialmente desligado;
+2. power-on / boot;
+3. entrada no desktop Nostalgia.exe;
+4. cursor abre uma página/navegador com tratamento CRT coerente com a cena;
+5. um programa é aberto a partir desse ambiente;
+6. o programa entra em um **estado de espera em loop leve**;
+7. esse loop funciona como a deixa visual para o operador trocar manualmente para a cena em que a live começará.
 
-No Browser Source:
+A duração exata e o programa final ainda podem ser calibrados visualmente; não fixar temporizações antes do teste no OBS.
+
+Requisitos mantidos:
 
 - 1920×1080;
-- arquivo local ou hospedagem estática;
-- habilitar **Atualizar navegador quando a cena se tornar ativa** apenas se quiser reiniciar a sequência em toda entrada.
-
-Música/áudio continuam fontes independentes do OBS.
+- execução leve;
+- sem depender de vídeo de fundo permanente;
+- efeitos CRT moderados, sem blur/shader pesado contínuo no Browser Source;
+- música/áudio separados no OBS.
 
 ## BRB
 
@@ -60,6 +65,8 @@ O placeholder é um único Buddy azul clássico, pequeno, com altura de aproxima
 
 `brb-debug.html` continua disponível para visualizar polígono/caminho de movimento. A calibração definitiva de colisões e escala só deve ser feita quando a arte final da Voya existir.
 
+Antes da produção/integracão definitiva será preparada uma **folha técnica para a artista**, com referências de tamanho, posição dos pés, áreas seguras, poses/gestos necessários e usos em Starting, BRB e transições. A arte final será desenhada manualmente fora do repositório antes de ser incorporada.
+
 É possível passar `?sprite=CAMINHO_RELATIVO.png` para testar uma arte futura; isso não transforma automaticamente o placeholder em implementação final da mascote.
 
 ## Ordem de fontes do BRB
@@ -72,9 +79,18 @@ De cima para baixo:
 
 Não adicionar uma segunda janela CSS de chat nem outro quarto ao `brb.html`.
 
-## Ideias ainda não implementadas
+## Próxima evolução aprovada do BRB — iluminação por horário
 
-O ciclo visual de horário do quarto — amanhecer, dia, pôr do sol e noite — foi discutido como evolução interessante, mas **ainda não é parte da implementação versionada**. Se for adotado, preferir filtros/camadas do OBS sobre o background do quarto sem alterar chat e Voya.
+O ciclo visual do quarto foi aprovado como próximo refinamento, com prioridade para **simplicidade e funcionamento previsível**.
+
+Direção:
+
+- amanhecer / dia / entardecer / noite como estados visuais amplos;
+- código local pequeno, sem API externa obrigatória;
+- alterar somente a iluminação/camada do quarto;
+- chat e Voya permanecem independentes e legíveis;
+- evitar infraestrutura grande (Home Assistant, Streamer.bot ou serviços externos) apenas para essa função;
+- horários exatos e transições serão calibrados quando a implementação começar.
 
 ## Performance
 
